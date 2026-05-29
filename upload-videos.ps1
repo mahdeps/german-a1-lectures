@@ -1,7 +1,9 @@
-﻿# Uploads all big video/audio files to a GitHub Release as clean-named assets.
+﻿﻿# Uploads all big video/audio files to a GitHub Release as clean-named assets.
 # Reads upload-map.json (asset -> local source path) and manifest.json (repo/tag).
 # Uses NTFS hardlinks so nothing is duplicated on disk. Safe to re-run (skips done).
-$ErrorActionPreference = 'Stop'
+# Note: keep ErrorActionPreference at Continue. With 'Stop', PowerShell 5.1 wraps
+# native gh stderr as a terminating error and aborts mid-run.
+$ErrorActionPreference = 'Continue'
 $root = $PSScriptRoot
 
 $manifest = Get-Content -Raw -Encoding UTF8 (Join-Path $root 'manifest.json') | ConvertFrom-Json

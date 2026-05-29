@@ -1,4 +1,4 @@
-﻿﻿# Scans the 16 lecture folders, classifies files, stages small notes/PDFs,
+﻿﻿﻿# Scans the 16 lecture folders, classifies files, stages small notes/PDFs,
 # and emits manifest.json consumed by index.html.
 $ErrorActionPreference = 'Stop'
 $root = $PSScriptRoot
@@ -24,7 +24,10 @@ function Format-Size($bytes) {
 $lectures = @()
 $uploadMap = [ordered]@{}
 
+$exclude = @(1)   # lectures to skip entirely
+
 for ($n = 1; $n -le 16; $n++) {
+  if ($exclude -contains $n) { continue }
   $folder = Join-Path $root ("المحاضرة $n")
   if (-not (Test-Path $folder)) { continue }
   $files = Get-ChildItem -File $folder
@@ -65,31 +68,13 @@ for ($n = 1; $n -le 16; $n++) {
     $pdfList += [ordered]@{ label = 'ملف PDF'; path = "pdf/$name"; size = (Format-Size $p.Length) }
   }
 
-  # ---- Videos (mp4) -> release ----
-  $extraV = 0
-  foreach ($v in $mp4s) {
-    $isCompressed = $v.Name -match 'compressed'
-    $isMain = ($v -eq $mp4s[0]) -and -not $isCompressed
-    if ($isMain) {
-      $asset = "L$nn-main.mp4"; $label = 'الفيديو الكامل (جودة عالية)'; $kind = 'video-main'
-    } elseif ($isCompressed) {
-      $asset = "L$nn-compressed.mp4"; $label = 'الفيديو (نسخة مضغوطة - أخف)'; $kind = 'video-compressed'
-    } else {
-      $extraV++
-      $asset = "L$nn-extra$extraV.mp4"; $label = "فيديو إضافي $extraV"; $kind = 'video-extra'
-    }
-    $downloads += [ordered]@{ label = $label; kind = $kind; asset = $asset; size = (Format-Size $v.Length) }
-    $uploadMap[$asset] = $v.FullName
-  }
-
-  # ---- Audio (m4a) -> release ----
-  $ai = 0
-  foreach ($a in $m4as) {
-    $ai++
-    $asset = if ($m4as.Count -eq 1) { "L$nn-audio.m4a" } else { "L$nn-audio$ai.m4a" }
-    $label = if ($m4as.Count -eq 1) { 'النسخة الصوتية (MP3/M4A)' } else { "ملف صوتي $ai" }
-    $downloads += [ordered]@{ label = $label; kind = 'audio'; asset = $asset; size = (Format-Size $a.Length) }
-    $uploadMap[$asset] = $a.FullName
+  # ---- Smallest video only -> release (per user's choice; audio/extra videos skipped) ----
+  $smallest = $mp4s | Sort-Object Length | Select-Object -First 1
+  if ($smallest) {
+    $asset = "L$nn-video.mp4"
+    $downloads += [ordered]@{ label = 'الفيديو'; kind = 'video-main'; asset = $asset; size = (Format-Size $smallest.Length) }
+    $uploadMap[$asset] = $smallest.FullName
+    Write-Host ("  -> L{0:D2} smallest video: {1} ({2})" -f $n, $smallest.Name, (Format-Size $smallest.Length))
   }
 
   $lectures += [ordered]@{

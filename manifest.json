@@ -8,37 +8,13 @@
              },
     "lectures":  [
                      {
-                         "number":  1,
-                         "topic":  "",
-                         "downloads":  [
-                                           {
-                                               "label":  "النسخة الصوتية (MP3/M4A)",
-                                               "kind":  "audio",
-                                               "asset":  "L01-audio.m4a",
-                                               "size":  "37 MB"
-                                           }
-                                       ],
-                         "notes":  [
-
-                                   ],
-                         "pdf":  [
-
-                                 ]
-                     },
-                     {
                          "number":  2,
                          "topic":  "الدرس الأول - أساسيات اللغة الألمانية",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L02-main.mp4",
-                                               "size":  "776 MB"
-                                           },
-                                           {
-                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
-                                               "kind":  "video-compressed",
-                                               "asset":  "L02-compressed.mp4",
+                                               "asset":  "L02-video.mp4",
                                                "size":  "166 MB"
                                            }
                                        ],
@@ -62,15 +38,9 @@
                          "topic":  "الأبجدية، الأرقام، التحيات والقواعد الأساسية",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L03-main.mp4",
-                                               "size":  "543 MB"
-                                           },
-                                           {
-                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
-                                               "kind":  "video-compressed",
-                                               "asset":  "L03-compressed.mp4",
+                                               "asset":  "L03-video.mp4",
                                                "size":  "125 MB"
                                            }
                                        ],
@@ -90,15 +60,9 @@
                          "topic":  "أدوات التعريف، النكرة، النفي وبناء السؤال",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L04-main.mp4",
-                                               "size":  "375 MB"
-                                           },
-                                           {
-                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
-                                               "kind":  "video-compressed",
-                                               "asset":  "L04-compressed.mp4",
+                                               "asset":  "L04-video.mp4",
                                                "size":  "104 MB"
                                            }
                                        ],
@@ -118,15 +82,9 @@
                          "topic":  "الأفعال، الهوايات وأيام الأسبوع",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L05-main.mp4",
-                                               "size":  "539 MB"
-                                           },
-                                           {
-                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
-                                               "kind":  "video-compressed",
-                                               "asset":  "L05-compressed.mp4",
+                                               "asset":  "L05-video.mp4",
                                                "size":  "130 MB"
                                            }
                                        ],
@@ -145,18 +103,7 @@
                          "number":  6,
                          "topic":  "المحاضرة السادسة — الأدوات، المهن والجمع",
                          "downloads":  [
-                                           {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
-                                               "kind":  "video-main",
-                                               "asset":  "L06-main.mp4",
-                                               "size":  "105 MB"
-                                           },
-                                           {
-                                               "label":  "النسخة الصوتية (MP3/M4A)",
-                                               "kind":  "audio",
-                                               "asset":  "L06-audio.m4a",
-                                               "size":  "50 MB"
-                                           }
+
                                        ],
                          "notes":  [
                                        {
@@ -174,22 +121,10 @@
                          "topic":  "الأدوات، الاتجاهات، الفصول وبناء الجملة",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L07-main.mp4",
-                                               "size":  "428 MB"
-                                           },
-                                           {
-                                               "label":  "فيديو إضافي 1",
-                                               "kind":  "video-extra",
-                                               "asset":  "L07-extra1.mp4",
+                                               "asset":  "L07-video.mp4",
                                                "size":  "75 MB"
-                                           },
-                                           {
-                                               "label":  "النسخة الصوتية (MP3/M4A)",
-                                               "kind":  "audio",
-                                               "asset":  "L07-audio.m4a",
-                                               "size":  "53 MB"
                                            }
                                        ],
                          "notes":  [
@@ -208,22 +143,10 @@
                          "topic":  "المحاضرة الثامنة — المحادثات، الاتجاهات والفصول",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L08-main.mp4",
-                                               "size":  "222 MB"
-                                           },
-                                           {
-                                               "label":  "فيديو إضافي 1",
-                                               "kind":  "video-extra",
-                                               "asset":  "L08-extra1.mp4",
+                                               "asset":  "L08-video.mp4",
                                                "size":  "36 MB"
-                                           },
-                                           {
-                                               "label":  "النسخة الصوتية (MP3/M4A)",
-                                               "kind":  "audio",
-                                               "asset":  "L08-audio.m4a",
-                                               "size":  "25 MB"
                                            }
                                        ],
                          "notes":  [
@@ -242,22 +165,10 @@
                          "topic":  "الطعام، التسوق وحالة الاكوزاتيف",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L09-main.mp4",
-                                               "size":  "625 MB"
-                                           },
-                                           {
-                                               "label":  "فيديو إضافي 1",
-                                               "kind":  "video-extra",
-                                               "asset":  "L09-extra1.mp4",
+                                               "asset":  "L09-video.mp4",
                                                "size":  "116 MB"
-                                           },
-                                           {
-                                               "label":  "النسخة الصوتية (MP3/M4A)",
-                                               "kind":  "audio",
-                                               "asset":  "L09-audio.m4a",
-                                               "size":  "77 MB"
                                            }
                                        ],
                          "notes":  [
@@ -276,22 +187,10 @@
                          "topic":  "möchten و mögen، تركيب الجملة، والتعبير عن الوقت",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L10-main.mp4",
-                                               "size":  "712 MB"
-                                           },
-                                           {
-                                               "label":  "فيديو إضافي 1",
-                                               "kind":  "video-extra",
-                                               "asset":  "L10-extra1.mp4",
+                                               "asset":  "L10-video.mp4",
                                                "size":  "139 MB"
-                                           },
-                                           {
-                                               "label":  "النسخة الصوتية (MP3/M4A)",
-                                               "kind":  "audio",
-                                               "asset":  "L10-audio.m4a",
-                                               "size":  "84 MB"
                                            }
                                        ],
                          "notes":  [
@@ -310,34 +209,10 @@
                          "topic":  "المحاضرة 11 — الروتين، الساعة وضمائر الملكية",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L11-main.mp4",
-                                               "size":  "610 MB"
-                                           },
-                                           {
-                                               "label":  "فيديو إضافي 1",
-                                               "kind":  "video-extra",
-                                               "asset":  "L11-extra1.mp4",
-                                               "size":  "111 MB"
-                                           },
-                                           {
-                                               "label":  "فيديو إضافي 2",
-                                               "kind":  "video-extra",
-                                               "asset":  "L11-extra2.mp4",
+                                               "asset":  "L11-video.mp4",
                                                "size":  "29 MB"
-                                           },
-                                           {
-                                               "label":  "ملف صوتي 1",
-                                               "kind":  "audio",
-                                               "asset":  "L11-audio1.m4a",
-                                               "size":  "72 MB"
-                                           },
-                                           {
-                                               "label":  "ملف صوتي 2",
-                                               "kind":  "audio",
-                                               "asset":  "L11-audio2.m4a",
-                                               "size":  "22 MB"
                                            }
                                        ],
                          "notes":  [
@@ -366,15 +241,9 @@
                          "topic":  "المحاضرة 12 — الأفعال الناقصة، المواعيد واللباقة",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L12-main.mp4",
-                                               "size":  "742 MB"
-                                           },
-                                           {
-                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
-                                               "kind":  "video-compressed",
-                                               "asset":  "L12-compressed.mp4",
+                                               "asset":  "L12-video.mp4",
                                                "size":  "195 MB"
                                            }
                                        ],
@@ -394,22 +263,10 @@
                          "topic":  "المحاضرة 13 — أعياد الميلاد، الأفعال المنفصلة والماضي",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L13-main.mp4",
-                                               "size":  "1.21 GB"
-                                           },
-                                           {
-                                               "label":  "فيديو إضافي 1",
-                                               "kind":  "video-extra",
-                                               "asset":  "L13-extra1.mp4",
+                                               "asset":  "L13-video.mp4",
                                                "size":  "271 MB"
-                                           },
-                                           {
-                                               "label":  "النسخة الصوتية (MP3/M4A)",
-                                               "kind":  "audio",
-                                               "asset":  "L13-audio.m4a",
-                                               "size":  "84 MB"
                                            }
                                        ],
                          "notes":  [
@@ -428,22 +285,10 @@
                          "topic":  "المحاضرة 14 — المراجعة الشاملة للامتحان",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L14-main.mp4",
-                                               "size":  "366 MB"
-                                           },
-                                           {
-                                               "label":  "فيديو إضافي 1",
-                                               "kind":  "video-extra",
-                                               "asset":  "L14-extra1.mp4",
+                                               "asset":  "L14-video.mp4",
                                                "size":  "56 MB"
-                                           },
-                                           {
-                                               "label":  "النسخة الصوتية (MP3/M4A)",
-                                               "kind":  "audio",
-                                               "asset":  "L14-audio.m4a",
-                                               "size":  "54 MB"
                                            }
                                        ],
                          "notes":  [
@@ -462,15 +307,9 @@
                          "topic":  "",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L15-main.mp4",
-                                               "size":  "550 MB"
-                                           },
-                                           {
-                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
-                                               "kind":  "video-compressed",
-                                               "asset":  "L15-compressed.mp4",
+                                               "asset":  "L15-video.mp4",
                                                "size":  "145 MB"
                                            }
                                        ],
@@ -486,15 +325,9 @@
                          "topic":  "",
                          "downloads":  [
                                            {
-                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "label":  "الفيديو",
                                                "kind":  "video-main",
-                                               "asset":  "L16-main.mp4",
-                                               "size":  "798 MB"
-                                           },
-                                           {
-                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
-                                               "kind":  "video-compressed",
-                                               "asset":  "L16-compressed.mp4",
+                                               "asset":  "L16-video.mp4",
                                                "size":  "187 MB"
                                            }
                                        ],
