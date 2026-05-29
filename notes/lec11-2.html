@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الساعة، العائلة والمواعيد — Kapitel 5</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#060810;--card:#0c1020;--card-h:#121828;
+--bdr:#182038;--bdr-h:#243050;
+--crimson:#e83858;--crimson-d:rgba(232,56,88,.07);
+--blue:#3898f0;--blue-d:rgba(56,152,240,.07);
+--teal:#28d0a8;--teal-d:rgba(40,208,168,.07);
+--amber:#e8a828;--amber-d:rgba(232,168,40,.07);
+--violet:#9060e8;--violet-d:rgba(144,96,232,.07);
+--green:#40c068;--green-d:rgba(64,192,104,.07);
+--rose:#e868a0;--rose-d:rgba(232,104,160,.07);
+--orange:#f08030;--orange-d:rgba(240,128,48,.07);
+--cyan:#38c0d8;--cyan-d:rgba(56,192,216,.07);
+--txt:#ccc8c0;--txt-d:#586878;--txt-b:#f0ece4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:'Noto Naskh Arabic',serif;line-height:2;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(700px 500px at 10% 20%,rgba(232,56,88,.02) 0%,transparent 70%),radial-gradient(600px 600px at 88% 55%,rgba(56,152,240,.018) 0%,transparent 70%),radial-gradient(600px 500px at 50% 85%,rgba(144,96,232,.015) 0%,transparent 70%);animation:dr 26s ease-in-out infinite}
+@keyframes dr{0%,100%{transform:translate(0,0)}50%{transform:translate(12px,-10px)}}
+.w{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:28px 20px 100px}
+
+.hero{text-align:center;padding:56px 16px 44px}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;background:var(--crimson-d);border:1px solid rgba(232,56,88,.16);border-radius:100px;padding:7px 22px;font-size:13px;font-weight:700;color:var(--crimson);font-family:'Noto Kufi Arabic',sans-serif;margin-bottom:22px}
+.hero-pill b{width:7px;height:7px;border-radius:50%;background:var(--crimson);animation:bk 2.4s ease infinite}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Noto Kufi Arabic',sans-serif;font-size:clamp(26px,5.5vw,48px);font-weight:900;color:var(--txt-b);line-height:1.35;margin-bottom:12px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--crimson),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:15px;color:var(--txt-d);max-width:560px;margin:0 auto}
+.hero-sep{width:60px;height:3px;margin:22px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--crimson),var(--blue))}
+
+.sec{margin-bottom:48px}
+.sec-h{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.sec-n{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:21px;font-weight:700;color:var(--bg);flex-shrink:0}
+.sec-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:20px;font-weight:800;color:var(--txt-b);line-height:1.4}
+.sec-td{font-family:'Instrument Serif',serif;font-size:13px;color:var(--txt-d);font-style:italic;direction:ltr;text-align:right}
+
+.cd{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:22px;margin-bottom:12px;transition:all .3s ease}
+.cd:hover{border-color:var(--bdr-h);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.rule{border-radius:16px;padding:20px;margin-bottom:12px;position:relative;overflow:hidden}
+.rule::before{content:'';position:absolute;top:-40px;left:50%;width:160px;height:160px;border-radius:50%;filter:blur(60px);opacity:.1;pointer-events:none}
+.rule h4{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.rule p{font-size:14px;line-height:2}
+.note{display:flex;gap:12px;border-radius:14px;padding:16px 20px;margin-bottom:10px}
+.note .ni{font-size:18px;flex-shrink:0;margin-top:2px}
+.note p{font-size:14px;line-height:1.9}
+.sub{font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:16px;color:var(--txt-b);margin:20px 0 12px;display:flex;align-items:center;gap:8px}
+
+/* CLOCK VISUAL */
+.clock-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.clock-item{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px;text-align:center;transition:all .3s ease}
+.clock-item:hover{border-color:var(--bdr-h);transform:translateY(-2px);background:var(--card-h)}
+.clock-time{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;direction:ltr}
+.clock-de{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d);direction:ltr;margin-top:4px}
+.clock-ar{font-size:13px;color:var(--txt-d);margin-top:4px}
+
+/* OFFICIAL vs INFORMAL */
+.oi-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:640px){.oi-duo{grid-template-columns:1fr}}
+.oi-box{border-radius:16px;padding:22px;text-align:center;transition:all .3s ease}
+.oi-box:hover{transform:translateY(-2px)}
+.oi-box h5{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700;margin-bottom:10px}
+
+/* FAMILY TREE */
+.family-tree{display:flex;flex-direction:column;align-items:center;gap:8px;margin:20px 0}
+.ft-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center}
+.ft-person{border-radius:14px;padding:14px 20px;text-align:center;min-width:120px;transition:all .3s ease}
+.ft-person:hover{transform:translateY(-2px)}
+.ft-person .emoji{font-size:28px;margin-bottom:4px}
+.ft-person .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr}
+.ft-person .ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+.ft-connector{font-size:20px;color:var(--txt-d)}
+.ft-label{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:700;padding:4px 14px;border-radius:8px;margin:4px 0}
+
+/* POSSESSIVE TABLE */
+.pos-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--bdr);margin-bottom:14px}
+.pos-table{width:100%;border-collapse:collapse;direction:ltr;text-align:center}
+.pos-table th{padding:12px 14px;font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:700;border-bottom:2px solid var(--bdr)}
+.pos-table td{padding:11px 14px;font-size:14px;border-bottom:1px solid rgba(24,32,58,.4);font-family:'JetBrains Mono',monospace}
+.pos-table tr:last-child td{border-bottom:none}
+.pos-table tr:hover td{background:rgba(144,96,232,.03)}
+.pos-table .changed{color:var(--crimson);font-weight:700}
+.pos-table .same{color:var(--green);font-weight:600}
+
+/* WANN WIE LANGE */
+.wann-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.wann-grid{grid-template-columns:1fr}}
+.wann-box{border-radius:16px;padding:22px}
+.wann-box h5{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700;margin-bottom:10px;text-align:center}
+.wann-item{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.03);font-size:14px}
+.wann-item:last-child{border-bottom:none}
+.wann-item .de{font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;text-align:right}
+.wann-item .ar{font-size:12px;color:var(--txt-d);margin-top:1px}
+
+/* EXAMPLE */
+.ex{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:14px 18px;margin-bottom:8px;display:flex;align-items:flex-start;gap:12px;transition:all .25s ease}
+.ex:hover{border-color:var(--bdr-h);transform:translateX(-3px);background:var(--card-h)}
+.ex .icon{font-size:16px;flex-shrink:0;margin-top:4px}
+.ex .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;direction:ltr;text-align:right;flex:1;line-height:1.7}
+.ex .ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+.ex .note-tag{font-size:10px;color:var(--txt-d);font-style:italic;margin-top:2px;background:rgba(255,255,255,.03);padding:2px 8px;border-radius:4px;display:inline-block}
+
+/* DAILY ROUTINE */
+.routine-grid{display:grid;gap:8px}
+.routine-item{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;transition:all .25s ease}
+.routine-item:hover{border-color:var(--bdr-h);transform:translateX(-3px);background:var(--card-h)}
+.routine-item .time{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;padding:6px 12px;border-radius:8px;flex-shrink:0;direction:ltr}
+.routine-item .emoji{font-size:20px;flex-shrink:0}
+.routine-item .de{font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;text-align:right;flex:1;line-height:1.7}
+.routine-item .ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+
+/* CALENDAR */
+.cal-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--bdr);margin-bottom:14px}
+.cal-table{width:100%;border-collapse:collapse;direction:ltr;text-align:center;font-size:13px}
+.cal-table th{padding:10px 8px;font-family:'Noto Kufi Arabic',sans-serif;font-size:11px;font-weight:700;border-bottom:2px solid var(--bdr)}
+.cal-table td{padding:10px 8px;border-bottom:1px solid rgba(24,32,58,.4);font-family:'JetBrains Mono',monospace;font-size:12px;vertical-align:top;line-height:1.6}
+.cal-table tr:last-child td{border-bottom:none}
+.cal-table tr:hover td{background:rgba(232,56,88,.03)}
+.cal-name{font-weight:700;font-size:13px}
+
+@keyframes fadeU{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeD{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(26px);transition:all .55s cubic-bezier(.23,1,.32,1)}
+.rv.v{opacity:1;transform:translateY(0)}
+@media(max-width:600px){.w{padding:14px 14px 60px}.hero{padding:40px 10px 32px}.sec-t{font-size:18px}.clock-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+</style>
+</head>
+<body>
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Kapitel 5 — الوحدة الخامسة</div>
+  <h1>الساعة، العائلة <em>والمواعيد</em></h1>
+  <p class="hero-sub">قراءة الساعة رسمياً وغير رسمي، العائلة، ضمائر الملكية، التعبير عن الوقت، والروتين اليومي</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: TELLING TIME ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--blue),#2070c8)">١</div>
+    <div><div class="sec-t">كم الساعة؟</div><div class="sec-td">Wie spät ist es?</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--blue-d);border:1px solid rgba(56,152,240,.14)">
+    <h4 style="color:var(--blue)">❓ طريقتان للسؤال عن الوقت</h4>
+    <p><span style="font-family:'JetBrains Mono',monospace;color:var(--blue)">Wie spät ist es?</span> أو <span style="font-family:'JetBrains Mono',monospace;color:var(--blue)">Wie viel Uhr ist es?</span></p>
+  </div>
+
+  <div class="sub">🕐 التعبيرات الشائعة (غير رسمي)</div>
+  <div class="clock-grid">
+    <div class="clock-item"><div class="clock-time" style="color:var(--blue)">7:00</div><div class="clock-de">sieben (Uhr)</div><div class="clock-ar">السابعة</div></div>
+    <div class="clock-item"><div class="clock-time" style="color:var(--blue)">7:05</div><div class="clock-de">fünf nach sieben</div><div class="clock-ar">السابعة وخمس دقائق</div></div>
+    <div class="clock-item"><div class="clock-time" style="color:var(--blue)">7:10</div><div class="clock-de">zehn nach sieben</div><div class="clock-ar">السابعة وعشر دقائق</div></div>
+    <div class="clock-item"><div class="clock-time" style="color:var(--blue)">7:15</div><div class="clock-de">Viertel nach sieben</div><div class="clock-ar">السابعة والربع</div></div>
+    <div class="clock-item"><div class="clock-time" style="color:var(--blue)">7:20</div><div class="clock-de">zwanzig nach sieben</div><div class="clock-ar">السابعة والثلث</div></div>
+    <div class="clock-item"><div class="clock-time" style="color:var(--amber)">7:25</div><div class="clock-de">fünf vor halb acht</div><div class="clock-ar">قبل النصف بخمسة</div></div>
+    <div class="clock-item" style="border-color:rgba(232,168,40,.25)"><div class="clock-time" style="color:var(--amber)">7:30</div><div class="clock-de" style="color:var(--amber);font-weight:700">halb acht</div><div class="clock-ar">السابعة والنصف</div></div>
+    <div class="clock-item"><div class="clock-time" style="color:var(--amber)">7:35</div><div class="clock-de">fünf nach halb acht</div><div class="clock-ar">بعد النصف بخمسة</div></div>
+    <div class="clock-item"><div class="clock-time" style="color:var(--crimson)">7:40</div><div class="clock-de">zwanzig vor acht</div><div class="clock-ar">الثامنة إلا ثلث</div></div>
+    <div class="clock-item"><div class="clock-time" style="color:var(--crimson)">7:45</div><div class="clock-de">Viertel vor acht</div><div class="clock-ar">الثامنة إلا ربع</div></div>
+    <div class="clock-item"><div class="clock-time" style="color:var(--crimson)">7:50</div><div class="clock-de">zehn vor acht</div><div class="clock-ar">الثامنة إلا عشر دقائق</div></div>
+    <div class="clock-item"><div class="clock-time" style="color:var(--crimson)">7:55</div><div class="clock-de">fünf vor acht</div><div class="clock-ar">الثامنة إلا خمس دقائق</div></div>
+  </div>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(232,168,40,.12);margin-top:14px">
+    <div class="ni">⚠️</div>
+    <div><p><strong style="color:var(--amber)">halb acht</strong> = السابعة والنصف (7:30) وليس الثامنة والنصف! في الألمانية، <span style="font-family:'JetBrains Mono',monospace;color:var(--amber)">halb</span> تشير إلى <strong>نصف الساعة القادمة</strong> وليس الحالية.</p></div>
+  </div>
+
+  <div class="sub">🏢 رسمي مقابل غير رسمي</div>
+  <div class="oi-duo">
+    <div class="oi-box" style="background:var(--green-d);border:1px solid rgba(64,192,104,.2);border-radius:16px">
+      <h5 style="color:var(--green)">😊 غير رسمي — inoffiziell</h5>
+      <div class="ex" style="margin:0;border:0;padding:0;background:transparent"><div style="flex:1"><div class="de" style="color:var(--green)">Es ist Viertel vor drei.</div><div class="ar">الثالثة إلا ربع</div></div></div>
+      <div style="font-size:12px;color:var(--txt-d);margin-top:8px">تستخدم في الحياة اليومية مع الأصدقاء</div>
+    </div>
+    <div class="oi-box" style="background:var(--blue-d);border:1px solid rgba(56,152,240,.2);border-radius:16px">
+      <h5 style="color:var(--blue)">🎩 رسمي — offiziell</h5>
+      <div class="ex" style="margin:0;border:0;padding:0;background:transparent"><div style="flex:1"><div class="de" style="color:var(--blue)">Es ist vierzehn Uhr fünfundvierzig.</div><div class="ar">الساعة 14:45</div></div></div>
+      <div style="font-size:12px;color:var(--txt-d);margin-top:8px">تستخدم في المحطات والمطارات والعمل</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--crimson-d);border:1px solid rgba(232,56,88,.14);margin-top:14px">
+    <h4 style="color:var(--crimson)">📌 السؤال والإجابة عن الموعد</h4>
+    <p>السؤال: <span style="font-family:'JetBrains Mono',monospace;color:var(--crimson)">Wann ...?</span> (متى؟)</p>
+    <p>الإجابة: <span style="font-family:'JetBrains Mono',monospace;color:var(--crimson)">Um ...</span> (في الساعة...)</p>
+  </div>
+  <div class="ex"><div class="icon">✏️</div><div style="flex:1"><div class="de" style="color:var(--crimson)"><strong>Wann</strong> frühstückst du? — <strong>Um</strong> Viertel nach sieben.</div><div class="ar">متى تتناول الفطور؟ — في السابعة والربع</div></div></div>
+  <div class="ex"><div class="icon">✏️</div><div style="flex:1"><div class="de" style="color:var(--crimson)"><strong>Wann</strong> fährst du ins Büro? — <strong>Um</strong> acht Uhr.</div><div class="ar">متى تذهب إلى المكتب؟ — في الثامنة</div></div></div>
+</div>
+
+<!-- ═══ 2: WANN & WIE LANGE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#18a888)">٢</div>
+    <div><div class="sec-t">متى؟ وكم المدة؟</div><div class="sec-td">Wann? & Wie lange?</div></div>
+  </div>
+
+  <div class="wann-grid">
+    <div class="wann-box" style="background:var(--teal-d);border:1px solid rgba(40,208,168,.2);border-radius:16px">
+      <h5 style="color:var(--teal)">🕐 Wann? — متى؟</h5>
+      <div class="wann-item"><div class="de" style="color:var(--teal)">am Montag</div><div class="ar">يوم الاثنين</div></div>
+      <div class="wann-item"><div class="de" style="color:var(--teal)">am Vormittag</div><div class="ar">في الضحى</div></div>
+      <div class="wann-item"><div class="de" style="color:var(--teal)">um drei Uhr</div><div class="ar">في الثالثة</div></div>
+      <div class="wann-item"><div class="de" style="color:var(--teal)">um Viertel nach vier</div><div class="ar">في الرابعة والربع</div></div>
+    </div>
+    <div class="wann-box" style="background:var(--orange-d);border:1px solid rgba(240,128,48,.2);border-radius:16px">
+      <h5 style="color:var(--orange)">⏱️ Wie lange? — كم المدة؟</h5>
+      <div class="wann-item"><div class="de" style="color:var(--orange)">von Sonntag bis Dienstag</div><div class="ar">من الأحد إلى الثلاثاء</div></div>
+      <div class="wann-item"><div class="de" style="color:var(--orange)">von 9 bis 17 Uhr</div><div class="ar">من 9 إلى 5 مساءً</div></div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--teal-d);border:1px solid rgba(40,208,168,.12);margin-top:12px">
+    <div class="ni">💡</div>
+    <div>
+      <p><span style="font-family:'JetBrains Mono',monospace;color:var(--teal);font-weight:700">am</span> = مع الأيام وفترات اليوم</p>
+      <p><span style="font-family:'JetBrains Mono',monospace;color:var(--teal);font-weight:700">um</span> = مع الساعة المحددة</p>
+      <p><span style="font-family:'JetBrains Mono',monospace;color:var(--orange);font-weight:700">von ... bis ...</span> = من ... إلى ... (للمدة)</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: DAILY ROUTINE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--green),#28a048)">٣</div>
+    <div><div class="sec-t">الروتين اليومي</div><div class="sec-td">Mein Tag</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--green-d);border:1px solid rgba(64,192,104,.14)">
+    <h4 style="color:var(--green)">📖 نموذج: يوم عادي</h4>
+    <p style="font-family:'JetBrains Mono',monospace;direction:ltr;text-align:right;line-height:2.2;color:var(--green)">Morgens trinke ich einen Kaffee und esse Müsli mit Obst. Dann gehe ich ins Büro...</p>
+    <p style="font-size:13px;color:var(--txt-d);margin-top:6px">صباحاً أشرب قهوة وآكل شوفان مع فواكه. ثم أذهب إلى المكتب...</p>
+  </div>
+
+  <div class="routine-grid">
+    <div class="routine-item">
+      <div class="time" style="background:rgba(232,168,40,.1);color:var(--amber)">morgens</div>
+      <div class="emoji">☕</div>
+      <div style="flex:1"><div class="de" style="color:var(--amber)">Ich trinke Kaffee und esse Müsli.</div><div class="ar">أشرب قهوة وآكل الشوفان</div></div>
+    </div>
+    <div class="routine-item">
+      <div class="time" style="background:rgba(56,152,240,.1);color:var(--blue)">dann</div>
+      <div class="emoji">💼</div>
+      <div style="flex:1"><div class="de" style="color:var(--blue)">Dann gehe ich ins Büro.</div><div class="ar">ثم أذهب إلى المكتب</div></div>
+    </div>
+    <div class="routine-item">
+      <div class="time" style="background:rgba(240,128,48,.1);color:var(--orange)">mittags</div>
+      <div class="emoji">🍽️</div>
+      <div style="flex:1"><div class="de" style="color:var(--orange)">Ich esse in der Kantine.</div><div class="ar">آكل في الكافتيريا</div></div>
+    </div>
+    <div class="routine-item">
+      <div class="time" style="background:rgba(144,96,232,.1);color:var(--violet)">abends</div>
+      <div class="emoji">📺</div>
+      <div style="flex:1"><div class="de" style="color:var(--violet)">Ich koche und sehe fern.</div><div class="ar">أطبخ وأشاهد التلفاز</div></div>
+    </div>
+  </div>
+
+  <div class="ex" style="margin-top:12px"><div class="icon">🛌</div><div style="flex:1"><div class="de" style="color:var(--rose)">Am Sonntag schläft Xaan lange.</div><div class="ar">يوم الأحد ينام خان طويلاً</div><div class="note-tag">am + يوم = في ذلك اليوم</div></div></div>
+</div>
+
+<!-- ═══ 4: FAMILY ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--crimson),#c02838)">٤</div>
+    <div><div class="sec-t">العائلة والمواعيد</div><div class="sec-td">Familie und Termine</div></div>
+  </div>
+
+  <div class="sub">👨‍👩‍👧‍👦 شجرة العائلة — Familienmitglieder</div>
+
+  <div class="family-tree">
+    <div class="ft-label" style="background:rgba(56,152,240,.1);color:var(--blue)">die Eltern — الوالدان</div>
+    <div class="ft-row">
+      <div class="ft-person" style="background:rgba(56,152,240,.06);border:1px solid rgba(56,152,240,.2)">
+        <div class="emoji">👨</div>
+        <div class="de" style="color:var(--blue)">der Vater</div>
+        <div class="ar">الأب</div>
+      </div>
+      <div class="ft-connector">❤️</div>
+      <div class="ft-person" style="background:rgba(232,104,160,.06);border:1px solid rgba(232,104,160,.2)">
+        <div class="emoji">👩</div>
+        <div class="de" style="color:var(--rose)">die Mutter</div>
+        <div class="ar">الأم</div>
+      </div>
+    </div>
+    <div class="ft-connector">⬇️</div>
+    <div class="ft-label" style="background:rgba(64,192,104,.1);color:var(--green)">die Kinder — الأطفال</div>
+    <div class="ft-row">
+      <div class="ft-person" style="background:rgba(64,192,104,.06);border:1px solid rgba(64,192,104,.2)">
+        <div class="emoji">👦</div>
+        <div class="de" style="color:var(--green)">der Sohn</div>
+        <div class="ar">الابن</div>
+      </div>
+      <div class="ft-person" style="background:rgba(232,168,40,.06);border:1px solid rgba(232,168,40,.2)">
+        <div class="emoji">👧</div>
+        <div class="de" style="color:var(--amber)">die Tochter</div>
+        <div class="ar">الابنة</div>
+      </div>
+    </div>
+    <div class="ft-row" style="margin-top:8px">
+      <div class="ft-person" style="background:rgba(56,192,216,.06);border:1px solid rgba(56,192,216,.2)">
+        <div class="emoji">👫</div>
+        <div class="de" style="color:var(--cyan)">der Bruder</div>
+        <div class="ar">الأخ</div>
+      </div>
+      <div class="ft-person" style="background:rgba(144,96,232,.06);border:1px solid rgba(144,96,232,.2)">
+        <div class="emoji">👭</div>
+        <div class="de" style="color:var(--violet)">die Schwester</div>
+        <div class="ar">الأخت</div>
+      </div>
+      <div class="ft-person" style="background:rgba(240,128,48,.06);border:1px solid rgba(240,128,48,.2)">
+        <div class="emoji">💍</div>
+        <div class="de" style="color:var(--orange)">der Mann</div>
+        <div class="ar">الزوج</div>
+      </div>
+      <div class="ft-person" style="background:rgba(232,56,88,.06);border:1px solid rgba(232,56,88,.2)">
+        <div class="emoji">💍</div>
+        <div class="de" style="color:var(--crimson)">die Frau</div>
+        <div class="ar">الزوجة</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: POSSESSIVE ARTICLES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#7040c0)">٥</div>
+    <div><div class="sec-t">ضمائر الملكية</div><div class="sec-td">Possessivartikel: mein, meine</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--violet-d);border:1px solid rgba(144,96,232,.14)">
+    <h4 style="color:var(--violet)">📖 الشرح</h4>
+    <p><span style="font-family:'JetBrains Mono',monospace;color:var(--violet);font-weight:700">mein</span> تعني «ملكي» وتتغير حسب جنس الاسم وحالته الإعرابية. تتبع نفس نمط <span style="font-family:'JetBrains Mono',monospace;color:var(--violet)">ein/eine</span>.</p>
+  </div>
+
+  <div class="pos-wrap">
+    <table class="pos-table">
+      <thead>
+        <tr>
+          <th style="color:var(--violet)">الأداة</th>
+          <th style="color:var(--violet)">Nominativ (الرفع)</th>
+          <th style="color:var(--violet)">Akkusativ (المفعول به)</th>
+          <th style="color:var(--violet)">مثال</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:12px;color:var(--blue)">der (مذكر)</td>
+          <td class="same" style="color:var(--blue)">mein Sohn</td>
+          <td class="changed">mein<strong style="color:var(--crimson)">en</strong> Sohn</td>
+          <td style="font-size:12px;color:var(--txt-d)">ابني</td>
+        </tr>
+        <tr>
+          <td style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:12px;color:var(--green)">das (محايد)</td>
+          <td class="same" style="color:var(--green)">mein Kind</td>
+          <td class="same" style="color:var(--green)">mein Kind ✓</td>
+          <td style="font-size:12px;color:var(--txt-d)">طفلي</td>
+        </tr>
+        <tr>
+          <td style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:12px;color:var(--rose)">die (مؤنث)</td>
+          <td class="same" style="color:var(--rose)">meine Tochter</td>
+          <td class="same" style="color:var(--rose)">meine Tochter ✓</td>
+          <td style="font-size:12px;color:var(--txt-d)">ابنتي</td>
+        </tr>
+        <tr>
+          <td style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:12px;color:var(--violet)">die (جمع)</td>
+          <td class="same" style="color:var(--violet)">meine Kinder</td>
+          <td class="same" style="color:var(--violet)">meine Kinder ✓</td>
+          <td style="font-size:12px;color:var(--txt-d)">أطفالي</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note" style="background:var(--crimson-d);border:1px solid rgba(232,56,88,.12)">
+    <div class="ni">⚠️</div>
+    <div><p><strong style="color:var(--crimson)">المذكر فقط</strong> يتغير في الاكوزاتيف: <span style="font-family:'JetBrains Mono',monospace;color:var(--crimson)">mein → mein<strong>en</strong></span> — الباقي يبقى كما هو!</p></div>
+  </div>
+
+  <div class="sub">✏️ أمثلة تطبيقية</div>
+  <div class="ex"><div class="icon">👦</div><div style="flex:1"><div class="de" style="color:var(--violet)"><strong>Mein</strong> Sohn Florian ist 12.</div><div class="ar">ابني فلوريان عمره 12 سنة</div><div class="note-tag">Nominativ — mein (مذكر)</div></div></div>
+  <div class="ex"><div class="icon">👧</div><div style="flex:1"><div class="de" style="color:var(--violet)"><strong>Meine</strong> Tochter Lena ist 14.</div><div class="ar">ابنتي لينا عمرها 14 سنة</div><div class="note-tag">Nominativ — meine (مؤنث)</div></div></div>
+  <div class="ex"><div class="icon">👶</div><div style="flex:1"><div class="de" style="color:var(--violet)"><strong>Meine</strong> Kinder gehen hier in Frankfurt in die Schule.</div><div class="ar">أطفالي يذهبون إلى المدرسة هنا في فرانكفورت</div><div class="note-tag">Nominativ — meine (جمع)</div></div></div>
+  <div class="ex"><div class="icon">💍</div><div style="flex:1"><div class="de" style="color:var(--violet)"><strong>Mein</strong> Mann heißt Hannes.</div><div class="ar">زوجي اسمه هانس</div><div class="note-tag">Nominativ — mein (مذكر)</div></div></div>
+  <div class="ex"><div class="icon">👀</div><div style="flex:1"><div class="de" style="color:var(--crimson)">Ich besuche <strong>meinen</strong> Bruder am Wochenende.</div><div class="ar">أزور أخي في نهاية الأسبوع</div><div class="note-tag">Akkusativ — mein<strong style="color:var(--crimson)">en</strong> (مذكر تغيّر!)</div></div></div>
+  <div class="ex"><div class="icon">👩</div><div style="flex:1"><div class="de" style="color:var(--green)">Ich besuche <strong>meine</strong> Schwester oft.</div><div class="ar">أزور أختي كثيراً</div><div class="note-tag">Akkusativ — meine (مؤنث — لم يتغير ✓)</div></div></div>
+</div>
+
+<!-- ═══ 6: FAMILY CALENDAR ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--amber),#c08810)">٦</div>
+    <div><div class="sec-t">جدول عائلة دوبارت</div><div class="sec-td">Kalender — Familie Dobart</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--amber-d);border:1px solid rgba(232,168,40,.14)">
+    <h4 style="color:var(--amber)">📅 الشرح</h4>
+    <p>هذا التمرين يربط بين أفراد العائلة ومواعيدهم خلال الأسبوع. لاحظ استخدام <span style="font-family:'JetBrains Mono',monospace;color:var(--amber)">am + اليوم</span> و <span style="font-family:'JetBrains Mono',monospace;color:var(--amber)">um + الساعة</span>.</p>
+  </div>
+
+  <div class="cal-wrap">
+    <table class="cal-table">
+      <thead>
+        <tr>
+          <th style="color:var(--amber)">اليوم</th>
+          <th style="color:var(--blue)">Florian 👦</th>
+          <th style="color:var(--rose)">Lena 👧</th>
+          <th style="color:var(--green)">Hannes 👨</th>
+          <th style="color:var(--crimson)">Mara 👩</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="color:var(--amber);font-weight:700">Fr (الجمعة)</td><td>9:00 Dr. Schwarz</td><td style="color:var(--rose)">Mathe-Test!!</td><td>19:20 Friseur</td><td style="color:var(--crimson)">Arbeit 3:00–17:00</td></tr>
+        <tr><td style="color:var(--amber);font-weight:700">Sa (السبت)</td><td>Handspiel</td><td style="color:var(--rose)">14:00 Geburtstag Sara</td><td>—</td><td style="color:var(--crimson)">Arbeit 3:00–14:00</td></tr>
+        <tr><td style="color:var(--amber);font-weight:700">So (الأحد)</td><td>—</td><td style="color:var(--rose)">Onkel Michi besuchen</td><td>Hamburg</td><td style="color:var(--crimson)">Arbeit 3:00–14:00</td></tr>
+        <tr><td style="color:var(--amber);font-weight:700">Mo (الاثنين)</td><td>16:45 Training</td><td style="color:var(--rose)">17:00 Geige</td><td>Hamburg</td><td>—</td></tr>
+        <tr><td style="color:var(--amber);font-weight:700">Di (الثلاثاء)</td><td>16:30 Trompete</td><td style="color:var(--rose)">Englisch-Test!</td><td>Hamburg</td><td style="color:var(--crimson)">15:30 Annalisa</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub">✏️ جمل من الجدول — تدرب على تكوينها!</div>
+  <div class="ex"><div class="icon">1️⃣</div><div style="flex:1"><div class="de" style="color:var(--green)">Hannes ist von Sonntag bis Dienstag in Hamburg.</div><div class="ar">هانس في هامبورغ من الأحد إلى الثلاثاء</div><div class="note-tag">von ... bis ... = من ... إلى ...</div></div></div>
+  <div class="ex"><div class="icon">2️⃣</div><div style="flex:1"><div class="de" style="color:var(--crimson)">Mara arbeitet am Freitag von 3:00 bis 17:00 Uhr.</div><div class="ar">مارا تعمل يوم الجمعة من 3 إلى 5 مساءً</div></div></div>
+  <div class="ex"><div class="icon">3️⃣</div><div style="flex:1"><div class="de" style="color:var(--rose)">Lena hat am Dienstag einen Englisch-Test.</div><div class="ar">لينا لديها امتحان إنجليزي يوم الثلاثاء</div></div></div>
+  <div class="ex"><div class="icon">4️⃣</div><div style="flex:1"><div class="de" style="color:var(--blue)">Florian hat am Montag um 16:45 Training.</div><div class="ar">فلوريان لديه تدريب يوم الاثنين الساعة 4:45</div></div></div>
+</div>
+
+<!-- ═══ 7: NÜTZLICHE AUSDRÜCKE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#c04078)">٧</div>
+    <div><div class="sec-t">مفردات وعبارات مفيدة من الوحدة</div><div class="sec-td">Nützliche Ausdrücke</div></div>
+  </div>
+
+  <div class="ex"><div class="icon">👨‍⚕️</div><div style="flex:1"><div class="de" style="color:var(--rose)">der Friseur</div><div class="ar">الحلاق</div></div></div>
+  <div class="ex"><div class="icon">🎵</div><div style="flex:1"><div class="de" style="color:var(--rose)">die Geige</div><div class="ar">الكمان (آلة موسيقية)</div></div></div>
+  <div class="ex"><div class="icon">🎺</div><div style="flex:1"><div class="de" style="color:var(--rose)">die Trompete</div><div class="ar">البوق</div></div></div>
+  <div class="ex"><div class="icon">🎂</div><div style="flex:1"><div class="de" style="color:var(--rose)">der Geburtstag</div><div class="ar">عيد الميلاد</div></div></div>
+  <div class="ex"><div class="icon">🏋️</div><div style="flex:1"><div class="de" style="color:var(--rose)">das Training</div><div class="ar">التدريب</div></div></div>
+  <div class="ex"><div class="icon">🏥</div><div style="flex:1"><div class="de" style="color:var(--rose)">krank</div><div class="ar">مريض</div></div></div>
+  <div class="ex"><div class="icon">💍</div><div style="flex:1"><div class="de" style="color:var(--rose)">verheiratet / ledig</div><div class="ar">متزوج / أعزب</div></div></div>
+  <div class="ex"><div class="icon">🏢</div><div style="flex:1"><div class="de" style="color:var(--rose)">das Büro</div><div class="ar">المكتب</div></div></div>
+  <div class="ex"><div class="icon">📱</div><div style="flex:1"><div class="de" style="color:var(--rose)">telefonieren mit</div><div class="ar">يتصل هاتفياً مع</div></div></div>
+  <div class="ex"><div class="icon">👀</div><div style="flex:1"><div class="de" style="color:var(--rose)">besuchen</div><div class="ar">يزور</div></div></div>
+</div>
+
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 12 — الأفعال الناقصة، المواعيد واللباقة</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#060810;--card:#0c1020;--card-h:#121828;
+--bdr:#182038;--bdr-h:#243050;
+--fire:#f06030;--fire-d:rgba(240,96,48,.07);
+--sky:#3898f0;--sky-d:rgba(56,152,240,.07);
+--teal:#28d0a8;--teal-d:rgba(40,208,168,.07);
+--gold:#e8b028;--gold-d:rgba(232,176,40,.07);
+--violet:#9060e8;--violet-d:rgba(144,96,232,.07);
+--red:#f04050;--red-d:rgba(240,64,80,.07);
+--green:#40c068;--green-d:rgba(64,192,104,.07);
+--rose:#e860a0;--rose-d:rgba(232,96,160,.07);
+--cyan:#38c0d8;--cyan-d:rgba(56,192,216,.07);
+--txt:#ccc8c0;--txt-d:#586878;--txt-b:#f0ece4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:'Noto Naskh Arabic',serif;line-height:2;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(700px 500px at 10% 20%,rgba(240,96,48,.02) 0%,transparent 70%),radial-gradient(600px 600px at 88% 55%,rgba(40,208,168,.018) 0%,transparent 70%),radial-gradient(600px 500px at 50% 85%,rgba(144,96,232,.015) 0%,transparent 70%);animation:dr 26s ease-in-out infinite}
+@keyframes dr{0%,100%{transform:translate(0,0)}50%{transform:translate(12px,-10px)}}
+.w{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:28px 20px 100px}
+
+.hero{text-align:center;padding:56px 16px 44px}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;background:var(--fire-d);border:1px solid rgba(240,96,48,.16);border-radius:100px;padding:7px 22px;font-size:13px;font-weight:700;color:var(--fire);font-family:'Noto Kufi Arabic',sans-serif;margin-bottom:22px}
+.hero-pill b{width:7px;height:7px;border-radius:50%;background:var(--fire);animation:bk 2.4s ease infinite}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Noto Kufi Arabic',sans-serif;font-size:clamp(26px,5.5vw,48px);font-weight:900;color:var(--txt-b);line-height:1.35;margin-bottom:12px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--fire),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:15px;color:var(--txt-d);max-width:560px;margin:0 auto}
+.hero-sep{width:60px;height:3px;margin:22px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--fire),var(--teal))}
+
+.sec{margin-bottom:48px}
+.sec-h{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.sec-n{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:21px;font-weight:700;color:var(--bg);flex-shrink:0}
+.sec-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:20px;font-weight:800;color:var(--txt-b);line-height:1.4}
+.sec-td{font-family:'Instrument Serif',serif;font-size:13px;color:var(--txt-d);font-style:italic;direction:ltr;text-align:right}
+
+.cd{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:22px;margin-bottom:12px;transition:all .3s ease}
+.cd:hover{border-color:var(--bdr-h);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.rule{border-radius:16px;padding:20px;margin-bottom:12px;position:relative;overflow:hidden}
+.rule::before{content:'';position:absolute;top:-40px;left:50%;width:160px;height:160px;border-radius:50%;filter:blur(60px);opacity:.1;pointer-events:none}
+.rule h4{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.rule p{font-size:14px;line-height:2}
+.note{display:flex;gap:12px;border-radius:14px;padding:16px 20px;margin-bottom:10px}
+.note .ni{font-size:18px;flex-shrink:0;margin-top:2px}
+.note p{font-size:14px;line-height:1.9}
+.sub{font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:16px;color:var(--txt-b);margin:20px 0 12px;display:flex;align-items:center;gap:8px}
+
+/* MODAL VERB CARDS */
+.mv-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+@media(max-width:700px){.mv-trio{grid-template-columns:1fr}}
+.mv-card{border-radius:18px;padding:22px;text-align:center;transition:all .3s ease;overflow:hidden}
+.mv-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.mv-card .verb{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;direction:ltr;line-height:1.1}
+.mv-card .meaning{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:700;margin-top:6px}
+.mv-card .badge{font-size:11px;font-weight:700;padding:3px 12px;border-radius:8px;margin-top:8px;display:inline-block;font-family:'Noto Kufi Arabic',sans-serif}
+.mv-card .conj{margin-top:14px;direction:ltr;text-align:left;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:2}
+.mv-card .conj .pr{color:rgba(255,255,255,.35);min-width:65px;display:inline-block}
+
+/* SENTENCE STRUCTURE */
+.struct{display:flex;align-items:center;justify-content:center;gap:0;margin:18px 0;flex-wrap:wrap;direction:ltr}
+.struct-block{padding:12px 16px;text-align:center;border:1px solid}
+.struct-block .label{font-size:9px;font-weight:700;letter-spacing:.5px;font-family:'Noto Kufi Arabic',sans-serif}
+.struct-block .value{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;margin-top:2px}
+
+/* EXAMPLE */
+.ex{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:14px 18px;margin-bottom:8px;display:flex;align-items:flex-start;gap:12px;transition:all .25s ease}
+.ex:hover{border-color:var(--bdr-h);transform:translateX(-3px);background:var(--card-h)}
+.ex .icon{font-size:16px;flex-shrink:0;margin-top:4px}
+.ex .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;direction:ltr;text-align:right;flex:1;line-height:1.7}
+.ex .ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+.ex .nt{font-size:10px;color:var(--txt-d);font-style:italic;margin-top:2px;background:rgba(255,255,255,.03);padding:2px 8px;border-radius:4px;display:inline-block}
+
+/* POLITENESS SCALE */
+.pol-scale{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+@media(max-width:700px){.pol-scale{grid-template-columns:1fr}}
+.pol-card{border-radius:16px;padding:22px;text-align:center;transition:all .3s ease;position:relative}
+.pol-card:hover{transform:translateY(-3px)}
+.pol-card .emoji{font-size:32px;margin-bottom:6px}
+.pol-card .level{font-size:11px;font-weight:700;padding:3px 12px;border-radius:6px;display:inline-block;margin-bottom:8px;font-family:'Noto Kufi Arabic',sans-serif}
+.pol-card .de{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:600;direction:ltr;margin:6px 0}
+.pol-card .ar{font-size:14px}
+.pol-card .desc{font-size:12px;color:var(--txt-d);margin-top:8px;line-height:1.6}
+.pol-arrow{display:flex;align-items:center;justify-content:center;margin:8px 0;color:var(--txt-d);font-size:13px;gap:8px;font-family:'Noto Kufi Arabic',sans-serif}
+.pol-arrow .line{flex:1;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green))}
+
+/* APPOINTMENT DIALOG */
+.appt-dialog{background:var(--card);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;margin-bottom:14px}
+.appt-dialog-head{padding:16px 22px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--bdr)}
+.appt-dialog-head .icon{font-size:24px}
+.appt-dialog-head .label{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700}
+.appt-dialog-body{padding:16px 22px}
+.appt-line{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid rgba(24,32,56,.3)}
+.appt-line:last-child{border-bottom:none}
+.appt-role{font-size:10px;font-weight:700;padding:3px 10px;border-radius:6px;flex-shrink:0;font-family:'Noto Kufi Arabic',sans-serif;margin-top:4px;min-width:55px;text-align:center}
+.appt-content{flex:1}
+.appt-de{font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:right;line-height:1.7}
+.appt-ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+
+/* TIME UNITS */
+.tu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+@media(max-width:640px){.tu-grid{grid-template-columns:1fr}}
+.tu-item{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:18px;text-align:center;transition:all .3s ease}
+.tu-item:hover{border-color:var(--bdr-h);transform:translateY(-2px)}
+.tu-item .emoji{font-size:28px;margin-bottom:6px}
+.tu-item .de{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:600;direction:ltr}
+.tu-item .ar{font-size:13px;color:var(--txt-d);margin-top:4px}
+
+/* APOLOGY EXCHANGE */
+.apol-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:640px){.apol-grid{grid-template-columns:1fr}}
+.apol-box{border-radius:16px;padding:22px;transition:all .3s ease}
+.apol-box:hover{transform:translateY(-2px)}
+.apol-box h5{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700;margin-bottom:12px;text-align:center}
+.apol-item{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.apol-item:last-child{border-bottom:none}
+.apol-item .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;min-width:130px;text-align:left}
+.apol-item .ar{font-size:13px;color:var(--txt-d)}
+
+/* PRONUNCIATION */
+.pron-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.pron-item{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px;transition:all .3s ease}
+.pron-item:hover{border-color:var(--bdr-h);transform:translateY(-2px);background:var(--card-h)}
+.pron-letter{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;direction:ltr;margin-bottom:4px}
+.pron-desc{font-size:13px;line-height:1.8}
+.pron-ex{font-family:'JetBrains Mono',monospace;font-size:12px;direction:ltr;display:inline-block;background:rgba(144,96,232,.06);border:1px solid rgba(144,96,232,.12);border-radius:6px;padding:2px 8px;margin-top:6px}
+
+/* GOODBYE COMPARE */
+.gb-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:640px){.gb-duo{grid-template-columns:1fr}}
+.gb-box{border-radius:16px;padding:22px;text-align:center;transition:all .3s ease}
+.gb-box:hover{transform:translateY(-2px)}
+.gb-box .emoji{font-size:32px;margin-bottom:6px}
+.gb-box .de{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;direction:ltr;margin:6px 0}
+.gb-box .ar{font-size:14px}
+.gb-box .when{font-size:12px;color:var(--txt-d);margin-top:6px}
+
+@keyframes fadeU{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeD{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(26px);transition:all .55s cubic-bezier(.23,1,.32,1)}
+.rv.v{opacity:1;transform:translateY(0)}
+@media(max-width:600px){.w{padding:14px 14px 60px}.hero{padding:40px 10px 32px}.sec-t{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 12 — المحاضرة الثانية عشرة</div>
+  <h1>الأفعال الناقصة، <em>اللباقة والمواعيد</em></h1>
+  <p class="hero-sub">müssen, können, wollen — ترتيب الجملة، مستويات المجاملة، تحديد المواعيد، الاعتذار، وملاحظات النطق</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: MODAL VERBS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--fire),#c84818)">١</div>
+    <div><div class="sec-t">الأفعال الناقصة</div><div class="sec-td">Modalverben</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--fire-d);border:1px solid rgba(240,96,48,.14)">
+    <h4 style="color:var(--fire)">❓ لماذا سُمّيت «ناقصة»؟</h4>
+    <p>لأن الجملة <strong style="color:var(--fire)">لا تكتمل معناها</strong> بوجودها وحدها — تحتاج دائماً إلى <strong style="color:var(--fire)">فعل آخر</strong> يُكمل المعنى.</p>
+  </div>
+
+  <!-- Three verb cards -->
+  <div class="mv-trio">
+    <div class="mv-card" style="background:rgba(240,64,80,.06);border:1px solid rgba(240,64,80,.2)">
+      <div class="verb" style="color:var(--red)">müssen</div>
+      <div class="meaning" style="color:var(--red)">يجب</div>
+      <div class="badge" style="background:rgba(240,64,80,.12);color:var(--red)">⚡ إلزام</div>
+      <div class="conj">
+        <div><span class="pr">ich</span> <strong style="color:var(--red)">muss</strong></div>
+        <div><span class="pr">du</span> <strong style="color:var(--red)">musst</strong></div>
+        <div><span class="pr">er/sie/es</span> <strong style="color:var(--red)">muss</strong></div>
+        <div><span class="pr">wir</span> <strong style="color:var(--red)">müssen</strong></div>
+        <div><span class="pr">ihr</span> <strong style="color:var(--red)">müsst</strong></div>
+        <div><span class="pr">sie/Sie</span> <strong style="color:var(--red)">müssen</strong></div>
+      </div>
+    </div>
+    <div class="mv-card" style="background:rgba(56,152,240,.06);border:1px solid rgba(56,152,240,.2)">
+      <div class="verb" style="color:var(--sky)">können</div>
+      <div class="meaning" style="color:var(--sky)">يستطيع</div>
+      <div class="badge" style="background:rgba(56,152,240,.12);color:var(--sky)">💪 قدرة</div>
+      <div class="conj">
+        <div><span class="pr">ich</span> <strong style="color:var(--sky)">kann</strong></div>
+        <div><span class="pr">du</span> <strong style="color:var(--sky)">kannst</strong></div>
+        <div><span class="pr">er/sie/es</span> <strong style="color:var(--sky)">kann</strong></div>
+        <div><span class="pr">wir</span> <strong style="color:var(--sky)">können</strong></div>
+        <div><span class="pr">ihr</span> <strong style="color:var(--sky)">könnt</strong></div>
+        <div><span class="pr">sie/Sie</span> <strong style="color:var(--sky)">können</strong></div>
+      </div>
+    </div>
+    <div class="mv-card" style="background:rgba(240,96,48,.06);border:1px solid rgba(240,96,48,.2)">
+      <div class="verb" style="color:var(--fire)">wollen</div>
+      <div class="meaning" style="color:var(--fire)">يريد</div>
+      <div class="badge" style="background:rgba(240,96,48,.12);color:var(--fire)">🔥 رغبة</div>
+      <div class="conj">
+        <div><span class="pr">ich</span> <strong style="color:var(--fire)">will</strong></div>
+        <div><span class="pr">du</span> <strong style="color:var(--fire)">willst</strong></div>
+        <div><span class="pr">er/sie/es</span> <strong style="color:var(--fire)">will</strong></div>
+        <div><span class="pr">wir</span> <strong style="color:var(--fire)">wollen</strong></div>
+        <div><span class="pr">ihr</span> <strong style="color:var(--fire)">wollt</strong></div>
+        <div><span class="pr">sie/Sie</span> <strong style="color:var(--fire)">wollen</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--violet-d);border:1px solid rgba(144,96,232,.12)">
+    <div class="ni">💡</div>
+    <div><p>تصريف <strong style="color:var(--violet)">ich</strong> = تصريف <strong style="color:var(--violet)">er/sie/es</strong> دائماً:<br><span style="font-family:'JetBrains Mono',monospace;direction:ltr;color:var(--violet)">ich muss = er muss | ich kann = er kann | ich will = er will</span></p></div>
+  </div>
+
+  <!-- Structure -->
+  <div class="sub">🏗️ ترتيب الجملة مع الفعل الناقص</div>
+
+  <div class="rule" style="background:var(--sky-d);border:1px solid rgba(56,152,240,.14)">
+    <h4 style="color:var(--sky)">📐 القاعدة</h4>
+    <p>الفعل الناقص <strong style="color:var(--sky)">مصرّف في الموقع الثاني</strong> — الفعل الأساسي <strong style="color:var(--sky)">مصدر في نهاية الجملة</strong>.</p>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:13px;color:var(--txt-d);text-align:center;margin:12px 0 6px">الجملة الخبرية</div>
+  <div class="struct">
+    <div class="struct-block" style="border-color:var(--txt-d);border-radius:12px 0 0 12px;background:rgba(255,255,255,.02)"><div class="label" style="color:var(--txt-d)">الفاعل ①</div><div class="value" style="color:var(--txt-b)">Ich</div></div>
+    <div class="struct-block" style="border-color:var(--red);background:rgba(240,64,80,.06)"><div class="label" style="color:var(--red)">Modal ②</div><div class="value" style="color:var(--red)">muss</div></div>
+    <div class="struct-block" style="border-color:var(--txt-d);background:rgba(255,255,255,.02)"><div class="label" style="color:var(--txt-d)">تكملة</div><div class="value" style="color:var(--txt)">heute</div></div>
+    <div class="struct-block" style="border-color:var(--sky);background:rgba(56,152,240,.06);border-radius:0 12px 12px 0"><div class="label" style="color:var(--sky)">Infinitiv ∞</div><div class="value" style="color:var(--sky)">arbeiten</div></div>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:13px;color:var(--txt-d);text-align:center;margin:12px 0 6px">السؤال (الفعل الناقص أولاً)</div>
+  <div class="struct">
+    <div class="struct-block" style="border-color:var(--sky);border-radius:12px 0 0 12px;background:rgba(56,152,240,.06)"><div class="label" style="color:var(--sky)">Modal ①</div><div class="value" style="color:var(--sky)">Kannst</div></div>
+    <div class="struct-block" style="border-color:var(--txt-d);background:rgba(255,255,255,.02)"><div class="label" style="color:var(--txt-d)">الفاعل ②</div><div class="value" style="color:var(--txt-b)">du</div></div>
+    <div class="struct-block" style="border-color:var(--txt-d);background:rgba(255,255,255,.02)"><div class="label" style="color:var(--txt-d)">تكملة</div><div class="value" style="color:var(--txt)">am Freitag</div></div>
+    <div class="struct-block" style="border-color:var(--sky);background:rgba(56,152,240,.06);border-radius:0 12px 12px 0"><div class="label" style="color:var(--sky)">Infinitiv ∞</div><div class="value" style="color:var(--sky)">kommen?</div></div>
+  </div>
+
+  <div class="sub">✏️ أمثلة تطبيقية</div>
+  <div class="ex"><div class="icon">💼</div><div style="flex:1"><div class="de" style="color:var(--red)">Ich <strong>muss</strong> morgen <u>arbeiten</u>.</div><div class="ar">يجب أن أعمل غداً</div></div></div>
+  <div class="ex"><div class="icon">🏊</div><div style="flex:1"><div class="de" style="color:var(--sky)">Er <strong>kann</strong> gut <u>schwimmen</u>.</div><div class="ar">يستطيع السباحة جيداً</div></div></div>
+  <div class="ex"><div class="icon">📚</div><div style="flex:1"><div class="de" style="color:var(--fire)">Wir <strong>wollen</strong> Deutsch <u>lernen</u>.</div><div class="ar">نريد تعلم الألمانية</div></div></div>
+  <div class="ex"><div class="icon">❓</div><div style="flex:1"><div class="de" style="color:var(--sky)"><strong>Kannst</strong> du mir <u>helfen</u>?</div><div class="ar">هل تستطيع مساعدتي؟</div><div class="nt">سؤال: الفعل الناقص أولاً</div></div></div>
+  <div class="ex"><div class="icon">🏥</div><div style="flex:1"><div class="de" style="color:var(--red)">Ich <strong>muss</strong> zum Arzt <u>gehen</u>.</div><div class="ar">يجب أن أذهب إلى الطبيب</div></div></div>
+  <div class="ex"><div class="icon">🛒</div><div style="flex:1"><div class="de" style="color:var(--red)">Am Abend <strong>muss</strong> ich noch <u>einkaufen</u>.</div><div class="ar">في المساء يجب أن أتسوق أيضاً</div><div class="nt">ظرف زمان أولاً → الفاعل ينتقل بعد الفعل</div></div></div>
+
+  <!-- sein special case -->
+  <div class="rule" style="background:var(--gold-d);border:1px solid rgba(232,176,40,.14);margin-top:14px">
+    <h4 style="color:var(--gold)">⭐ حالة خاصة: فعل sein مع الأفعال الناقصة</h4>
+    <p>إذا كانت الجملة <strong style="color:var(--gold)">اسمية أو وصفية</strong> بدون فعل حقيقي، نستخدم <span style="font-family:'JetBrains Mono',monospace;color:var(--gold);font-weight:700">sein</span> في نهاية الجملة.</p>
+  </div>
+  <div class="ex"><div class="icon">📍</div><div style="flex:1"><div class="de" style="color:var(--gold)">Ich <strong>muss</strong> morgen in Amman <u>sein</u>.</div><div class="ar">يجب أن أكون في عمّان غداً</div><div class="nt">لا يوجد فعل حقيقي → نستخدم sein</div></div></div>
+  <div class="ex"><div class="icon">⏰</div><div style="flex:1"><div class="de" style="color:var(--gold)">Du <strong>musst</strong> um 8 Uhr da <u>sein</u>.</div><div class="ar">يجب أن تكون هناك الساعة 8</div></div></div>
+</div>
+
+<!-- ═══ 2: POLITENESS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#c89810)">٢</div>
+    <div><div class="sec-t">اللباقة والمجاملة</div><div class="sec-td">Höflichkeit</div></div>
+  </div>
+
+  <div class="pol-arrow">
+    <span style="color:var(--red)">😤 غير مجامل</span>
+    <div class="line"></div>
+    <span style="color:var(--green)">مجامل جداً 🤝</span>
+  </div>
+
+  <div class="pol-scale">
+    <div class="pol-card" style="background:var(--red-d);border:1px solid rgba(240,64,80,.2);border-radius:16px">
+      <div class="emoji">😤</div>
+      <div class="level" style="background:rgba(240,64,80,.15);color:var(--red)">غير مجامل — unhöflich</div>
+      <div class="de" style="color:var(--red)">ich will</div>
+      <div class="ar" style="color:var(--red)">wollen</div>
+      <div class="desc">فقط للأمور الشخصية — لا تستخدمها للطلب من الآخرين!</div>
+      <div class="ex" style="margin:10px 0 0;padding:8px 12px;border:0"><div style="flex:1"><div class="de" style="color:var(--red);font-size:13px">Ich <strong>will</strong> Kaffee.</div><div class="ar">أريد قهوة (فظ!)</div></div></div>
+    </div>
+    <div class="pol-card" style="background:var(--teal-d);border:1px solid rgba(40,208,168,.2);border-radius:16px">
+      <div class="emoji">😊</div>
+      <div class="level" style="background:rgba(40,208,168,.15);color:var(--teal)">مجامل — höflich</div>
+      <div class="de" style="color:var(--teal)">ich möchte</div>
+      <div class="ar" style="color:var(--teal)">möchten</div>
+      <div class="desc">مناسبة لمعظم المواقف اليومية</div>
+      <div class="ex" style="margin:10px 0 0;padding:8px 12px;border:0"><div style="flex:1"><div class="de" style="color:var(--teal);font-size:13px">Ich <strong>möchte</strong> Kaffee trinken.</div><div class="ar">أودّ شرب قهوة</div></div></div>
+    </div>
+    <div class="pol-card" style="background:var(--green-d);border:1px solid rgba(64,192,104,.2);border-radius:16px">
+      <div class="emoji">🤝</div>
+      <div class="level" style="background:rgba(64,192,104,.15);color:var(--green)">مجامل جداً — sehr höflich</div>
+      <div class="de" style="color:var(--green)">ich hätte gern</div>
+      <div class="ar" style="color:var(--green)">أودّ / أرغب</div>
+      <div class="desc">الأفضل عند طلب موعد أو خدمة</div>
+      <div class="ex" style="margin:10px 0 0;padding:8px 12px;border:0"><div style="flex:1"><div class="de" style="color:var(--green);font-size:13px">Ich <strong>hätte gern</strong> einen Kaffee.</div><div class="ar">أودّ قهوة لو سمحت</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: APPOINTMENTS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#2070c8)">٣</div>
+    <div><div class="sec-t">المواعيد والدقة</div><div class="sec-td">Termine und Pünktlichkeit</div></div>
+  </div>
+
+  <!-- Appointment Dialog -->
+  <div class="sub">🏥 محادثة تحديد موعد عند الطبيب</div>
+  <div class="appt-dialog">
+    <div class="appt-dialog-head" style="background:rgba(56,152,240,.04)">
+      <div class="icon">📞</div>
+      <div class="label" style="color:var(--sky)">Termin beim Arzt</div>
+    </div>
+    <div class="appt-dialog-body">
+      <div class="appt-line">
+        <div class="appt-role" style="background:rgba(56,152,240,.1);color:var(--sky);border:1px solid rgba(56,152,240,.15)">موظفة</div>
+        <div class="appt-content"><div class="appt-de" style="color:var(--sky)">Praxis Dr. Müller, was kann ich für Sie tun?</div><div class="appt-ar">عيادة الدكتور مولر، ماذا يمكنني أن أفعل لحضرتك؟</div></div>
+      </div>
+      <div class="appt-line">
+        <div class="appt-role" style="background:rgba(64,192,104,.1);color:var(--green);border:1px solid rgba(64,192,104,.15)">مريض</div>
+        <div class="appt-content"><div class="appt-de" style="color:var(--green)">Guten Tag, ich hätte gern einen Termin.</div><div class="appt-ar">يوم سعيد، أودّ الحصول على موعد.</div></div>
+      </div>
+      <div class="appt-line">
+        <div class="appt-role" style="background:rgba(56,152,240,.1);color:var(--sky);border:1px solid rgba(56,152,240,.15)">موظفة</div>
+        <div class="appt-content"><div class="appt-de" style="color:var(--sky)">Können Sie am Freitag um 10:45 Uhr kommen?</div><div class="appt-ar">هل تستطيع المجيء يوم الجمعة الساعة 10:45؟</div></div>
+      </div>
+      <div class="appt-line">
+        <div class="appt-role" style="background:rgba(64,192,104,.1);color:var(--green);border:1px solid rgba(64,192,104,.15)">مريض</div>
+        <div class="appt-content"><div class="appt-de" style="color:var(--green)">Ja, das geht. Vielen Dank!</div><div class="appt-ar">نعم، ممكن. شكراً جزيلاً!</div></div>
+      </div>
+      <div class="appt-line">
+        <div class="appt-role" style="background:rgba(56,152,240,.1);color:var(--sky);border:1px solid rgba(56,152,240,.15)">موظفة</div>
+        <div class="appt-content"><div class="appt-de" style="color:var(--sky)">Bitte. Auf Wiederhören!</div><div class="appt-ar">عفواً. مع السلامة! (هاتفياً)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Time units -->
+  <div class="sub">⏱️ وحدات الوقت</div>
+  <div class="tu-grid">
+    <div class="tu-item"><div class="emoji">⏰</div><div class="tu-de" style="color:var(--gold)">die Minute</div><div class="tu-ar">دقيقة</div></div>
+    <div class="tu-item"><div class="emoji">🕐</div><div class="tu-de" style="color:var(--gold)">die Viertelstunde</div><div class="tu-ar">ربع ساعة (15 دقيقة)</div></div>
+    <div class="tu-item"><div class="emoji">🕧</div><div class="tu-de" style="color:var(--gold)">die halbe Stunde</div><div class="tu-ar">نصف ساعة (30 دقيقة)</div></div>
+  </div>
+
+  <!-- Punctuality vocab -->
+  <div class="sub">⏱️ الدقة في المواعيد</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px">
+    <div class="ex" style="margin:0"><div class="icon">✅</div><div style="flex:1"><div class="de" style="color:var(--green)">pünktlich</div><div class="ar">دقيق في موعده</div></div></div>
+    <div class="ex" style="margin:0"><div class="icon">❌</div><div style="flex:1"><div class="de" style="color:var(--red)">unpünktlich</div><div class="ar">غير دقيق</div></div></div>
+    <div class="ex" style="margin:0"><div class="icon">⏰</div><div style="flex:1"><div class="de" style="color:var(--red)">zu spät</div><div class="ar">متأخر</div></div></div>
+    <div class="ex" style="margin:0"><div class="icon">📋</div><div style="flex:1"><div class="de" style="color:var(--gold)">die Verspätung</div><div class="ar">التأخير</div></div></div>
+  </div>
+
+  <!-- Late & Apology -->
+  <div class="sub">😔 الاعتذار عن التأخير والرد عليه</div>
+
+  <div class="ex"><div class="icon">😰</div><div style="flex:1"><div class="de" style="color:var(--red)">Es tut mir leid, ich bin 10 Minuten zu spät.</div><div class="ar">أنا آسف، تأخرت 10 دقائق.</div></div></div>
+  <div class="ex"><div class="icon">😥</div><div style="flex:1"><div class="de" style="color:var(--red)">Entschuldigen Sie die Verspätung.</div><div class="ar">أعتذر عن التأخير.</div></div></div>
+
+  <div class="apol-grid">
+    <div class="apol-box" style="background:var(--red-d);border:1px solid rgba(240,64,80,.15);border-radius:16px">
+      <h5 style="color:var(--red)">😔 الاعتذار</h5>
+      <div class="apol-item"><span class="de" style="color:var(--red)">Es tut mir leid</span><span class="ar">أنا آسف</span></div>
+      <div class="apol-item"><span class="de" style="color:var(--red)">Entschuldigen Sie</span><span class="ar">أعتذر (رسمي)</span></div>
+      <div class="apol-item"><span class="de" style="color:var(--red)">Entschuldigung</span><span class="ar">معذرة</span></div>
+    </div>
+    <div class="apol-box" style="background:var(--green-d);border:1px solid rgba(64,192,104,.15);border-radius:16px">
+      <h5 style="color:var(--green)">😊 الرد على الاعتذار</h5>
+      <div class="apol-item"><span class="de" style="color:var(--green)">Kein Problem</span><span class="ar">لا مشكلة</span></div>
+      <div class="apol-item"><span class="de" style="color:var(--green)">Macht nichts</span><span class="ar">لا بأس</span></div>
+      <div class="apol-item"><span class="de" style="color:var(--green)">Schon gut</span><span class="ar">لا عليك</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 4: PRONUNCIATION & EXTRAS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#7040c0)">٤</div>
+    <div><div class="sec-t">ملاحظات إضافية</div><div class="sec-td">Zusätzliche Hinweise</div></div>
+  </div>
+
+  <div class="sub">🔤 ملاحظات النطق</div>
+  <div class="pron-grid">
+    <div class="pron-item">
+      <div class="pron-letter" style="color:var(--violet)">sp</div>
+      <div class="pron-desc">في بداية الكلمة تُلفظ <strong style="color:var(--violet)">«شب»</strong></div>
+      <div class="pron-ex" style="color:var(--violet)">Sport → شبورت</div>
+    </div>
+    <div class="pron-item">
+      <div class="pron-letter" style="color:var(--violet)">st</div>
+      <div class="pron-desc">في بداية الكلمة تُلفظ <strong style="color:var(--violet)">«شت»</strong></div>
+      <div class="pron-ex" style="color:var(--violet)">Stunde → شتوندة</div>
+    </div>
+    <div class="pron-item">
+      <div class="pron-letter" style="color:var(--violet)">حروف العلة</div>
+      <div class="pron-desc">يجب التركيز على مدّ حروف العلة بشكل صحيح</div>
+      <div class="pron-ex" style="color:var(--violet)">a, e, i, o, u</div>
+    </div>
+  </div>
+
+  <!-- Wiedersehen vs Wiederhören -->
+  <div class="sub">👋 الوداع: وجهاً لوجه مقابل الهاتف</div>
+  <div class="gb-duo">
+    <div class="gb-box" style="background:var(--teal-d);border:1px solid rgba(40,208,168,.2);border-radius:16px">
+      <div class="emoji">👋</div>
+      <div class="de" style="color:var(--teal)">Auf Wiedersehen</div>
+      <div class="ar" style="color:var(--teal)">إلى اللقاء</div>
+      <div class="when">تُستخدم عند اللقاء <strong style="color:var(--teal)">وجهاً لوجه</strong></div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);direction:ltr;margin-top:6px">wieder + sehen = رؤية مرة أخرى</div>
+    </div>
+    <div class="gb-box" style="background:var(--fire-d);border:1px solid rgba(240,96,48,.2);border-radius:16px">
+      <div class="emoji">📞</div>
+      <div class="de" style="color:var(--fire)">Auf Wiederhören</div>
+      <div class="ar" style="color:var(--fire)">مع السلامة (هاتفياً)</div>
+      <div class="when">تُستخدم لإنهاء <strong style="color:var(--fire)">المكالمات الهاتفية</strong></div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);direction:ltr;margin-top:6px">wieder + hören = سماع مرة أخرى</div>
+    </div>
+  </div>
+
+  <!-- Exam Info -->
+  <div class="rule" style="background:var(--gold-d);border:1px solid rgba(232,176,40,.14);margin-top:18px">
+    <h4 style="color:var(--gold)">📝 معلومات عن الامتحان</h4>
+    <p>الامتحان القادم سيكون <strong style="color:var(--gold)">اختيار من متعدد + سؤال كتابي</strong>. الواجب: صفحة 57 + محادثات تحديد مواعيد (مدرسة لغات / حلاق).</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

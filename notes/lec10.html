@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>möchten و mögen، تركيب الجملة، والتعبير عن الوقت</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#060810;--card:#0c1020;--card-h:#121828;
+--bdr:#182038;--bdr-h:#243050;
+--amber:#e8a020;--amber-d:rgba(232,160,32,.07);
+--teal:#28d0a8;--teal-d:rgba(40,208,168,.07);
+--blue:#4090f0;--blue-d:rgba(64,144,240,.07);
+--red:#f04858;--red-d:rgba(240,72,88,.07);
+--violet:#9060e8;--violet-d:rgba(144,96,232,.07);
+--green:#40c068;--green-d:rgba(64,192,104,.07);
+--rose:#e860a0;--rose-d:rgba(232,96,160,.07);
+--cyan:#38c0d8;--cyan-d:rgba(56,192,216,.07);
+--orange:#f07830;--orange-d:rgba(240,120,48,.07);
+--txt:#ccc8c0;--txt-d:#586878;--txt-b:#f0ece4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:'Noto Naskh Arabic',serif;line-height:2;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(700px 500px at 10% 20%,rgba(232,160,32,.02) 0%,transparent 70%),radial-gradient(600px 600px at 88% 55%,rgba(40,208,168,.018) 0%,transparent 70%),radial-gradient(600px 500px at 50% 85%,rgba(144,96,232,.015) 0%,transparent 70%);animation:dr 26s ease-in-out infinite}
+@keyframes dr{0%,100%{transform:translate(0,0)}50%{transform:translate(12px,-10px)}}
+.w{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:28px 20px 100px}
+
+.hero{text-align:center;padding:56px 16px 44px}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;background:var(--amber-d);border:1px solid rgba(232,160,32,.16);border-radius:100px;padding:7px 22px;font-size:13px;font-weight:700;color:var(--amber);font-family:'Noto Kufi Arabic',sans-serif;margin-bottom:22px}
+.hero-pill b{width:7px;height:7px;border-radius:50%;background:var(--amber);animation:bk 2.4s ease infinite}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Noto Kufi Arabic',sans-serif;font-size:clamp(26px,5.5vw,48px);font-weight:900;color:var(--txt-b);line-height:1.35;margin-bottom:12px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--amber),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:15px;color:var(--txt-d);max-width:560px;margin:0 auto}
+.hero-sep{width:60px;height:3px;margin:22px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--amber),var(--teal))}
+
+.sec{margin-bottom:48px}
+.sec-h{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.sec-n{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:21px;font-weight:700;color:var(--bg);flex-shrink:0}
+.sec-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:20px;font-weight:800;color:var(--txt-b);line-height:1.4}
+.sec-td{font-family:'Instrument Serif',serif;font-size:13px;color:var(--txt-d);font-style:italic;direction:ltr;text-align:right}
+
+.cd{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:22px;margin-bottom:12px;transition:all .3s ease}
+.cd:hover{border-color:var(--bdr-h);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.rule{border-radius:16px;padding:20px;margin-bottom:12px;position:relative;overflow:hidden}
+.rule::before{content:'';position:absolute;top:-40px;left:50%;width:160px;height:160px;border-radius:50%;filter:blur(60px);opacity:.1;pointer-events:none}
+.rule h4{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.rule p{font-size:14px;line-height:2}
+.note{display:flex;gap:12px;border-radius:14px;padding:16px 20px;margin-bottom:10px}
+.note .ni{font-size:18px;flex-shrink:0;margin-top:2px}
+.note p{font-size:14px;line-height:1.9}
+
+/* VERB PAIR CARDS */
+.vp-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:640px){.vp-duo{grid-template-columns:1fr}}
+.vp-card{border-radius:18px;padding:24px;transition:all .3s ease;overflow:hidden;position:relative}
+.vp-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.vp-card .verb{font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:700;direction:ltr;text-align:right}
+.vp-card .meaning{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700;margin-top:4px}
+.vp-card .conj-mini{margin-top:14px}
+.cj-row{display:flex;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.03);direction:ltr;font-family:'JetBrains Mono',monospace;font-size:13px}
+.cj-row:last-child{border-bottom:none}
+.cj-row .pr{color:var(--txt-d);min-width:70px;font-size:12px}
+.cj-row .val{font-weight:600;flex:1}
+.cj-row .highlight{border-radius:4px;padding:0 6px}
+
+/* SENTENCE STRUCTURE */
+.struct{display:flex;align-items:center;justify-content:center;gap:0;margin:16px 0;flex-wrap:wrap;direction:ltr}
+.struct-block{padding:12px 16px;text-align:center;border:1px solid}
+.struct-block .label{font-size:9px;font-weight:700;letter-spacing:.5px;font-family:'Noto Kufi Arabic',sans-serif}
+.struct-block .value{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;margin-top:2px}
+
+/* EXAMPLE CARD */
+.ex{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:14px 18px;margin-bottom:8px;display:flex;align-items:flex-start;gap:12px;transition:all .25s ease}
+.ex:hover{border-color:var(--bdr-h);transform:translateX(-3px);background:var(--card-h)}
+.ex .icon{font-size:16px;flex-shrink:0;margin-top:4px}
+.ex .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;direction:ltr;text-align:right;flex:1;line-height:1.7}
+.ex .ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+.ex .note-tag{font-size:10px;color:var(--txt-d);font-style:italic;margin-top:2px}
+
+/* UND vs DANN compare */
+.ud-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:640px){.ud-duo{grid-template-columns:1fr}}
+.ud-box{border-radius:16px;padding:22px;text-align:center;transition:all .3s ease}
+.ud-box:hover{transform:translateY(-2px)}
+.ud-box .word{font-family:'JetBrains Mono',monospace;font-size:34px;font-weight:700;direction:ltr}
+.ud-box .desc{font-size:14px;margin-top:6px;line-height:1.8}
+.ud-box .formula{font-family:'JetBrains Mono',monospace;font-size:12px;direction:ltr;margin-top:10px;padding:8px 12px;border-radius:8px}
+.ud-box .ex-line{font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;margin-top:8px;line-height:1.8}
+
+/* FOOD CHIPS */
+.food-chips{display:flex;flex-wrap:wrap;gap:8px}
+.fc{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:9px 14px;transition:all .25s ease}
+.fc:hover{border-color:var(--bdr-h);transform:translateY(-1px);background:var(--card-h)}
+.fc .emoji{font-size:18px}
+.fc .d{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;direction:ltr}
+.fc .a{font-size:11px;color:var(--txt-d)}
+
+/* TIME GRID */
+.time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.time-item{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px;text-align:center;transition:all .3s ease}
+.time-item:hover{border-color:var(--bdr-h);transform:translateY(-2px)}
+.time-de{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:600;direction:ltr}
+.time-ar{font-size:13px;color:var(--txt-d);margin-top:4px}
+
+/* PREP COMPARE */
+.prep-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+@media(max-width:640px){.prep-trio{grid-template-columns:1fr}}
+.prep-card{border-radius:14px;padding:18px;text-align:center;transition:all .3s ease}
+.prep-card:hover{transform:translateY(-2px)}
+.prep-card .word{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;direction:ltr}
+.prep-card .usage{font-size:13px;margin-top:4px;line-height:1.6}
+.prep-card .examples{font-family:'JetBrains Mono',monospace;font-size:12px;direction:ltr;margin-top:8px;line-height:2;opacity:.8}
+
+/* MEAL CARDS */
+.meal-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+@media(max-width:640px){.meal-trio{grid-template-columns:1fr}}
+.meal-card{border-radius:16px;padding:20px;text-align:center;transition:all .3s ease}
+.meal-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.meal-card .emoji{font-size:32px;margin-bottom:6px}
+.meal-card .de{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:600;direction:ltr}
+.meal-card .ar{font-size:13px;margin-top:4px}
+.meal-card .prep{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:6px;direction:ltr;opacity:.7}
+
+/* W-FRAGEN mini */
+.wf-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.wf{display:flex;align-items:center;gap:8px;border-radius:12px;padding:12px 18px;transition:all .3s ease}
+.wf:hover{transform:scale(1.04)}
+.wf .word{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;direction:ltr}
+.wf .mean{font-size:13px}
+
+@keyframes fadeU{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeD{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(26px);transition:all .55s cubic-bezier(.23,1,.32,1)}
+.rv.v{opacity:1;transform:translateY(0)}
+@media(max-width:600px){.w{padding:14px 14px 60px}.hero{padding:40px 10px 32px}.sec-t{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> möchten, mögen & Satzbau</div>
+  <h1>القواعد، الطعام <em>والوقت</em></h1>
+  <p class="hero-sub">الأفعال möchten و mögen، تركيب الجملة مع فعلين، أدوات الربط، الوجبات والأطعمة، والتعبير عن الوقت</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: möchten & mögen ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--amber),#c88810)">١</div>
+    <div><div class="sec-t">الأفعال möchten و mögen</div><div class="sec-td">Modal-like Verbs</div></div>
+  </div>
+
+  <div class="vp-duo">
+    <div class="vp-card" style="background:rgba(232,160,32,.06);border:1px solid rgba(232,160,32,.2)">
+      <div class="verb" style="color:var(--amber)">möchten</div>
+      <div class="meaning" style="color:var(--amber)">يرغب / يودّ</div>
+      <div class="conj-mini">
+        <div class="cj-row"><span class="pr">ich</span><span class="val" style="color:var(--amber)"><span class="highlight" style="background:rgba(232,160,32,.12)">möchte</span></span></div>
+        <div class="cj-row"><span class="pr">du</span><span class="val" style="color:var(--amber)">möchtest</span></div>
+        <div class="cj-row"><span class="pr">er/sie/es</span><span class="val" style="color:var(--amber)"><span class="highlight" style="background:rgba(232,160,32,.12)">möchte</span></span></div>
+        <div class="cj-row"><span class="pr">wir</span><span class="val" style="color:var(--amber)">möchten</span></div>
+        <div class="cj-row"><span class="pr">ihr</span><span class="val" style="color:var(--amber)">möchtet</span></div>
+        <div class="cj-row"><span class="pr">sie/Sie</span><span class="val" style="color:var(--amber)">möchten</span></div>
+      </div>
+    </div>
+    <div class="vp-card" style="background:rgba(40,208,168,.06);border:1px solid rgba(40,208,168,.2)">
+      <div class="verb" style="color:var(--teal)">mögen</div>
+      <div class="meaning" style="color:var(--teal)">يحبّ / يفضّل</div>
+      <div class="conj-mini">
+        <div class="cj-row"><span class="pr">ich</span><span class="val" style="color:var(--teal)"><span class="highlight" style="background:rgba(40,208,168,.12)">mag</span></span></div>
+        <div class="cj-row"><span class="pr">du</span><span class="val" style="color:var(--teal)">magst</span></div>
+        <div class="cj-row"><span class="pr">er/sie/es</span><span class="val" style="color:var(--teal)"><span class="highlight" style="background:rgba(40,208,168,.12)">mag</span></span></div>
+        <div class="cj-row"><span class="pr">wir</span><span class="val" style="color:var(--teal)">mögen</span></div>
+        <div class="cj-row"><span class="pr">ihr</span><span class="val" style="color:var(--teal)">mögt</span></div>
+        <div class="cj-row"><span class="pr">sie/Sie</span><span class="val" style="color:var(--teal)">mögen</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(232,160,32,.12)">
+    <div class="ni">💡</div>
+    <div><p>لاحظ: تصريف <strong style="color:var(--amber)">ich</strong> يتطابق تماماً مع <strong style="color:var(--amber)">er/sie/es</strong> في كلا الفعلين — وهذه سمة مميزة للأفعال الناقصة.</p></div>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:15px;color:var(--txt-b);margin:18px 0 10px">✏️ أمثلة على möchten</div>
+  <div class="ex"><div class="icon">☕</div><div style="flex:1"><div class="de" style="color:var(--amber)">Ich <strong>möchte</strong> Kaffee <u>trinken</u>.</div><div class="ar">أودّ شرب قهوة</div></div></div>
+  <div class="ex"><div class="icon">🍕</div><div style="flex:1"><div class="de" style="color:var(--amber)">Er <strong>möchte</strong> Pizza <u>essen</u>.</div><div class="ar">يريد أكل بيتزا</div></div></div>
+  <div class="ex"><div class="icon">📚</div><div style="flex:1"><div class="de" style="color:var(--amber)">Wir <strong>möchten</strong> Deutsch <u>lernen</u>.</div><div class="ar">نودّ تعلم الألمانية</div></div></div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:15px;color:var(--txt-b);margin:18px 0 10px">✏️ أمثلة على mögen</div>
+  <div class="ex"><div class="icon">🧀</div><div style="flex:1"><div class="de" style="color:var(--teal)">Ich <strong>mag</strong> Käse.</div><div class="ar">أحب الجبنة</div></div></div>
+  <div class="ex"><div class="icon">🍫</div><div style="flex:1"><div class="de" style="color:var(--teal)">Sie <strong>mag</strong> Schokolade.</div><div class="ar">هي تحب الشوكولاتة</div></div></div>
+  <div class="ex"><div class="icon">🥦</div><div style="flex:1"><div class="de" style="color:var(--teal)">Wir <strong>mögen</strong> Gemüse.</div><div class="ar">نحب الخضروات</div></div></div>
+</div>
+
+<!-- ═══ 2: SENTENCE STRUCTURE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--blue),#2070c8)">٢</div>
+    <div><div class="sec-t">تركيب الجملة وموقع الفعل</div><div class="sec-td">Satzbau</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--blue-d);border:1px solid rgba(64,144,240,.14)">
+    <h4 style="color:var(--blue)">⚡ القاعدة الأساسية</h4>
+    <p>الفعل <strong style="color:var(--blue)">دائماً في الموقع الثاني</strong> في الجملة الخبرية.</p>
+  </div>
+
+  <!-- Two verbs structure -->
+  <div class="rule" style="background:var(--violet-d);border:1px solid rgba(144,96,232,.14)">
+    <h4 style="color:var(--violet)">🔗 الجملة ذات الفعلين</h4>
+    <p>الفعل الأول (المصرّف) في <strong style="color:var(--violet)">الموقع الثاني</strong> — الفعل الثاني (المصدر) في <strong style="color:var(--violet)">نهاية الجملة</strong>.</p>
+  </div>
+
+  <div class="struct">
+    <div class="struct-block" style="border-color:var(--txt-d);border-radius:12px 0 0 12px;background:rgba(255,255,255,.02)">
+      <div class="label" style="color:var(--txt-d)">الفاعل ①</div>
+      <div class="value" style="color:var(--txt-b)">Ich</div>
+    </div>
+    <div class="struct-block" style="border-color:var(--amber);background:rgba(232,160,32,.08)">
+      <div class="label" style="color:var(--amber)">الفعل المصرّف ②</div>
+      <div class="value" style="color:var(--amber)">möchte</div>
+    </div>
+    <div class="struct-block" style="border-color:var(--txt-d);background:rgba(255,255,255,.02)">
+      <div class="label" style="color:var(--txt-d)">تكملة</div>
+      <div class="value" style="color:var(--txt)">Kaffee</div>
+    </div>
+    <div class="struct-block" style="border-color:var(--blue);background:rgba(64,144,240,.08);border-radius:0 12px 12px 0">
+      <div class="label" style="color:var(--blue)">المصدر ∞</div>
+      <div class="value" style="color:var(--blue)">trinken</div>
+    </div>
+  </div>
+
+  <!-- Time adverb first -->
+  <div class="rule" style="background:var(--green-d);border:1px solid rgba(64,192,104,.14)">
+    <h4 style="color:var(--green)">🕐 البداية بظرف الزمان</h4>
+    <p>إذا بدأت الجملة بظرف زمان، <strong style="color:var(--green)">يبقى الفعل ثانياً</strong> ويتحرك الفاعل للموقع الثالث.</p>
+  </div>
+
+  <div class="struct">
+    <div class="struct-block" style="border-color:var(--green);border-radius:12px 0 0 12px;background:rgba(64,192,104,.06)">
+      <div class="label" style="color:var(--green)">الزمان ①</div>
+      <div class="value" style="color:var(--green)">Morgens</div>
+    </div>
+    <div class="struct-block" style="border-color:var(--amber);background:rgba(232,160,32,.08)">
+      <div class="label" style="color:var(--amber)">الفعل ②</div>
+      <div class="value" style="color:var(--amber)">trinke</div>
+    </div>
+    <div class="struct-block" style="border-color:var(--txt-d);background:rgba(255,255,255,.02)">
+      <div class="label" style="color:var(--txt-d)">الفاعل ③</div>
+      <div class="value" style="color:var(--txt-b)">ich</div>
+    </div>
+    <div class="struct-block" style="border-color:var(--txt-d);border-radius:0 12px 12px 0;background:rgba(255,255,255,.02)">
+      <div class="label" style="color:var(--txt-d)">تكملة</div>
+      <div class="value" style="color:var(--txt)">Kaffee</div>
+    </div>
+  </div>
+
+  <div class="ex"><div class="icon">✏️</div><div style="flex:1"><div class="de" style="color:var(--green)"><strong>Morgens</strong> trinke ich Kaffee.</div><div class="ar">كل صباح أشرب القهوة</div></div></div>
+  <div class="ex"><div class="icon">✏️</div><div style="flex:1"><div class="de" style="color:var(--green)"><strong>Am Abend</strong> koche ich gern.</div><div class="ar">في المساء أحب الطبخ</div></div></div>
+
+  <!-- UND vs DANN -->
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:16px;color:var(--txt-b);margin:24px 0 10px">🔗 أدوات الربط: und مقابل dann</div>
+
+  <div class="ud-duo">
+    <div class="ud-box" style="background:var(--cyan-d);border:1px solid rgba(56,192,216,.2);border-radius:16px">
+      <div class="word" style="color:var(--cyan)">und</div>
+      <div class="desc" style="color:var(--cyan)">و — <strong>لا تغيّر</strong> الترتيب</div>
+      <div class="formula" style="background:rgba(56,192,216,.06);color:var(--cyan)">S + V + ... <strong>und</strong> S + V + ...</div>
+      <div class="ex-line" style="color:var(--cyan)">Ich trinke Tee <strong>und</strong> ich esse Brot.</div>
+      <div style="font-size:12px;color:var(--txt-d);margin-top:4px">أشرب الشاي وآكل الخبز</div>
+    </div>
+    <div class="ud-box" style="background:var(--orange-d);border:1px solid rgba(240,120,48,.2);border-radius:16px">
+      <div class="word" style="color:var(--orange)">dann</div>
+      <div class="desc" style="color:var(--orange)">ثم — الفعل <strong>مباشرة بعدها</strong></div>
+      <div class="formula" style="background:rgba(240,120,48,.06);color:var(--orange)">... <strong>dann</strong> + V + S + ...</div>
+      <div class="ex-line" style="color:var(--orange)">Ich frühstücke, <strong>dann</strong> gehe ich.</div>
+      <div style="font-size:12px;color:var(--txt-d);margin-top:4px">أتناول الفطور، ثم أذهب</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: MEALS & FOOD ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--green),#28a048)">٣</div>
+    <div><div class="sec-t">الوجبات والأطعمة</div><div class="sec-td">Mahlzeiten & Essen</div></div>
+  </div>
+
+  <div class="meal-trio">
+    <div class="meal-card" style="background:rgba(232,160,32,.06);border:1px solid rgba(232,160,32,.2)">
+      <div class="emoji">🌅</div>
+      <div class="de" style="color:var(--amber)">das Frühstück</div>
+      <div class="ar" style="color:var(--amber)">الإفطار</div>
+      <div class="prep" style="color:var(--amber)">zum Frühstück</div>
+    </div>
+    <div class="meal-card" style="background:rgba(240,120,48,.06);border:1px solid rgba(240,120,48,.2)">
+      <div class="emoji">☀️</div>
+      <div class="de" style="color:var(--orange)">das Mittagessen</div>
+      <div class="ar" style="color:var(--orange)">الغداء</div>
+      <div class="prep" style="color:var(--orange)">zum Mittagessen</div>
+    </div>
+    <div class="meal-card" style="background:rgba(144,96,232,.06);border:1px solid rgba(144,96,232,.2)">
+      <div class="emoji">🌙</div>
+      <div class="de" style="color:var(--violet)">das Abendessen</div>
+      <div class="ar" style="color:var(--violet)">العشاء</div>
+      <div class="prep" style="color:var(--violet)">zum Abendessen</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--green-d);border:1px solid rgba(64,192,104,.12)">
+    <div class="ni">📌</div>
+    <div><p>استخدام <span style="font-family:'JetBrains Mono',monospace;color:var(--green);font-weight:700">zum</span> مع الوجبات أسلوب احترافي وصحيح — مثال: <span style="font-family:'JetBrains Mono',monospace;color:var(--green)">Zum Frühstück esse ich Brot.</span></p></div>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:15px;color:var(--txt-b);margin:18px 0 10px">🥗 مفردات الأطعمة والمشروبات</div>
+  <div class="food-chips">
+    <div class="fc"><span class="emoji">🧀</span><div><div class="d" style="color:var(--green)">Käse</div><div class="a">جبن</div></div></div>
+    <div class="fc"><span class="emoji">🥛</span><div><div class="d" style="color:var(--green)">Milch</div><div class="a">حليب</div></div></div>
+    <div class="fc"><span class="emoji">🍞</span><div><div class="d" style="color:var(--green)">Brot</div><div class="a">خبز</div></div></div>
+    <div class="fc"><span class="emoji">🥖</span><div><div class="d" style="color:var(--green)">Brötchen</div><div class="a">خبز صغير</div></div></div>
+    <div class="fc"><span class="emoji">🧂</span><div><div class="d" style="color:var(--green)">Salz</div><div class="a">ملح</div></div></div>
+    <div class="fc"><span class="emoji">🌶️</span><div><div class="d" style="color:var(--green)">Pfeffer</div><div class="a">فلفل</div></div></div>
+    <div class="fc"><span class="emoji">🫒</span><div><div class="d" style="color:var(--green)">Essig</div><div class="a">خل</div></div></div>
+    <div class="fc"><span class="emoji">☕</span><div><div class="d" style="color:var(--green)">Kaffee</div><div class="a">قهوة</div></div></div>
+    <div class="fc"><span class="emoji">🍎</span><div><div class="d" style="color:var(--green)">Obst</div><div class="a">فواكه</div></div></div>
+    <div class="fc"><span class="emoji">🥦</span><div><div class="d" style="color:var(--green)">Gemüse</div><div class="a">خضروات</div></div></div>
+    <div class="fc"><span class="emoji">🧃</span><div><div class="d" style="color:var(--green)">Saft</div><div class="a">عصير</div></div></div>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:15px;color:var(--txt-b);margin:18px 0 10px">💬 تعبيرات مفيدة</div>
+  <div class="ex"><div class="icon">😋</div><div style="flex:1"><div class="de" style="color:var(--rose)">Lecker! / Sehr lecker!</div><div class="ar">لذيذ! / لذيذ جداً!</div></div></div>
+  <div class="ex"><div class="icon">😊</div><div style="flex:1"><div class="de" style="color:var(--rose)">Ich bin satt.</div><div class="ar">أنا شبعان</div></div></div>
+  <div class="ex"><div class="icon">🍽️</div><div style="flex:1"><div class="de" style="color:var(--rose)">Guten Appetit!</div><div class="ar">شهية طيبة / صحتين</div></div></div>
+  <div class="ex"><div class="icon">🥂</div><div style="flex:1"><div class="de" style="color:var(--rose)">Prost!</div><div class="ar">نخبك (عند الشرب)</div></div></div>
+</div>
+
+<!-- ═══ 4: W-FRAGEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--cyan),#20a0b8)">٤</div>
+    <div><div class="sec-t">أدوات الاستفهام</div><div class="sec-td">W-Fragen</div></div>
+  </div>
+
+  <div class="wf-chips">
+    <div class="wf" style="background:rgba(56,192,216,.08);border:1px solid rgba(56,192,216,.2)"><div class="word" style="color:var(--cyan)">Was</div><div class="mean" style="color:var(--cyan)">ماذا</div></div>
+    <div class="wf" style="background:rgba(56,192,216,.08);border:1px solid rgba(56,192,216,.2)"><div class="word" style="color:var(--cyan)">Wo</div><div class="mean" style="color:var(--cyan)">أين</div></div>
+    <div class="wf" style="background:rgba(56,192,216,.08);border:1px solid rgba(56,192,216,.2)"><div class="word" style="color:var(--cyan)">Wie</div><div class="mean" style="color:var(--cyan)">كيف</div></div>
+    <div class="wf" style="background:rgba(56,192,216,.08);border:1px solid rgba(56,192,216,.2)"><div class="word" style="color:var(--cyan)">Wann</div><div class="mean" style="color:var(--cyan)">متى</div></div>
+  </div>
+
+  <div class="ex" style="margin-top:12px"><div class="icon">✏️</div><div style="flex:1"><div class="de" style="color:var(--cyan)"><strong>Was</strong> möchtest du <u>essen</u>?</div><div class="ar">ماذا تريد أن تأكل؟</div></div></div>
+  <div class="ex"><div class="icon">✏️</div><div style="flex:1"><div class="de" style="color:var(--cyan)"><strong>Wann</strong> frühstückst du?</div><div class="ar">متى تتناول الفطور؟</div></div></div>
+</div>
+
+<!-- ═══ 5: TIME EXPRESSIONS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#7040c0)">٥</div>
+    <div><div class="sec-t">التعبير عن الوقت والاستمرارية</div><div class="sec-td">Zeitangaben</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--violet-d);border:1px solid rgba(144,96,232,.14)">
+    <h4 style="color:var(--violet)">🔄 لاحقة «s» = التكرار</h4>
+    <p>إضافة <strong style="color:var(--violet)">-s</strong> لظرف الزمان تحوّله من وقت محدد إلى <strong style="color:var(--violet)">عادة متكررة</strong>.</p>
+  </div>
+
+  <div class="time-grid">
+    <div class="time-item"><div class="time-de" style="color:var(--violet)">morgens</div><div class="time-ar">كل صباح</div></div>
+    <div class="time-item"><div class="time-de" style="color:var(--violet)">mittags</div><div class="time-ar">كل ظهيرة</div></div>
+    <div class="time-item"><div class="time-de" style="color:var(--violet)">abends</div><div class="time-ar">كل مساء</div></div>
+    <div class="time-item"><div class="time-de" style="color:var(--violet)">nachts</div><div class="time-ar">كل ليلة</div></div>
+  </div>
+
+  <div class="ex" style="margin-top:12px"><div class="icon">✏️</div><div style="flex:1"><div class="de" style="color:var(--violet)"><strong>Morgens</strong> trinke ich Kaffee.</div><div class="ar">كل صباح أشرب القهوة</div></div></div>
+  <div class="ex"><div class="icon">✏️</div><div style="flex:1"><div class="de" style="color:var(--violet)"><strong>Abends</strong> koche ich gern.</div><div class="ar">كل مساء أحب الطبخ</div></div></div>
+
+  <div class="prep-trio" style="margin-top:18px">
+    <div class="prep-card" style="background:var(--blue-d);border:1px solid rgba(64,144,240,.2)">
+      <div class="word" style="color:var(--blue)">am</div>
+      <div class="usage" style="color:var(--blue)">وقت محدد في اليوم</div>
+      <div class="examples" style="color:var(--blue)">am Morgen<br>am Abend</div>
+    </div>
+    <div class="prep-card" style="background:var(--green-d);border:1px solid rgba(64,192,104,.2)">
+      <div class="word" style="color:var(--green)">vor</div>
+      <div class="usage" style="color:var(--green)">قبل</div>
+      <div class="examples" style="color:var(--green)">Vormittag<br>(قبل الظهر)</div>
+    </div>
+    <div class="prep-card" style="background:var(--orange-d);border:1px solid rgba(240,120,48,.2)">
+      <div class="word" style="color:var(--orange)">nach</div>
+      <div class="usage" style="color:var(--orange)">بعد</div>
+      <div class="examples" style="color:var(--orange)">Nachmittag<br>(بعد الظهر)</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

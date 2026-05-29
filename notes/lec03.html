@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأبجدية، الأرقام، التحيات والقواعد الأساسية</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#050810;--bg2:#090d16;--card:#0d1120;--card-h:#131928;
+--bdr:#18203a;--bdr-h:#243050;
+--amber:#f0b020;--amber-d:rgba(240,176,32,.08);
+--teal:#30d8b0;--teal-d:rgba(48,216,176,.08);
+--coral:#f06848;--coral-d:rgba(240,104,72,.08);
+--sky:#48a8f0;--sky-d:rgba(72,168,240,.08);
+--violet:#a070f0;--violet-d:rgba(160,112,240,.08);
+--rose:#e868a0;--rose-d:rgba(232,104,160,.08);
+--txt:#ccc8c0;--txt-d:#586878;--txt-b:#f0ece4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:'Noto Naskh Arabic',serif;line-height:2;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.016;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;
+background:
+  radial-gradient(800px 500px at 15% 25%,rgba(240,176,32,.02) 0%,transparent 70%),
+  radial-gradient(600px 700px at 85% 55%,rgba(48,216,176,.018) 0%,transparent 70%),
+  radial-gradient(700px 600px at 45% 85%,rgba(160,112,240,.015) 0%,transparent 70%);
+animation:drift 28s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(15px,-12px)}}
+
+.w{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:28px 20px 100px}
+
+/* HERO */
+.hero{text-align:center;padding:64px 16px 52px}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;background:var(--amber-d);border:1px solid rgba(240,176,32,.16);border-radius:100px;padding:7px 22px;font-size:13px;font-weight:700;color:var(--amber);font-family:'Noto Kufi Arabic',sans-serif;margin-bottom:26px;animation:fadeD .7s ease}
+.hero-pill b{width:7px;height:7px;border-radius:50%;background:var(--amber);animation:bk 2.4s ease infinite}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Noto Kufi Arabic',sans-serif;font-size:clamp(30px,6vw,54px);font-weight:900;color:var(--txt-b);line-height:1.35;margin-bottom:14px;animation:fadeU .7s ease .1s both}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--amber),var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:16px;color:var(--txt-d);max-width:540px;margin:0 auto;animation:fadeU .7s ease .2s both}
+.hero-sep{width:60px;height:3px;margin:26px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--amber),var(--coral));animation:fadeU .7s ease .3s both}
+
+/* SECTIONS */
+.sec{margin-bottom:52px}
+.sec-h{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.sec-n{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:22px;font-weight:700;color:var(--bg);flex-shrink:0}
+.sec-tg{flex:1}
+.sec-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:23px;font-weight:800;color:var(--txt-b);line-height:1.4}
+.sec-td{font-family:'Instrument Serif',serif;font-size:14px;color:var(--txt-d);font-style:italic;direction:ltr;text-align:right}
+
+/* ALPHABET GRID */
+.alg{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:7px}
+.ali{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:12px 8px;text-align:center;transition:all .3s ease;position:relative;overflow:hidden}
+.ali:hover{border-color:rgba(240,176,32,.3);transform:scale(1.04);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.ali .letter{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:600;direction:ltr;line-height:1.2}
+.ali .pron{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);direction:ltr;margin-top:4px}
+.ali .ar-pron{font-size:12px;color:var(--txt-d);margin-top:2px}
+
+/* UMLAUT SPECIAL */
+.umlaut-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:16px}
+.umlaut-card{background:var(--card);border:1px solid rgba(240,176,32,.2);border-radius:16px;padding:20px;text-align:center;transition:all .3s ease;position:relative}
+.umlaut-card:hover{border-color:rgba(240,176,32,.4);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.umlaut-letter{font-family:'JetBrains Mono',monospace;font-size:48px;font-weight:600;direction:ltr;line-height:1}
+.umlaut-name{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--txt-d);direction:ltr;margin-top:6px}
+.umlaut-desc{font-size:14px;color:var(--txt);margin-top:8px;line-height:1.8}
+
+/* NUMBERS */
+.ng{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:7px}
+.ni{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:12px 8px;text-align:center;transition:all .3s ease}
+.ni:hover{border-color:rgba(48,216,176,.3);transform:scale(1.05)}
+.nv{font-family:'Space Mono',monospace;font-size:26px;font-weight:700;direction:ltr}
+.nd{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);direction:ltr;margin-top:3px}
+
+/* RULE BOX */
+.rule{border-radius:16px;padding:24px;margin-bottom:12px;position:relative;overflow:hidden}
+.rule::before{content:'';position:absolute;top:-40px;left:50%;width:180px;height:180px;border-radius:50%;filter:blur(70px);opacity:.12;pointer-events:none}
+.rule h4{font-family:'Noto Kufi Arabic',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.rule p{font-size:15px;line-height:2}
+
+.rule--amber{background:var(--amber-d);border:1px solid rgba(240,176,32,.14)}
+.rule--amber::before{background:var(--amber)}
+.rule--teal{background:var(--teal-d);border:1px solid rgba(48,216,176,.14)}
+.rule--teal::before{background:var(--teal)}
+.rule--coral{background:var(--coral-d);border:1px solid rgba(240,104,72,.14)}
+.rule--coral::before{background:var(--coral)}
+.rule--sky{background:var(--sky-d);border:1px solid rgba(72,168,240,.14)}
+.rule--sky::before{background:var(--sky)}
+.rule--violet{background:var(--violet-d);border:1px solid rgba(160,112,240,.14)}
+.rule--violet::before{background:var(--violet)}
+
+/* CARD */
+.cd{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:24px;margin-bottom:12px;transition:all .3s ease}
+.cd:hover{border-color:var(--bdr-h);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.cd h4{font-family:'Noto Kufi Arabic',sans-serif;font-size:16px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+
+/* DUAL COLUMNS */
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.dual{grid-template-columns:1fr}}
+
+/* LIST ITEM */
+.li{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(24,32,58,.5)}
+.li:last-child{border-bottom:none}
+.li:hover{padding-right:6px}
+.li .de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;direction:ltr;min-width:130px;text-align:left}
+.li .ar{font-size:14px;color:var(--txt);flex:1}
+.li .note{font-size:12px;color:var(--txt-d);font-style:italic}
+
+/* EXAMPLE */
+.ex{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.015);border:1px dashed var(--bdr-h);border-radius:12px;padding:12px 16px;margin-top:10px}
+.ex .icon{font-size:16px;flex-shrink:0}
+.ex .t{font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:right;flex:1;line-height:1.7}
+.ex .ea{font-size:13px;color:var(--txt-d);font-family:'Noto Naskh Arabic',serif}
+
+/* INTRO METHODS */
+.intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:640px){.intro-grid{grid-template-columns:1fr}}
+.intro-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:22px;text-align:center;transition:all .3s ease}
+.intro-card:hover{border-color:rgba(72,168,240,.3);transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.intro-num{font-family:'Space Mono',monospace;font-size:14px;font-weight:700;width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.intro-de{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:600;direction:ltr;margin-bottom:6px}
+.intro-ar{font-size:14px;color:var(--txt-d)}
+
+/* QUESTION LIST */
+.q-item{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 20px;margin-bottom:8px;display:flex;align-items:flex-start;gap:14px;transition:all .25s ease}
+.q-item:hover{border-color:var(--bdr-h);transform:translateX(-3px);background:var(--card-h)}
+.q-icon{font-size:18px;flex-shrink:0;margin-top:2px}
+.q-de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:500;direction:ltr;text-align:right;line-height:1.7}
+.q-ar{font-size:13px;color:var(--txt-d);margin-top:3px}
+.q-hint{font-size:12px;color:var(--txt-d);font-style:italic;margin-top:2px;background:rgba(72,168,240,.06);border-radius:6px;padding:2px 8px;display:inline-block}
+
+/* CONJUGATION TABLE */
+.conj-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--bdr);margin-bottom:12px}
+.conj-table{width:100%;border-collapse:collapse;direction:ltr;text-align:center}
+.conj-table th{background:rgba(160,112,240,.08);padding:12px 14px;font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:700;border-bottom:1px solid var(--bdr);white-space:nowrap}
+.conj-table td{padding:11px 14px;font-size:14px;color:var(--txt);border-bottom:1px solid rgba(24,32,58,.4)}
+.conj-table tr:last-child td{border-bottom:none}
+.conj-table tr:hover td{background:rgba(160,112,240,.03)}
+.conj-table .pn{font-family:'JetBrains Mono',monospace;font-weight:600}
+.conj-table .end{font-weight:700}
+
+/* VOCAB CHIPS */
+.vchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.vc{display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--bdr);border-radius:11px;padding:10px 16px;transition:all .25s ease}
+.vc:hover{border-color:var(--bdr-h);transform:translateY(-2px);background:var(--card-h)}
+.vc .d{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr}
+.vc .a{font-size:13px;color:var(--txt-d)}
+
+/* GRAMMAR RULES */
+.gram-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-top:12px}
+.gram-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:20px;transition:all .3s ease}
+.gram-card:hover{border-color:rgba(160,112,240,.25);transform:translateY(-2px)}
+.gram-card .icon{font-size:24px;margin-bottom:8px}
+.gram-card h5{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:700;margin-bottom:6px}
+.gram-card p{font-size:14px;color:var(--txt);line-height:1.8}
+
+/* ANIMATIONS */
+@keyframes fadeU{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeD{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(26px);transition:all .55s cubic-bezier(.23,1,.32,1)}
+.rv.v{opacity:1;transform:translateY(0)}
+
+@media(max-width:600px){
+.w{padding:14px 14px 60px}.hero{padding:44px 10px 36px}
+.sec-t{font-size:19px}.alg{grid-template-columns:repeat(auto-fill,minmax(80px,1fr))}
+.ng{grid-template-columns:repeat(auto-fill,minmax(80px,1fr))}
+}
+</style>
+</head>
+<body>
+<div class="amb"></div>
+<div class="w">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-pill"><b></b> Grundlagen — الأساسيات</div>
+  <h1>الأبجدية، الأرقام <em>والقواعد</em></h1>
+  <p class="hero-sub">الحروف الألمانية ونطقها، الأرقام من 0 إلى 20، التحيات، التعريف بالنفس، وأساسيات القواعد</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: ALPHABET ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--amber),#d09010)">١</div>
+    <div class="sec-tg">
+      <div class="sec-t">الأبجدية الألمانية</div>
+      <div class="sec-td">Das Alphabet</div>
+    </div>
+  </div>
+
+  <div class="alg">
+    <div class="ali"><div class="letter" style="color:var(--amber)">A a</div><div class="pron">(ah)</div><div class="ar-pron">ا</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">B b</div><div class="pron">(bay)</div><div class="ar-pron">بي</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">C c</div><div class="pron">(tsay)</div><div class="ar-pron">سي</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">D d</div><div class="pron">(day)</div><div class="ar-pron">دي</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">E e</div><div class="pron">(ay)</div><div class="ar-pron">إيه</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">F f</div><div class="pron">(eff)</div><div class="ar-pron">إف</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">G g</div><div class="pron">(gay)</div><div class="ar-pron">جي</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">H h</div><div class="pron">(hah)</div><div class="ar-pron">ها</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">I i</div><div class="pron">(eeh)</div><div class="ar-pron">إي</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">J j</div><div class="pron">(yot)</div><div class="ar-pron">يوت ←ياء</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">K k</div><div class="pron">(kah)</div><div class="ar-pron">كا</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">L l</div><div class="pron">(ell)</div><div class="ar-pron">إل</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">M m</div><div class="pron">(em)</div><div class="ar-pron">إم</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">N n</div><div class="pron">(en)</div><div class="ar-pron">إن</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">O o</div><div class="pron">(oh)</div><div class="ar-pron">أوه</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">P p</div><div class="pron">(pay)</div><div class="ar-pron">بي</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">Q q</div><div class="pron">(koo)</div><div class="ar-pron">كو</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">R r</div><div class="pron">(err)</div><div class="ar-pron">إر / أغ</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">S s</div><div class="pron">(es)</div><div class="ar-pron">بداية=ز نهاية=س</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">T t</div><div class="pron">(tay)</div><div class="ar-pron">تي</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">U u</div><div class="pron">(ooh)</div><div class="ar-pron">أوه</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">V v</div><div class="pron">(fow)</div><div class="ar-pron">فاو ← فاء</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">W w</div><div class="pron">(vay)</div><div class="ar-pron">في ← V إنجليزي</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">X x</div><div class="pron">(iks)</div><div class="ar-pron">إكس</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">Y y</div><div class="pron">(üpsilon)</div><div class="ar-pron">إبسلون ← ياء</div></div>
+    <div class="ali"><div class="letter" style="color:var(--amber)">Z z</div><div class="pron">(tset)</div><div class="ar-pron">تسِت ⚠️ ليس زين</div></div>
+  </div>
+
+  <!-- Umlaute -->
+  <div style="margin-top:24px">
+    <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:17px;color:var(--txt-b);margin-bottom:14px;display:flex;align-items:center;gap:8px">✨ حروف الأوملاوت — Umlaute</div>
+    <div class="umlaut-grid">
+      <div class="umlaut-card">
+        <div class="umlaut-letter" style="color:var(--amber)">Ä ä</div>
+        <div class="umlaut-name">(Ae)</div>
+        <div class="umlaut-desc">تُلفظ <strong style="color:var(--amber)">«إيه»</strong></div>
+      </div>
+      <div class="umlaut-card">
+        <div class="umlaut-letter" style="color:var(--coral)">Ö ö</div>
+        <div class="umlaut-name">(Oe)</div>
+        <div class="umlaut-desc">ضم الشفتين مع تقديم اللسان</div>
+      </div>
+      <div class="umlaut-card">
+        <div class="umlaut-letter" style="color:var(--teal)">Ü ü</div>
+        <div class="umlaut-name">(Ue)</div>
+        <div class="umlaut-desc">ضم الشفتين بشكل ضيّق</div>
+      </div>
+      <div class="umlaut-card" style="border-color:rgba(240,176,32,.25)">
+        <div class="umlaut-letter" style="color:var(--sky)">ß</div>
+        <div class="umlaut-name">Eszett</div>
+        <div class="umlaut-desc">= دبل سين <strong style="color:var(--sky)">ss</strong><br>تُلفظ دائماً «س»</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: NUMBERS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#18b890)">٢</div>
+    <div class="sec-tg">
+      <div class="sec-t">الأرقام من 0 إلى 20</div>
+      <div class="sec-td">Die Zahlen 0–20</div>
+    </div>
+  </div>
+
+  <div class="ng">
+    <div class="ni"><div class="nv" style="color:var(--teal)">0</div><div class="nd">Null</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">1</div><div class="nd">Eins</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">2</div><div class="nd">Zwei</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">3</div><div class="nd">Drei</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">4</div><div class="nd">Vier</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">5</div><div class="nd">Fünf</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">6</div><div class="nd">Sechs</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">7</div><div class="nd">Sieben</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">8</div><div class="nd">Acht</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">9</div><div class="nd">Neun</div></div>
+    <div class="ni" style="border-color:rgba(48,216,176,.25)"><div class="nv" style="color:var(--amber)">10</div><div class="nd">Zehn</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">11</div><div class="nd">Elf</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">12</div><div class="nd">Zwölf</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">13</div><div class="nd">Dreizehn</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">14</div><div class="nd">Vierzehn</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">15</div><div class="nd">Fünfzehn</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">16</div><div class="nd">Sechzehn</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">17</div><div class="nd">Siebzehn</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">18</div><div class="nd">Achtzehn</div></div>
+    <div class="ni"><div class="nv" style="color:var(--teal)">19</div><div class="nd">Neunzehn</div></div>
+    <div class="ni" style="border-color:rgba(48,216,176,.25)"><div class="nv" style="color:var(--amber)">20</div><div class="nd">Zwanzig</div></div>
+  </div>
+
+  <div class="rule rule--teal" style="margin-top:14px">
+    <h4 style="color:var(--teal)">💡 ملاحظات النطق</h4>
+    <p>المقطع <strong style="color:var(--teal)">ei</strong> يُلفظ «آي» كما في <span style="font-family:'JetBrains Mono',monospace;color:var(--teal);direction:ltr">Eins, Drei</span></p>
+    <p>المقطع <strong style="color:var(--teal)">ie</strong> يُلفظ «إي» ممدودة كما في <span style="font-family:'JetBrains Mono',monospace;color:var(--teal);direction:ltr">Vier, Sieben</span></p>
+  </div>
+
+  <div class="rule rule--amber">
+    <h4 style="color:var(--amber)">⚠️ انتبه للتغييرات</h4>
+    <p><strong style="color:var(--amber)">16:</strong> تُحذف الـ s من sechs → <span style="font-family:'JetBrains Mono',monospace;color:var(--amber);direction:ltr">Sechzehn</span></p>
+    <p><strong style="color:var(--amber)">17:</strong> تُحذف الـ en من sieben → <span style="font-family:'JetBrains Mono',monospace;color:var(--amber);direction:ltr">Siebzehn</span></p>
+    <p>الأرقام 13–19: الرقم + <span style="font-family:'JetBrains Mono',monospace;color:var(--amber);direction:ltr">zehn</span> (مثل العربي: ثلاثة عشر)</p>
+  </div>
+</div>
+
+<!-- ═══ 3: GREETINGS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#d03820)">٣</div>
+    <div class="sec-tg">
+      <div class="sec-t">التحيات والتوديع</div>
+      <div class="sec-td">Begrüßungen und Abschiede</div>
+    </div>
+  </div>
+
+  <div class="dual">
+    <div class="cd">
+      <h4 style="color:var(--teal)">👋 التحيات</h4>
+      <div class="li"><span class="de" style="color:var(--teal)">Guten Morgen</span><span class="ar">صباح الخير</span></div>
+      <div class="li"><span class="de" style="color:var(--teal)">Guten Tag</span><span class="ar">طاب يومك (نهاراً)</span></div>
+      <div class="li"><span class="de" style="color:var(--teal)">Guten Abend</span><span class="ar">مساء الخير</span></div>
+      <div class="li"><span class="de" style="color:var(--teal)">Gute Nacht</span><span class="ar">تصبح على خير</span></div>
+      <div class="li"><span class="de" style="color:var(--teal)">Hallo</span><span class="ar">مرحباً</span></div>
+    </div>
+    <div class="cd">
+      <h4 style="color:var(--coral)">🚶 التوديع</h4>
+      <div class="li"><span class="de" style="color:var(--coral)">Tschüss / Ciao</span><span class="ar">مع السلامة / باي</span></div>
+      <div class="li"><span class="de" style="color:var(--coral)">Auf Wiedersehen</span><span class="ar">إلى اللقاء</span></div>
+      <div class="li"><span class="de" style="color:var(--coral)">Bis bald</span><span class="ar">أراك قريباً</span></div>
+    </div>
+  </div>
+
+  <div class="cd" style="margin-top:12px">
+    <h4 style="color:var(--sky)">❓ السؤال عن الحال</h4>
+    <div class="li"><span class="de" style="color:var(--sky)">Wie geht's?</span><span class="ar">كيف حالك؟</span></div>
+    <div class="li"><span class="de" style="color:var(--sky)">Danke, sehr gut</span><span class="ar">شكراً، جيد جداً</span></div>
+    <div class="li"><span class="de" style="color:var(--sky)">Ganz gut</span><span class="ar">تمام / جيد تماماً</span></div>
+  </div>
+</div>
+
+<!-- ═══ 4: SELF INTRO ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#2880c8)">٤</div>
+    <div class="sec-tg">
+      <div class="sec-t">التعريف بالنفس والأسئلة الشخصية</div>
+      <div class="sec-td">Sich vorstellen</div>
+    </div>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:16px;color:var(--txt-b);margin-bottom:14px">🪪 ثلاث طرق للتعريف بالنفس</div>
+
+  <div class="intro-grid">
+    <div class="intro-card">
+      <div class="intro-num" style="background:rgba(72,168,240,.1);color:var(--sky)">1</div>
+      <div class="intro-de" style="color:var(--sky)">Ich bin ...</div>
+      <div class="intro-ar">أنا أكون...</div>
+    </div>
+    <div class="intro-card">
+      <div class="intro-num" style="background:rgba(72,168,240,.1);color:var(--sky)">2</div>
+      <div class="intro-de" style="color:var(--sky)">Ich heiße ...</div>
+      <div class="intro-ar">أنا أُدعى...</div>
+    </div>
+    <div class="intro-card">
+      <div class="intro-num" style="background:rgba(72,168,240,.1);color:var(--sky)">3</div>
+      <div class="intro-de" style="color:var(--sky)">Mein Name ist ...</div>
+      <div class="intro-ar">اسمي يكون...</div>
+    </div>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:16px;color:var(--txt-b);margin:24px 0 14px">❓ أدوات السؤال والأسئلة الهامة</div>
+
+  <div class="q-item">
+    <div class="q-icon">🗣️</div>
+    <div style="flex:1">
+      <div class="q-de" style="color:var(--sky)">Wer bist du?</div>
+      <div class="q-ar">من تكون أنت؟</div>
+    </div>
+  </div>
+  <div class="q-item">
+    <div class="q-icon">📛</div>
+    <div style="flex:1">
+      <div class="q-de" style="color:var(--sky)">Wie heißt du?</div>
+      <div class="q-ar">ما اسمك؟</div>
+    </div>
+  </div>
+  <div class="q-item">
+    <div class="q-icon">🌍</div>
+    <div style="flex:1">
+      <div class="q-de" style="color:var(--sky)">Woher kommst du?</div>
+      <div class="q-ar">من أين تأتي؟</div>
+      <div class="q-hint">الإجابة: <span style="font-family:'JetBrains Mono',monospace;direction:ltr">aus + الدولة</span></div>
+    </div>
+  </div>
+  <div class="q-item">
+    <div class="q-icon">🏠</div>
+    <div style="flex:1">
+      <div class="q-de" style="color:var(--sky)">Wo wohnst du?</div>
+      <div class="q-ar">أين تسكن؟</div>
+      <div class="q-hint">الإجابة: <span style="font-family:'JetBrains Mono',monospace;direction:ltr">in + المدينة</span></div>
+    </div>
+  </div>
+  <div class="q-item">
+    <div class="q-icon">💬</div>
+    <div style="flex:1">
+      <div class="q-de" style="color:var(--sky)">Welche Sprachen sprechen Sie?</div>
+      <div class="q-ar">أي اللغات تتحدث حضرتك؟</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: GRAMMAR ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#8048c8)">٥</div>
+    <div class="sec-tg">
+      <div class="sec-t">القواعد الأساسية</div>
+      <div class="sec-td">Grammatik</div>
+    </div>
+  </div>
+
+  <div class="rule rule--violet">
+    <h4 style="color:var(--violet)">📐 تصريف الأفعال</h4>
+    <p>معظم الأفعال تنتهي بـ <strong style="color:var(--violet)">-en</strong>. عند التصريف نحذف النهاية ونضيف حسب الضمير:</p>
+  </div>
+
+  <div class="conj-wrap">
+    <table class="conj-table">
+      <thead>
+        <tr>
+          <th style="color:var(--violet)">الضمير</th>
+          <th style="color:var(--violet)">النهاية</th>
+          <th style="color:var(--violet)">مثال: wohnen</th>
+          <th style="color:var(--violet)">المعنى</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="pn" style="color:var(--violet)">ich</td>
+          <td class="end" style="color:var(--amber)">-e</td>
+          <td style="font-family:'JetBrains Mono',monospace">wohn<span style="color:var(--amber);font-weight:700">e</span></td>
+          <td>أنا أسكن</td>
+        </tr>
+        <tr>
+          <td class="pn" style="color:var(--violet)">du</td>
+          <td class="end" style="color:var(--amber)">-st</td>
+          <td style="font-family:'JetBrains Mono',monospace">wohn<span style="color:var(--amber);font-weight:700">st</span></td>
+          <td>أنتَ تسكن</td>
+        </tr>
+        <tr>
+          <td class="pn" style="color:var(--violet)">er / sie</td>
+          <td class="end" style="color:var(--amber)">-t</td>
+          <td style="font-family:'JetBrains Mono',monospace">wohn<span style="color:var(--amber);font-weight:700">t</span></td>
+          <td>هو / هي يسكن</td>
+        </tr>
+        <tr>
+          <td class="pn" style="color:var(--violet)">Sie</td>
+          <td class="end" style="color:var(--amber)">-en</td>
+          <td style="font-family:'JetBrains Mono',monospace">wohn<span style="color:var(--amber);font-weight:700">en</span></td>
+          <td>حضرتك تسكن</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:16px;color:var(--txt-b);margin:20px 0 12px">📌 قواعد إضافية مهمة</div>
+
+  <div class="gram-cards">
+    <div class="gram-card">
+      <div class="icon">🔢</div>
+      <h5 style="color:var(--violet)">موقع الفعل</h5>
+      <p>الفعل يأتي <strong style="color:var(--violet)">دائماً في الموقع الثاني</strong> في الجملة الخبرية والسؤال بأداة استفهام.</p>
+    </div>
+    <div class="gram-card">
+      <div class="icon">🔠</div>
+      <h5 style="color:var(--violet)">الأسماء بحرف كبير</h5>
+      <p>جميع الأسماء (Nomen) في الألمانية تبدأ <strong style="color:var(--violet)">دائماً بحرف كبير</strong> (Capital).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 6: EXTRA VOCAB ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#c04878)">٦</div>
+    <div class="sec-tg">
+      <div class="sec-t">كلمات إضافية للتعامل مع الكتاب</div>
+      <div class="sec-td">Zusätzliche Wörter</div>
+    </div>
+  </div>
+
+  <div class="vchips">
+    <div class="vc"><span class="d" style="color:var(--rose)">Hören</span><span class="a">اسمع</span></div>
+    <div class="vc"><span class="d" style="color:var(--rose)">Lesen</span><span class="a">اقرأ</span></div>
+    <div class="vc"><span class="d" style="color:var(--rose)">Frau</span><span class="a">سيدة (قبل اسم العائلة)</span></div>
+    <div class="vc"><span class="d" style="color:var(--rose)">Herr</span><span class="a">سيد (قبل اسم العائلة)</span></div>
+    <div class="vc"><span class="d" style="color:var(--rose)">Auch</span><span class="a">أيضاً</span></div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

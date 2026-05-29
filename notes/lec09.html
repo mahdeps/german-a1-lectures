@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الطعام، التسوق وحالة الاكوزاتيف</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#060810;--card:#0c1020;--card-h:#121828;
+--bdr:#182038;--bdr-h:#243050;
+--orange:#f08838;--orange-d:rgba(240,136,56,.07);
+--green:#38c868;--green-d:rgba(56,200,104,.07);
+--blue:#4090f0;--blue-d:rgba(64,144,240,.07);
+--red:#f04858;--red-d:rgba(240,72,88,.07);
+--violet:#9868e0;--violet-d:rgba(152,104,224,.07);
+--gold:#e0b028;--gold-d:rgba(224,176,40,.07);
+--teal:#30c8a8;--teal-d:rgba(48,200,168,.07);
+--rose:#e868a0;--rose-d:rgba(232,104,160,.07);
+--cyan:#38b8e0;--cyan-d:rgba(56,184,224,.07);
+--txt:#ccc8c0;--txt-d:#586878;--txt-b:#f0ece4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:'Noto Naskh Arabic',serif;line-height:2;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(700px 500px at 10% 20%,rgba(240,136,56,.02) 0%,transparent 70%),radial-gradient(600px 600px at 88% 55%,rgba(56,200,104,.018) 0%,transparent 70%),radial-gradient(600px 500px at 50% 85%,rgba(152,104,224,.015) 0%,transparent 70%);animation:dr 26s ease-in-out infinite}
+@keyframes dr{0%,100%{transform:translate(0,0)}50%{transform:translate(12px,-10px)}}
+.w{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:28px 20px 100px}
+
+.hero{text-align:center;padding:56px 16px 44px}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;background:var(--orange-d);border:1px solid rgba(240,136,56,.16);border-radius:100px;padding:7px 22px;font-size:13px;font-weight:700;color:var(--orange);font-family:'Noto Kufi Arabic',sans-serif;margin-bottom:22px}
+.hero-pill b{width:7px;height:7px;border-radius:50%;background:var(--orange);animation:bk 2.4s ease infinite}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Noto Kufi Arabic',sans-serif;font-size:clamp(26px,5.5vw,48px);font-weight:900;color:var(--txt-b);line-height:1.35;margin-bottom:12px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--orange),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:15px;color:var(--txt-d);max-width:560px;margin:0 auto}
+.hero-sep{width:60px;height:3px;margin:22px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--orange),var(--green))}
+
+.sec{margin-bottom:48px}
+.sec-h{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.sec-n{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:21px;font-weight:700;color:var(--bg);flex-shrink:0}
+.sec-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:20px;font-weight:800;color:var(--txt-b);line-height:1.4}
+.sec-td{font-family:'Instrument Serif',serif;font-size:13px;color:var(--txt-d);font-style:italic;direction:ltr;text-align:right}
+
+.cd{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:22px;margin-bottom:12px;transition:all .3s ease}
+.cd:hover{border-color:var(--bdr-h);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.rule{border-radius:16px;padding:20px;margin-bottom:12px;position:relative;overflow:hidden}
+.rule::before{content:'';position:absolute;top:-40px;left:50%;width:160px;height:160px;border-radius:50%;filter:blur(60px);opacity:.1;pointer-events:none}
+.rule h4{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.rule p{font-size:14px;line-height:2}
+.note{display:flex;gap:12px;border-radius:14px;padding:16px 20px;margin-bottom:10px}
+.note .ni{font-size:18px;flex-shrink:0;margin-top:2px}
+.note p{font-size:14px;line-height:1.9}
+
+/* SELF INTRO TEMPLATE */
+.intro-template{background:var(--card);border:1px solid var(--bdr);border-radius:18px;padding:0;overflow:hidden;margin-bottom:14px}
+.intro-head{padding:16px 22px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--bdr)}
+.intro-head .icon{font-size:22px}
+.intro-head .label{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:700}
+.intro-rows{padding:16px 22px}
+.intro-row{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid rgba(24,32,56,.4)}
+.intro-row:last-child{border-bottom:none}
+.intro-row .tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;flex-shrink:0;font-family:'Noto Kufi Arabic',sans-serif;margin-top:4px;min-width:60px;text-align:center}
+.intro-row .content{flex:1}
+.intro-row .de{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;direction:ltr;text-align:right;line-height:1.7}
+.intro-row .ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+
+/* FOOD GRID */
+.food-section{margin-bottom:16px}
+.food-title{font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:16px;color:var(--txt-b);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.food-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+.food-item{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px;transition:all .25s ease}
+.food-item:hover{border-color:var(--bdr-h);transform:translateY(-1px);background:var(--card-h)}
+.food-item .emoji{font-size:20px;flex-shrink:0}
+.food-item .de{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;direction:ltr}
+.food-item .ar{font-size:12px;color:var(--txt-d);margin-top:1px}
+
+/* SHOP CARDS */
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.shop-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:18px;text-align:center;transition:all .3s ease}
+.shop-card:hover{border-color:var(--bdr-h);transform:translateY(-2px)}
+.shop-card .emoji{font-size:30px;margin-bottom:6px}
+.shop-card .de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;direction:ltr}
+.shop-card .ar{font-size:13px;color:var(--txt-d);margin-top:4px}
+
+/* AKKUSATIV TABLE */
+.ak-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--bdr);margin-bottom:14px}
+.ak-table{width:100%;border-collapse:collapse;direction:ltr;text-align:center}
+.ak-table th{padding:12px 14px;font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:700;border-bottom:2px solid var(--bdr)}
+.ak-table td{padding:11px 14px;font-size:14px;border-bottom:1px solid rgba(24,32,58,.4);font-family:'JetBrains Mono',monospace}
+.ak-table tr:last-child td{border-bottom:none}
+.ak-table tr:hover td{background:rgba(240,72,88,.03)}
+.ak-table .changed{color:var(--red);font-weight:700;font-size:16px;position:relative}
+.ak-table .same{color:var(--green);font-weight:600}
+.ak-table .label-cell{font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:12px}
+
+/* AKKUSATIV VERBS */
+.akv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;margin-top:12px}
+.akv-item{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:10px;transition:all .25s ease}
+.akv-item:hover{border-color:rgba(240,72,88,.25);transform:translateY(-2px);background:var(--card-h)}
+.akv-item .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr}
+.akv-item .ar{font-size:12px;color:var(--txt-d)}
+
+/* EXAMPLE SENTENCES */
+.ex-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 20px;margin-bottom:8px;transition:all .25s ease}
+.ex-card:hover{border-color:var(--bdr-h);transform:translateX(-3px);background:var(--card-h)}
+.ex-de{font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:right;line-height:1.7}
+.ex-ar{font-size:12px;color:var(--txt-d);margin-top:3px}
+.ex-note{font-size:11px;font-style:italic;color:var(--txt-d);margin-top:2px}
+
+/* SHOPPING PHRASES */
+.sp-grid{display:grid;gap:8px}
+.sp-item{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:12px;transition:all .25s ease}
+.sp-item:hover{border-color:var(--bdr-h);transform:translateX(-3px);background:var(--card-h)}
+.sp-item .icon{font-size:18px;flex-shrink:0}
+.sp-item .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;direction:ltr;text-align:right;flex:1}
+.sp-item .ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+.sp-role{font-size:10px;font-weight:700;padding:2px 8px;border-radius:5px;flex-shrink:0;font-family:'Noto Kufi Arabic',sans-serif}
+
+@keyframes fadeU{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeD{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(26px);transition:all .55s cubic-bezier(.23,1,.32,1)}
+.rv.v{opacity:1;transform:translateY(0)}
+@media(max-width:600px){.w{padding:14px 14px 60px}.hero{padding:40px 10px 32px}.sec-t{font-size:18px}.food-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+</style>
+</head>
+<body>
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Lebensmittel & Akkusativ</div>
+  <h1>الطعام، التسوق <em>والمفعول به</em></h1>
+  <p class="hero-sub">التعريف بالنفس مع أمثلة، مفردات الأطعمة لكل وجبة، أماكن التسوق، وقاعدة الاكوزاتيف</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: SELF INTRO ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--orange),#d06820)">١</div>
+    <div><div class="sec-t">مراجعة التعريف بالنفس</div><div class="sec-td">Sich vorstellen</div></div>
+  </div>
+
+  <!-- Template -->
+  <div class="intro-template">
+    <div class="intro-head" style="background:rgba(240,136,56,.04)">
+      <div class="icon">📋</div>
+      <div class="label" style="color:var(--orange)">القالب الكامل للتعريف بالنفس — مع أمثلة</div>
+    </div>
+    <div class="intro-rows">
+      <div class="intro-row">
+        <div class="tag" style="background:rgba(240,136,56,.1);color:var(--orange)">الاسم</div>
+        <div class="content">
+          <div class="de" style="color:var(--orange)">Ich bin Ahmad. / Ich heiße Ahmad.</div>
+          <div class="ar">أنا أحمد / اسمي أحمد</div>
+        </div>
+      </div>
+      <div class="intro-row">
+        <div class="tag" style="background:rgba(240,136,56,.1);color:var(--orange)">العمر</div>
+        <div class="content">
+          <div class="de" style="color:var(--orange)">Ich bin 25 Jahre alt.</div>
+          <div class="ar">عمري 25 سنة</div>
+        </div>
+      </div>
+      <div class="intro-row">
+        <div class="tag" style="background:rgba(56,200,104,.1);color:var(--green)">الأصل</div>
+        <div class="content">
+          <div class="de" style="color:var(--green)">Ich komme aus Jordanien.</div>
+          <div class="ar">أنا من الأردن</div>
+        </div>
+      </div>
+      <div class="intro-row">
+        <div class="tag" style="background:rgba(56,200,104,.1);color:var(--green)">السكن</div>
+        <div class="content">
+          <div class="de" style="color:var(--green)">Ich wohne in Amman.</div>
+          <div class="ar">أسكن في عمان</div>
+        </div>
+      </div>
+      <div class="intro-row">
+        <div class="tag" style="background:rgba(64,144,240,.1);color:var(--blue)">اللغات</div>
+        <div class="content">
+          <div class="de" style="color:var(--blue)">Ich spreche Arabisch, Englisch und ein bisschen Deutsch.</div>
+          <div class="ar">أتحدث العربية والإنجليزية وقليلاً من الألمانية</div>
+        </div>
+      </div>
+      <div class="intro-row">
+        <div class="tag" style="background:rgba(152,104,224,.1);color:var(--violet)">العمل</div>
+        <div class="content">
+          <div class="de" style="color:var(--violet)">Ich arbeite als Ingenieur. Ich arbeite 40 Stunden pro Woche.</div>
+          <div class="ar">أعمل كمهندس. أعمل 40 ساعة أسبوعياً</div>
+        </div>
+      </div>
+      <div class="intro-row">
+        <div class="tag" style="background:rgba(232,104,160,.1);color:var(--rose)">الهوايات</div>
+        <div class="content">
+          <div class="de" style="color:var(--rose)">Mein Hobby ist Lesen. / Meine Hobbys sind Joggen und Kochen.</div>
+          <div class="ar">هوايتي القراءة / هواياتي الركض والطبخ</div>
+          <div style="margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d);direction:ltr;text-align:right">أو: Ich fotografiere gern. / Ich jogge gern.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full example -->
+  <div class="cd" style="border-color:rgba(240,136,56,.2);background:rgba(240,136,56,.03)">
+    <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:14px;color:var(--orange);margin-bottom:10px;display:flex;align-items:center;gap:8px">✨ مثال كامل مُجمَّع</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;text-align:right;line-height:2.2;color:var(--orange);background:rgba(240,136,56,.04);border-radius:12px;padding:16px 18px;border:1px solid rgba(240,136,56,.1)">Hallo! Ich bin Ahmad, 25 Jahre alt. Ich komme aus Jordanien und wohne in Amman. Ich spreche Arabisch und Englisch, und zurzeit lerne ich Deutsch. Ich arbeite als Ingenieur. Ich arbeite 40 Stunden pro Woche. In meiner Freizeit jogge ich gern und ich koche auch gern.</div>
+    <div style="font-size:13px;color:var(--txt-d);margin-top:10px;line-height:2;border-right:3px solid rgba(240,136,56,.3);padding-right:14px">مرحباً! أنا أحمد، عمري 25 سنة. أنا من الأردن وأسكن في عمان. أتحدث العربية والإنجليزية، وحالياً أتعلم الألمانية. أعمل كمهندس. أعمل 40 ساعة أسبوعياً. في وقت فراغي أحب الركض وأحب الطبخ أيضاً.</div>
+  </div>
+</div>
+
+<!-- ═══ 2: FOOD ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--green),#20a050)">٢</div>
+    <div><div class="sec-t">مفردات الأطعمة — Guten Appetit!</div><div class="sec-td">Lebensmittel</div></div>
+  </div>
+
+  <!-- Frühstück -->
+  <div class="food-section">
+    <div class="food-title" style="color:var(--gold)">🌅 وجبة الإفطار — Frühstück</div>
+    <div class="food-grid">
+      <div class="food-item"><span class="emoji">🍌</span><div><div class="de" style="color:var(--gold)">die Banane</div><div class="ar">الموز</div></div></div>
+      <div class="food-item"><span class="emoji">🍊</span><div><div class="de" style="color:var(--gold)">Orangensaft</div><div class="ar">عصير البرتقال</div></div></div>
+      <div class="food-item"><span class="emoji">🥣</span><div><div class="de" style="color:var(--gold)">Müsli</div><div class="ar">حبوب الإفطار</div></div></div>
+      <div class="food-item"><span class="emoji">🥛</span><div><div class="de" style="color:var(--gold)">Joghurt</div><div class="ar">اللبن الزبادي</div></div></div>
+      <div class="food-item"><span class="emoji">🍵</span><div><div class="de" style="color:var(--gold)">der Tee</div><div class="ar">الشاي</div></div></div>
+      <div class="food-item"><span class="emoji">🥛</span><div><div class="de" style="color:var(--gold)">die Milch</div><div class="ar">الحليب</div></div></div>
+      <div class="food-item"><span class="emoji">☕</span><div><div class="de" style="color:var(--gold)">der Kaffee</div><div class="ar">القهوة</div></div></div>
+      <div class="food-item"><span class="emoji">🧀</span><div><div class="de" style="color:var(--gold)">der Käse</div><div class="ar">الجبنة</div></div></div>
+      <div class="food-item"><span class="emoji">🍯</span><div><div class="de" style="color:var(--gold)">die Marmelade</div><div class="ar">المربى</div></div></div>
+      <div class="food-item"><span class="emoji">🥚</span><div><div class="de" style="color:var(--gold)">das Ei</div><div class="ar">البيضة</div></div></div>
+      <div class="food-item"><span class="emoji">🥖</span><div><div class="de" style="color:var(--gold)">das Brötchen</div><div class="ar">الخبيزات الصغيرة</div></div></div>
+    </div>
+  </div>
+
+  <!-- Mittagessen -->
+  <div class="food-section">
+    <div class="food-title" style="color:var(--orange)">☀️ وجبة الغداء — Mittagessen</div>
+    <div class="food-grid">
+      <div class="food-item"><span class="emoji">🍎</span><div><div class="de" style="color:var(--orange)">Apfelsaft</div><div class="ar">عصير التفاح</div></div></div>
+      <div class="food-item"><span class="emoji">🥔</span><div><div class="de" style="color:var(--orange)">Kartoffeln</div><div class="ar">البطاطا</div></div></div>
+      <div class="food-item"><span class="emoji">🧂</span><div><div class="de" style="color:var(--orange)">das Salz</div><div class="ar">الملح</div></div></div>
+      <div class="food-item"><span class="emoji">🌶️</span><div><div class="de" style="color:var(--orange)">der Pfeffer</div><div class="ar">الفلفل الأسود</div></div></div>
+      <div class="food-item"><span class="emoji">🥦</span><div><div class="de" style="color:var(--orange)">das Gemüse</div><div class="ar">الخضار</div></div></div>
+      <div class="food-item"><span class="emoji">🫒</span><div><div class="de" style="color:var(--orange)">der Essig</div><div class="ar">الخل</div></div></div>
+      <div class="food-item"><span class="emoji">🫒</span><div><div class="de" style="color:var(--orange)">das Öl</div><div class="ar">الزيت</div></div></div>
+      <div class="food-item"><span class="emoji">🥩</span><div><div class="de" style="color:var(--orange)">das Fleisch</div><div class="ar">اللحم</div></div></div>
+    </div>
+  </div>
+
+  <!-- Kaffee und Kuchen -->
+  <div class="food-section">
+    <div class="food-title" style="color:var(--rose)">☕ القهوة والكيك — Kaffee und Kuchen</div>
+    <div class="food-grid">
+      <div class="food-item"><span class="emoji">🎂</span><div><div class="de" style="color:var(--rose)">der Kuchen</div><div class="ar">الكيك / الفطير</div></div></div>
+      <div class="food-item"><span class="emoji">🍦</span><div><div class="de" style="color:var(--rose)">die Sahne</div><div class="ar">الكريمة</div></div></div>
+      <div class="food-item"><span class="emoji">🍫</span><div><div class="de" style="color:var(--rose)">die Schokolade</div><div class="ar">الشوكولاتة</div></div></div>
+      <div class="food-item"><span class="emoji">🍪</span><div><div class="de" style="color:var(--rose)">der Keks</div><div class="ar">البسكويت</div></div></div>
+      <div class="food-item"><span class="emoji">🧊</span><div><div class="de" style="color:var(--rose)">der Zucker</div><div class="ar">السكر</div></div></div>
+    </div>
+    <div class="note" style="background:var(--rose-d);border:1px solid rgba(232,104,160,.12);margin-top:8px">
+      <div class="ni">📌</div>
+      <div><p>الشاي والقهوة والسكر تأخذ دائماً الارتيكل <span style="font-family:'JetBrains Mono',monospace;color:var(--rose);font-weight:700">der</span>.</p></div>
+    </div>
+  </div>
+
+  <!-- Abendessen -->
+  <div class="food-section">
+    <div class="food-title" style="color:var(--violet)">🌙 وجبة العشاء — Abendessen</div>
+    <div class="food-grid">
+      <div class="food-item"><span class="emoji">🧈</span><div><div class="de" style="color:var(--violet)">die Butter</div><div class="ar">الزبدة</div></div></div>
+      <div class="food-item"><span class="emoji">🍞</span><div><div class="de" style="color:var(--violet)">das Brot</div><div class="ar">الخبز</div></div></div>
+      <div class="food-item"><span class="emoji">🍅</span><div><div class="de" style="color:var(--violet)">die Tomate</div><div class="ar">البندورة</div></div></div>
+      <div class="food-item"><span class="emoji">🥒</span><div><div class="de" style="color:var(--violet)">die Gurke</div><div class="ar">الخيار</div></div></div>
+      <div class="food-item"><span class="emoji">🥗</span><div><div class="de" style="color:var(--violet)">der Salat</div><div class="ar">الخس / سلطة</div></div></div>
+      <div class="food-item"><span class="emoji">🍲</span><div><div class="de" style="color:var(--violet)">die Suppe</div><div class="ar">الشوربة</div></div></div>
+      <div class="food-item"><span class="emoji">🌭</span><div><div class="de" style="color:var(--violet)">die Wurst</div><div class="ar">النقانق</div></div></div>
+      <div class="food-item"><span class="emoji">🥓</span><div><div class="de" style="color:var(--violet)">der Schinken</div><div class="ar">شرائح اللحم</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: SHOPS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#18a888)">٣</div>
+    <div><div class="sec-t">أماكن التسوق</div><div class="sec-td">Einkaufen</div></div>
+  </div>
+
+  <div class="shop-grid">
+    <div class="shop-card"><div class="emoji">🛒</div><div class="de" style="color:var(--teal)">der Supermarkt</div><div class="ar">السوبر ماركت</div></div>
+    <div class="shop-card"><div class="emoji">🥬</div><div class="de" style="color:var(--teal)">der Markt</div><div class="ar">سوق الخضرة</div></div>
+    <div class="shop-card"><div class="emoji">🥖</div><div class="de" style="color:var(--teal)">die Bäckerei</div><div class="ar">المخبز</div></div>
+    <div class="shop-card"><div class="emoji">🥩</div><div class="de" style="color:var(--teal)">die Metzgerei</div><div class="ar">الملحمة</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--teal-d);border:1px solid rgba(48,200,168,.14);margin-top:12px">
+    <h4 style="color:var(--teal)">🔑 قاعدة</h4>
+    <p>أي كلمة تنتهي بـ <span style="font-family:'JetBrains Mono',monospace;color:var(--teal);font-weight:700">-ei</span> يكون ارتيكلها دائماً <span style="font-family:'JetBrains Mono',monospace;color:var(--teal);font-weight:700">die</span>.</p>
+  </div>
+</div>
+
+<!-- ═══ 4: AKKUSATIV ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--red),#c82838)">٤</div>
+    <div><div class="sec-t">قاعدة المفعول به</div><div class="sec-td">Akkusativ</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--red-d);border:1px solid rgba(240,72,88,.14)">
+    <h4 style="color:var(--red)">📐 ما هو الاكوزاتيف؟</h4>
+    <p>هي الحالة الإعرابية للاسم عندما يكون <strong style="color:var(--red)">مفعولاً به</strong> — أي وقع عليه فعل الفاعل.</p>
+  </div>
+
+  <div class="note" style="background:var(--red-d);border:1px solid rgba(240,72,88,.12)">
+    <div class="ni">⚠️</div>
+    <div><p><strong style="color:var(--red)">المذكر فقط</strong> هو الذي يتغير في الاكوزاتيف. الباقي يبقى كما هو!</p></div>
+  </div>
+
+  <div class="ak-wrap">
+    <table class="ak-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th style="color:var(--blue)">المذكر 🔵</th>
+          <th style="color:var(--green)">المحايد 🟢</th>
+          <th style="color:var(--rose)">المؤنث 🔴</th>
+          <th style="color:var(--violet)">الجمع 🟣</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="label-cell" style="color:var(--blue)">Nominativ<br>(الرفع)</td>
+          <td style="color:var(--blue)">der<br><span style="font-size:11px;color:var(--txt-d)">ein / kein</span></td>
+          <td class="same">das<br><span style="font-size:11px;color:var(--txt-d)">ein / kein</span></td>
+          <td class="same">die<br><span style="font-size:11px;color:var(--txt-d)">eine / keine</span></td>
+          <td class="same">die<br><span style="font-size:11px;color:var(--txt-d)">— / keine</span></td>
+        </tr>
+        <tr>
+          <td class="label-cell" style="color:var(--red)">Akkusativ<br>(المفعول به)</td>
+          <td class="changed">den ⚡<br><span style="font-size:12px">einen / keinen</span></td>
+          <td class="same">das ✓<br><span style="font-size:11px;color:var(--txt-d)">ein / kein</span></td>
+          <td class="same">die ✓<br><span style="font-size:11px;color:var(--txt-d)">eine / keine</span></td>
+          <td class="same">die ✓<br><span style="font-size:11px;color:var(--txt-d)">— / keine</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:15px;color:var(--txt-b);margin:20px 0 10px">🔧 أفعال تجرّ المفعول به (Akkusativ)</div>
+  <div class="akv-grid">
+    <div class="akv-item"><span class="de" style="color:var(--red)">kaufen</span><span class="ar">يشتري</span></div>
+    <div class="akv-item"><span class="de" style="color:var(--red)">brauchen</span><span class="ar">يحتاج</span></div>
+    <div class="akv-item"><span class="de" style="color:var(--red)">haben</span><span class="ar">يملك</span></div>
+    <div class="akv-item"><span class="de" style="color:var(--red)">machen</span><span class="ar">يفعل</span></div>
+    <div class="akv-item"><span class="de" style="color:var(--red)">kochen</span><span class="ar">يطبخ</span></div>
+    <div class="akv-item"><span class="de" style="color:var(--red)">essen</span><span class="ar">يأكل</span></div>
+    <div class="akv-item"><span class="de" style="color:var(--red)">finden</span><span class="ar">يجد</span></div>
+    <div class="akv-item"><span class="de" style="color:var(--red)">nehmen</span><span class="ar">يأخذ</span></div>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:15px;color:var(--txt-b);margin:20px 0 10px">✏️ أمثلة توضيحية</div>
+  <div class="ex-card">
+    <div class="ex-de" style="color:var(--red)">Ich kaufe <u>einen</u> Käse.</div>
+    <div class="ex-ar">أشتري جبنة</div>
+    <div class="ex-note">Käse مذكر → ein تحولت إلى <strong style="color:var(--red)">einen</strong></div>
+  </div>
+  <div class="ex-card">
+    <div class="ex-de" style="color:var(--red)">Wir haben <u>keinen</u> Käse.</div>
+    <div class="ex-ar">ليس لدينا جبنة</div>
+    <div class="ex-note">نفي المذكر في الاكوزاتيف → <strong style="color:var(--red)">keinen</strong></div>
+  </div>
+  <div class="ex-card">
+    <div class="ex-de" style="color:var(--red)">Ich brauche <u>einen</u> Euro.</div>
+    <div class="ex-ar">أحتاج يورو واحد</div>
+    <div class="ex-note">Euro مذكر → <strong style="color:var(--red)">einen</strong></div>
+  </div>
+</div>
+
+<!-- ═══ 5: SHOPPING PHRASES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--cyan),#2098b8)">٥</div>
+    <div><div class="sec-t">جمل وتعبيرات التسوق</div><div class="sec-td">Einkaufen — Redemittel</div></div>
+  </div>
+
+  <div class="note" style="background:var(--cyan-d);border:1px solid rgba(56,184,224,.12)">
+    <div class="ni">📦</div>
+    <div><p>احفظ هذه التعبيرات كـ <strong style="color:var(--cyan)">قوالب جاهزة (Packages)</strong> لتسهيل المحادثة!</p></div>
+  </div>
+
+  <div class="sp-grid">
+    <div class="sp-item">
+      <div class="icon">🛒</div>
+      <span class="sp-role" style="background:rgba(56,184,224,.1);color:var(--cyan);border:1px solid rgba(56,184,224,.15)">مكان</span>
+      <div style="flex:1"><div class="sp-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:right;color:var(--cyan)">im Supermarkt / in der Bäckerei / auf dem Markt</div><div style="font-size:12px;color:var(--txt-d);margin-top:2px">في السوبر ماركت / في المخبز / في السوق</div></div>
+    </div>
+    <div class="sp-item">
+      <div class="icon">👋</div>
+      <span class="sp-role" style="background:rgba(240,136,56,.1);color:var(--orange);border:1px solid rgba(240,136,56,.15)">بائع</span>
+      <div style="flex:1"><div class="sp-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:right;color:var(--orange)">Wer kommt dran?</div><div style="font-size:12px;color:var(--txt-d);margin-top:2px">من عليه الدور؟</div></div>
+    </div>
+    <div class="sp-item">
+      <div class="icon">❓</div>
+      <span class="sp-role" style="background:rgba(240,136,56,.1);color:var(--orange);border:1px solid rgba(240,136,56,.15)">بائع</span>
+      <div style="flex:1"><div class="sp-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:right;color:var(--orange)">Was möchten Sie?</div><div style="font-size:12px;color:var(--txt-d);margin-top:2px">ماذا ترغب حضرتك؟</div></div>
+    </div>
+    <div class="sp-item">
+      <div class="icon">➕</div>
+      <span class="sp-role" style="background:rgba(240,136,56,.1);color:var(--orange);border:1px solid rgba(240,136,56,.15)">بائع</span>
+      <div style="flex:1"><div class="sp-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:right;color:var(--orange)">Sonst noch etwas?</div><div style="font-size:12px;color:var(--txt-d);margin-top:2px">هل تريد شيئاً آخر؟</div></div>
+    </div>
+    <div class="sp-item">
+      <div class="icon">✅</div>
+      <span class="sp-role" style="background:rgba(240,136,56,.1);color:var(--orange);border:1px solid rgba(240,136,56,.15)">بائع</span>
+      <div style="flex:1"><div class="sp-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:right;color:var(--orange)">Ist das alles?</div><div style="font-size:12px;color:var(--txt-d);margin-top:2px">هل هذا كل شيء؟</div></div>
+    </div>
+    <div class="sp-item">
+      <div class="icon">💰</div>
+      <span class="sp-role" style="background:rgba(56,200,104,.1);color:var(--green);border:1px solid rgba(56,200,104,.15)">زبون</span>
+      <div style="flex:1"><div class="sp-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:right;color:var(--green)">Was kostet ...? / Wie viel kostet ...?</div><div style="font-size:12px;color:var(--txt-d);margin-top:2px">بكم ...؟ / كم يكلف ...؟</div></div>
+    </div>
+    <div class="sp-item">
+      <div class="icon">🔍</div>
+      <span class="sp-role" style="background:rgba(56,200,104,.1);color:var(--green);border:1px solid rgba(56,200,104,.15)">زبون</span>
+      <div style="flex:1"><div class="sp-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:right;color:var(--green)">Entschuldigung, wo finde ich ...?</div><div style="font-size:12px;color:var(--txt-d);margin-top:2px">المعذرة، أين أجد ...؟</div></div>
+    </div>
+    <div class="sp-item">
+      <div class="icon">🧾</div>
+      <span class="sp-role" style="background:rgba(240,136,56,.1);color:var(--orange);border:1px solid rgba(240,136,56,.15)">كاشير</span>
+      <div style="flex:1"><div class="sp-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:right;color:var(--orange)">Brauchen Sie den Kassenzettel?</div><div style="font-size:12px;color:var(--txt-d);margin-top:2px">هل تحتاج إلى الفاتورة/الوصل؟</div></div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

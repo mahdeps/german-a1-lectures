@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 13 — أعياد الميلاد، الأفعال المنفصلة والماضي</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#060810;--card:#0c1020;--card-h:#121828;
+--bdr:#182038;--bdr-h:#243050;
+--pink:#e85898;--pink-d:rgba(232,88,152,.07);
+--sky:#3898f0;--sky-d:rgba(56,152,240,.07);
+--teal:#28d0a8;--teal-d:rgba(40,208,168,.07);
+--amber:#e8a828;--amber-d:rgba(232,168,40,.07);
+--violet:#9060e8;--violet-d:rgba(144,96,232,.07);
+--red:#f04858;--red-d:rgba(240,72,88,.07);
+--green:#40c068;--green-d:rgba(64,192,104,.07);
+--orange:#f08030;--orange-d:rgba(240,128,48,.07);
+--cyan:#38c0d8;--cyan-d:rgba(56,192,216,.07);
+--txt:#ccc8c0;--txt-d:#586878;--txt-b:#f0ece4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:'Noto Naskh Arabic',serif;line-height:2;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(700px 500px at 10% 20%,rgba(232,88,152,.02) 0%,transparent 70%),radial-gradient(600px 600px at 88% 55%,rgba(40,208,168,.018) 0%,transparent 70%),radial-gradient(600px 500px at 50% 85%,rgba(144,96,232,.015) 0%,transparent 70%);animation:dr 26s ease-in-out infinite}
+@keyframes dr{0%,100%{transform:translate(0,0)}50%{transform:translate(12px,-10px)}}
+.w{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:28px 20px 100px}
+
+.hero{text-align:center;padding:56px 16px 44px}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;background:var(--pink-d);border:1px solid rgba(232,88,152,.16);border-radius:100px;padding:7px 22px;font-size:13px;font-weight:700;color:var(--pink);font-family:'Noto Kufi Arabic',sans-serif;margin-bottom:22px}
+.hero-pill b{width:7px;height:7px;border-radius:50%;background:var(--pink);animation:bk 2.4s ease infinite}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Noto Kufi Arabic',sans-serif;font-size:clamp(24px,5vw,46px);font-weight:900;color:var(--txt-b);line-height:1.35;margin-bottom:12px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--pink),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:15px;color:var(--txt-d);max-width:580px;margin:0 auto}
+.hero-sep{width:60px;height:3px;margin:22px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--pink),var(--teal))}
+
+.sec{margin-bottom:48px}
+.sec-h{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.sec-n{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:21px;font-weight:700;color:var(--bg);flex-shrink:0}
+.sec-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:20px;font-weight:800;color:var(--txt-b);line-height:1.4}
+.sec-td{font-family:'Instrument Serif',serif;font-size:13px;color:var(--txt-d);font-style:italic;direction:ltr;text-align:right}
+
+.cd{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:22px;margin-bottom:12px;transition:all .3s ease}
+.cd:hover{border-color:var(--bdr-h);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.rule{border-radius:16px;padding:20px;margin-bottom:12px;position:relative;overflow:hidden}
+.rule::before{content:'';position:absolute;top:-40px;left:50%;width:160px;height:160px;border-radius:50%;filter:blur(60px);opacity:.1;pointer-events:none}
+.rule h4{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.rule p{font-size:14px;line-height:2}
+.note{display:flex;gap:12px;border-radius:14px;padding:16px 20px;margin-bottom:10px}
+.note .ni{font-size:18px;flex-shrink:0;margin-top:2px}
+.note p{font-size:14px;line-height:1.9}
+.sub{font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:16px;color:var(--txt-b);margin:20px 0 12px;display:flex;align-items:center;gap:8px}
+
+.ex{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:14px 18px;margin-bottom:8px;display:flex;align-items:flex-start;gap:12px;transition:all .25s ease}
+.ex:hover{border-color:var(--bdr-h);transform:translateX(-3px);background:var(--card-h)}
+.ex .icon{font-size:16px;flex-shrink:0;margin-top:4px}
+.ex .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;direction:ltr;text-align:right;flex:1;line-height:1.7}
+.ex .ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+.ex .nt{font-size:10px;color:var(--txt-d);font-style:italic;margin-top:2px;background:rgba(255,255,255,.03);padding:2px 8px;border-radius:4px;display:inline-block}
+
+/* ORDINAL GRID */
+.ord-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:7px}
+.ord-item{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:12px 10px;text-align:center;transition:all .25s ease}
+.ord-item:hover{border-color:var(--bdr-h);transform:scale(1.03)}
+.ord-num{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;direction:ltr}
+.ord-de{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);direction:ltr;margin-top:3px}
+
+/* SEPARABLE VERB VISUAL */
+.sep-visual{display:flex;align-items:center;justify-content:center;gap:0;margin:16px 0;flex-wrap:wrap;direction:ltr}
+.sep-block{padding:14px 18px;text-align:center;border:1px solid;font-family:'JetBrains Mono',monospace}
+.sep-block .label{font-size:9px;font-weight:700;letter-spacing:.5px;font-family:'Noto Kufi Arabic',sans-serif}
+.sep-block .value{font-size:15px;font-weight:600;margin-top:2px}
+
+/* PREFIX CARDS */
+.prefix-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.prefix-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:18px;transition:all .3s ease}
+.prefix-card:hover{border-color:var(--bdr-h);transform:translateY(-2px);background:var(--card-h)}
+.prefix-tag{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;direction:ltr;margin-bottom:8px;display:inline-block;padding:4px 14px;border-radius:8px}
+.prefix-verb{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.prefix-verb:last-child{border-bottom:none}
+.prefix-verb .de{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;direction:ltr}
+.prefix-verb .ar{font-size:12px;color:var(--txt-d)}
+
+/* PRONOUN TABLE */
+.pn-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--bdr);margin-bottom:14px}
+.pn-table{width:100%;border-collapse:collapse;direction:ltr;text-align:center}
+.pn-table th{padding:12px 14px;font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:700;border-bottom:2px solid var(--bdr)}
+.pn-table td{padding:11px 14px;font-size:15px;border-bottom:1px solid rgba(24,32,58,.4);font-family:'JetBrains Mono',monospace;font-weight:600}
+.pn-table tr:last-child td{border-bottom:none}
+.pn-table tr:hover td{background:rgba(144,96,232,.03)}
+.pn-table .changed{color:var(--red)}
+.pn-table .same{color:var(--green)}
+.pn-table .arrow{color:var(--txt-d);font-size:14px}
+
+/* PAST TENSE DUO */
+.past-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.past-duo{grid-template-columns:1fr}}
+.past-card{border-radius:18px;padding:24px;text-align:center;transition:all .3s ease;overflow:hidden}
+.past-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.past-card .verb-pair{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:12px;direction:ltr}
+.past-card .present{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:600;opacity:.5;text-decoration:line-through}
+.past-card .arrow{font-size:20px;color:var(--txt-d)}
+.past-card .past{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700}
+.past-card .meaning{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:700;margin-top:4px}
+.past-card .conj{margin-top:14px;direction:ltr;text-align:left;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:2}
+.past-card .conj .pr{color:rgba(255,255,255,.35);min-width:65px;display:inline-block}
+
+@keyframes fadeU{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeD{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(26px);transition:all .55s cubic-bezier(.23,1,.32,1)}
+.rv.v{opacity:1;transform:translateY(0)}
+@media(max-width:600px){.w{padding:14px 14px 60px}.hero{padding:40px 10px 32px}.sec-t{font-size:18px}.ord-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}}
+</style>
+</head>
+<body>
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 13 — المحاضرة الثالثة عشرة</div>
+  <h1>أعياد الميلاد، الأفعال المنفصلة <em>والماضي</em></h1>
+  <p class="hero-sub">الأرقام الترتيبية، الأفعال القابلة للانفصال، ضمائر النصب الشخصية، والماضي البسيط لـ haben و sein</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: BIRTHDAY ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--pink),#c03878)">١</div>
+    <div><div class="sec-t">أعياد الميلاد والأرقام الترتيبية</div><div class="sec-td">Geburtstag & Ordinalzahlen</div></div>
+  </div>
+
+  <div class="sub">❓ السؤال عن عيد الميلاد</div>
+  <div class="ex"><div class="icon">😊</div><div style="flex:1"><div class="de" style="color:var(--pink)">Wann <strong>hast</strong> du Geburtstag?</div><div class="ar">متى عندك عيد ميلاد؟ (غير رسمي)</div></div></div>
+  <div class="ex"><div class="icon">🎩</div><div style="flex:1"><div class="de" style="color:var(--pink)">Wann <strong>haben</strong> Sie Geburtstag?</div><div class="ar">متى عند حضرتك عيد ميلاد؟ (رسمي)</div></div></div>
+  <div class="ex"><div class="icon">📅</div><div style="flex:1"><div class="de" style="color:var(--pink)">Wann <strong>ist</strong> dein Geburtstag?</div><div class="ar">متى يكون عيد ميلادك؟ (بديل)</div></div></div>
+
+  <div class="rule" style="background:var(--pink-d);border:1px solid rgba(232,88,152,.14)">
+    <h4 style="color:var(--pink)">📐 قاعدة الأرقام الترتيبية</h4>
+    <p>من <strong style="color:var(--pink)">1 إلى 19</strong>: نضيف <span style="font-family:'JetBrains Mono',monospace;color:var(--pink);font-weight:700">-ten</span> (مثل: am vier<strong>ten</strong>)</p>
+    <p>من <strong style="color:var(--pink)">20 فما فوق</strong>: نضيف <span style="font-family:'JetBrains Mono',monospace;color:var(--pink);font-weight:700">-sten</span> (مثل: am zwanzig<strong>sten</strong>)</p>
+  </div>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(232,168,40,.12)">
+    <div class="ni">⚠️</div>
+    <div><p>أرقام استثنائية: <span style="font-family:'JetBrains Mono',monospace;color:var(--amber)">am <strong>ersten</strong></span> (الأول) | <span style="font-family:'JetBrains Mono',monospace;color:var(--amber)">am <strong>dritten</strong></span> (الثالث)</p></div>
+  </div>
+
+  <div class="sub">🔢 الأرقام الترتيبية مع am</div>
+  <div class="ord-grid">
+    <div class="ord-item" style="border-color:rgba(232,168,40,.25)"><div class="ord-num" style="color:var(--amber)">1.</div><div class="ord-de" style="color:var(--amber)">am <strong>ersten</strong></div></div>
+    <div class="ord-item"><div class="ord-num" style="color:var(--pink)">2.</div><div class="ord-de">am zweiten</div></div>
+    <div class="ord-item" style="border-color:rgba(232,168,40,.25)"><div class="ord-num" style="color:var(--amber)">3.</div><div class="ord-de" style="color:var(--amber)">am <strong>dritten</strong></div></div>
+    <div class="ord-item"><div class="ord-num" style="color:var(--pink)">4.</div><div class="ord-de">am vierten</div></div>
+    <div class="ord-item"><div class="ord-num" style="color:var(--pink)">5.</div><div class="ord-de">am fünften</div></div>
+    <div class="ord-item"><div class="ord-num" style="color:var(--pink)">6.</div><div class="ord-de">am sechsten</div></div>
+    <div class="ord-item"><div class="ord-num" style="color:var(--pink)">7.</div><div class="ord-de">am siebten</div></div>
+    <div class="ord-item"><div class="ord-num" style="color:var(--pink)">8.</div><div class="ord-de">am achten</div></div>
+    <div class="ord-item"><div class="ord-num" style="color:var(--pink)">10.</div><div class="ord-de">am zehnten</div></div>
+    <div class="ord-item"><div class="ord-num" style="color:var(--pink)">15.</div><div class="ord-de">am fünfzehnten</div></div>
+    <div class="ord-item" style="border-color:rgba(56,152,240,.25)"><div class="ord-num" style="color:var(--sky)">20.</div><div class="ord-de" style="color:var(--sky)">am zwanzig<strong>sten</strong></div></div>
+    <div class="ord-item" style="border-color:rgba(56,152,240,.25)"><div class="ord-num" style="color:var(--sky)">22.</div><div class="ord-de" style="color:var(--sky)">am zweiundzwanzig<strong>sten</strong></div></div>
+    <div class="ord-item" style="border-color:rgba(56,152,240,.25)"><div class="ord-num" style="color:var(--sky)">30.</div><div class="ord-de" style="color:var(--sky)">am dreißig<strong>sten</strong></div></div>
+  </div>
+
+  <div class="sub">✏️ أمثلة كاملة</div>
+  <div class="ex"><div class="icon">🎂</div><div style="flex:1"><div class="de" style="color:var(--pink)">Ich habe <strong>am achten Oktober</strong> Geburtstag.</div><div class="ar">عيد ميلادي في الثامن من أكتوبر</div></div></div>
+  <div class="ex"><div class="icon">🎉</div><div style="flex:1"><div class="de" style="color:var(--pink)">Ich habe <strong>am zweiundzwanzigsten Juni</strong> Geburtstag.</div><div class="ar">عيد ميلادي في الثاني والعشرين من يونيو</div></div></div>
+  <div class="ex"><div class="icon">🎁</div><div style="flex:1"><div class="de" style="color:var(--pink)">Mein Geburtstag ist <strong>am ersten März</strong>.</div><div class="ar">عيد ميلادي في الأول من مارس</div></div></div>
+</div>
+
+<!-- ═══ 2: SEPARABLE VERBS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#18a888)">٢</div>
+    <div><div class="sec-t">الأفعال القابلة للانفصال</div><div class="sec-td">Trennbare Verben</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--teal-d);border:1px solid rgba(40,208,168,.14)">
+    <h4 style="color:var(--teal)">📖 ما هي؟</h4>
+    <p>أفعال تتكون من <strong style="color:var(--teal)">سابقة (Prefix) + فعل أصلي</strong>. في الجملة، يُصرَّف الفعل ويبقى في الموقع الثاني، والسابقة تُرمى في <strong style="color:var(--teal)">آخر الجملة</strong>.</p>
+  </div>
+
+  <!-- Visual -->
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:13px;color:var(--txt-d);text-align:center;margin:14px 0 6px">مثال: anrufen (يتصل) → في الجملة</div>
+  <div class="sep-visual">
+    <div class="sep-block" style="border-color:var(--txt-d);border-radius:12px 0 0 12px;background:rgba(255,255,255,.02)"><div class="label" style="color:var(--txt-d)">الفاعل ①</div><div class="value" style="color:var(--txt-b)">Ich</div></div>
+    <div class="sep-block" style="border-color:var(--teal);background:rgba(40,208,168,.08)"><div class="label" style="color:var(--teal)">فعل مصرّف ②</div><div class="value" style="color:var(--teal)">rufe</div></div>
+    <div class="sep-block" style="border-color:var(--txt-d);background:rgba(255,255,255,.02)"><div class="label" style="color:var(--txt-d)">تكملة</div><div class="value" style="color:var(--txt)">Ali</div></div>
+    <div class="sep-block" style="border-color:var(--pink);background:rgba(232,88,152,.08);border-radius:0 12px 12px 0"><div class="label" style="color:var(--pink)">السابقة 🔚</div><div class="value" style="color:var(--pink)">an</div></div>
+  </div>
+
+  <div class="sub">🏷️ السوابق وأفعالها</div>
+  <div class="prefix-grid">
+    <div class="prefix-card">
+      <div class="prefix-tag" style="background:rgba(232,88,152,.1);color:var(--pink)">an-</div>
+      <div class="prefix-verb"><span class="de" style="color:var(--pink)">anfangen</span><span class="ar">يبدأ</span></div>
+      <div class="prefix-verb"><span class="de" style="color:var(--pink)">anrufen</span><span class="ar">يتصل</span></div>
+    </div>
+    <div class="prefix-card">
+      <div class="prefix-tag" style="background:rgba(40,208,168,.1);color:var(--teal)">mit-</div>
+      <div class="prefix-verb"><span class="de" style="color:var(--teal)">mitmachen</span><span class="ar">يشارك</span></div>
+      <div class="prefix-verb"><span class="de" style="color:var(--teal)">mitbringen</span><span class="ar">يحضر معه</span></div>
+      <div class="prefix-verb"><span class="de" style="color:var(--teal)">mitkommen</span><span class="ar">يأتي معه</span></div>
+    </div>
+    <div class="prefix-card">
+      <div class="prefix-tag" style="background:rgba(56,152,240,.1);color:var(--sky)">ab-</div>
+      <div class="prefix-verb"><span class="de" style="color:var(--sky)">abholen</span><span class="ar">يصطحب / يجلب</span></div>
+    </div>
+    <div class="prefix-card">
+      <div class="prefix-tag" style="background:rgba(232,168,40,.1);color:var(--amber)">ein-</div>
+      <div class="prefix-verb"><span class="de" style="color:var(--amber)">einladen</span><span class="ar">يدعو</span></div>
+      <div class="prefix-verb"><span class="de" style="color:var(--amber)">einsammeln</span><span class="ar">يجمع</span></div>
+    </div>
+  </div>
+
+  <div class="sub">✏️ أمثلة في جمل</div>
+  <div class="ex"><div class="icon">📞</div><div style="flex:1"><div class="de" style="color:var(--teal)">Ich <strong>rufe</strong> Ali <strong style="color:var(--pink)">an</strong>.</div><div class="ar">أتصل بعلي</div><div class="nt">anrufen: rufe (مصرّف) + an (آخر الجملة)</div></div></div>
+  <div class="ex"><div class="icon">🎬</div><div style="flex:1"><div class="de" style="color:var(--teal)">Der Film <strong>fängt</strong> um 8 Uhr <strong style="color:var(--pink)">an</strong>.</div><div class="ar">الفيلم يبدأ الساعة 8</div><div class="nt">anfangen: fängt + an</div></div></div>
+  <div class="ex"><div class="icon">🎁</div><div style="flex:1"><div class="de" style="color:var(--teal)">Er <strong>bringt</strong> Kuchen <strong style="color:var(--pink)">mit</strong>.</div><div class="ar">يحضر معه كيك</div><div class="nt">mitbringen: bringt + mit</div></div></div>
+  <div class="ex"><div class="icon">🎉</div><div style="flex:1"><div class="de" style="color:var(--teal)">Ich <strong>lade</strong> dich zur Party <strong style="color:var(--pink)">ein</strong>.</div><div class="ar">أدعوك إلى الحفلة</div><div class="nt">einladen: lade + ein</div></div></div>
+
+  <!-- With Modal Verb -->
+  <div class="rule" style="background:var(--amber-d);border:1px solid rgba(232,168,40,.14);margin-top:14px">
+    <h4 style="color:var(--amber)">⭐ مع الأفعال الناقصة = لا انفصال!</h4>
+    <p>إذا كان هناك فعل ناقص (Modalverb)، الفعل المنفصل يذهب لآخر الجملة <strong style="color:var(--amber)">كاملاً بدون انفصال</strong> وبصيغة المصدر.</p>
+  </div>
+
+  <div class="ex"><div class="icon">✅</div><div style="flex:1"><div class="de" style="color:var(--amber)">Ich <strong>will</strong> <u>mitkommen</u>.</div><div class="ar">أريد أن آتي معكم</div><div class="nt">will (ناقص في الموقع ②) + mitkommen (مصدر كامل في النهاية)</div></div></div>
+  <div class="ex"><div class="icon">✅</div><div style="flex:1"><div class="de" style="color:var(--amber)">Kannst du Ali <u>anrufen</u>?</div><div class="ar">هل تستطيع الاتصال بعلي؟</div></div></div>
+  <div class="ex"><div class="icon">✅</div><div style="flex:1"><div class="de" style="color:var(--amber)">Wir <strong>müssen</strong> Kuchen <u>mitbringen</u>.</div><div class="ar">يجب أن نحضر معنا كيك</div></div></div>
+</div>
+
+<!-- ═══ 3: PERSONAL PRONOUNS AKKUSATIV ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#7040c0)">٣</div>
+    <div><div class="sec-t">ضمائر النصب الشخصية</div><div class="sec-td">Personalpronomen im Akkusativ</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--violet-d);border:1px solid rgba(144,96,232,.14)">
+    <h4 style="color:var(--violet)">📖 الشرح</h4>
+    <p>عندما يقع الفعل <strong style="color:var(--violet)">على الضمير</strong> (أي الضمير مفعول به)، يتحول من حالة الرفع إلى حالة النصب.</p>
+  </div>
+
+  <div class="pn-wrap">
+    <table class="pn-table">
+      <thead><tr><th style="color:var(--violet)">Nominativ (رفع)</th><th></th><th style="color:var(--red)">Akkusativ (نصب)</th><th style="color:var(--txt-d)">مثال</th></tr></thead>
+      <tbody>
+        <tr><td style="color:var(--violet)">ich</td><td class="arrow">→</td><td class="changed">mich</td><td style="font-size:12px;color:var(--txt-d)">أنا → ـني</td></tr>
+        <tr><td style="color:var(--violet)">du</td><td class="arrow">→</td><td class="changed">dich</td><td style="font-size:12px;color:var(--txt-d)">أنت → ـك</td></tr>
+        <tr><td style="color:var(--violet)">er</td><td class="arrow">→</td><td class="changed">ihn</td><td style="font-size:12px;color:var(--txt-d)">هو → ـه</td></tr>
+        <tr><td style="color:var(--violet)">es</td><td class="arrow">→</td><td class="same">es ✓</td><td style="font-size:12px;color:var(--txt-d)">لم يتغير</td></tr>
+        <tr><td style="color:var(--violet)">sie</td><td class="arrow">→</td><td class="same">sie ✓</td><td style="font-size:12px;color:var(--txt-d)">لم يتغير</td></tr>
+        <tr><td style="color:var(--violet)">wir</td><td class="arrow">→</td><td class="changed">uns</td><td style="font-size:12px;color:var(--txt-d)">نحن → ـنا</td></tr>
+        <tr><td style="color:var(--violet)">ihr</td><td class="arrow">→</td><td class="changed">euch</td><td style="font-size:12px;color:var(--txt-d)">أنتم → ـكم</td></tr>
+        <tr><td style="color:var(--violet)">sie/Sie</td><td class="arrow">→</td><td class="same">sie/Sie ✓</td><td style="font-size:12px;color:var(--txt-d)">لم يتغير</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub">✏️ أمثلة</div>
+  <div class="ex"><div class="icon">❤️</div><div style="flex:1"><div class="de" style="color:var(--violet)">Ich liebe <strong style="color:var(--red)">dich</strong>.</div><div class="ar">أحبك</div></div></div>
+  <div class="ex"><div class="icon">📞</div><div style="flex:1"><div class="de" style="color:var(--violet)">Ich rufe <strong style="color:var(--red)">ihn</strong> an.</div><div class="ar">أتصل به</div></div></div>
+  <div class="ex"><div class="icon">👋</div><div style="flex:1"><div class="de" style="color:var(--violet)">Er besucht <strong style="color:var(--red)">uns</strong> morgen.</div><div class="ar">يزورنا غداً</div></div></div>
+  <div class="ex"><div class="icon">🎁</div><div style="flex:1"><div class="de" style="color:var(--violet)">Das ist <strong>für</strong> <strong style="color:var(--red)">mich</strong>.</div><div class="ar">هذا لي</div><div class="nt">für يتطلب دائماً Akkusativ</div></div></div>
+
+  <div class="note" style="background:var(--red-d);border:1px solid rgba(240,72,88,.12)">
+    <div class="ni">❓</div>
+    <div><p>السؤال عن الأشخاص: <span style="font-family:'JetBrains Mono',monospace;color:var(--red)">wer</span> (من؟ — رفع) → <span style="font-family:'JetBrains Mono',monospace;color:var(--red);font-weight:700">wen</span> (من؟ — نصب)<br><span style="font-family:'JetBrains Mono',monospace;color:var(--red)"><strong>Wen</strong> liebst du?</span> = من تحب؟</p></div>
+  </div>
+</div>
+
+<!-- ═══ 4: PRÄTERITUM ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--orange),#c86818)">٤</div>
+    <div><div class="sec-t">الماضي البسيط لفعلين أساسيين</div><div class="sec-td">Präteritum: haben & sein</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--orange-d);border:1px solid rgba(240,128,48,.14)">
+    <h4 style="color:var(--orange)">📖 لماذا هذان الفعلان فقط؟</h4>
+    <p>رغم أن الماضي البسيط يُستخدم غالباً في الكتابة، إلا أن الألمان يستخدمون <span style="font-family:'JetBrains Mono',monospace;color:var(--orange);font-weight:700">haben</span> و <span style="font-family:'JetBrains Mono',monospace;color:var(--orange);font-weight:700">sein</span> في الماضي البسيط حتى في <strong style="color:var(--orange)">المحادثة اليومية</strong>.</p>
+  </div>
+
+  <div class="past-duo">
+    <div class="past-card" style="background:rgba(56,152,240,.06);border:1px solid rgba(56,152,240,.2)">
+      <div class="verb-pair"><span class="present" style="color:var(--sky)">haben</span><span class="arrow">→</span><span class="past" style="color:var(--sky)">hatten</span></div>
+      <div class="meaning" style="color:var(--sky)">يملك → كان يملك</div>
+      <div class="conj">
+        <div><span class="pr">ich</span> <strong style="color:var(--sky)">hatte</strong></div>
+        <div><span class="pr">du</span> <strong style="color:var(--sky)">hattest</strong></div>
+        <div><span class="pr">er/sie/es</span> <strong style="color:var(--sky)">hatte</strong></div>
+        <div><span class="pr">wir</span> <strong style="color:var(--sky)">hatten</strong></div>
+        <div><span class="pr">ihr</span> <strong style="color:var(--sky)">hattet</strong></div>
+        <div><span class="pr">sie/Sie</span> <strong style="color:var(--sky)">hatten</strong></div>
+      </div>
+    </div>
+    <div class="past-card" style="background:rgba(240,128,48,.06);border:1px solid rgba(240,128,48,.2)">
+      <div class="verb-pair"><span class="present" style="color:var(--orange)">sein</span><span class="arrow">→</span><span class="past" style="color:var(--orange)">waren</span></div>
+      <div class="meaning" style="color:var(--orange)">يكون → كان</div>
+      <div class="conj">
+        <div><span class="pr">ich</span> <strong style="color:var(--orange)">war</strong></div>
+        <div><span class="pr">du</span> <strong style="color:var(--orange)">warst</strong></div>
+        <div><span class="pr">er/sie/es</span> <strong style="color:var(--orange)">war</strong></div>
+        <div><span class="pr">wir</span> <strong style="color:var(--orange)">waren</strong></div>
+        <div><span class="pr">ihr</span> <strong style="color:var(--orange)">wart</strong></div>
+        <div><span class="pr">sie/Sie</span> <strong style="color:var(--orange)">waren</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--violet-d);border:1px solid rgba(144,96,232,.12)">
+    <div class="ni">💡</div>
+    <div><p>في الماضي البسيط أيضاً: <strong style="color:var(--violet)">ich = er/sie/es</strong> في التصريف!<br><span style="font-family:'JetBrains Mono',monospace;color:var(--violet)">ich <strong>hatte</strong> = er <strong>hatte</strong> | ich <strong>war</strong> = er <strong>war</strong></span></p></div>
+  </div>
+
+  <div class="sub">✏️ أمثلة</div>
+  <div class="ex"><div class="icon">🚗</div><div style="flex:1"><div class="de" style="color:var(--sky)">Ich <strong>hatte</strong> ein Auto.</div><div class="ar">كان عندي سيارة</div></div></div>
+  <div class="ex"><div class="icon">🐱</div><div style="flex:1"><div class="de" style="color:var(--sky)">Wir <strong>hatten</strong> eine Katze.</div><div class="ar">كان عندنا قطة</div></div></div>
+  <div class="ex"><div class="icon">📍</div><div style="flex:1"><div class="de" style="color:var(--orange)">Ich <strong>war</strong> in Amman.</div><div class="ar">كنت في عمّان</div></div></div>
+  <div class="ex"><div class="icon">🇩🇪</div><div style="flex:1"><div class="de" style="color:var(--orange)">Sie <strong>waren</strong> in Deutschland.</div><div class="ar">كانوا في ألمانيا</div></div></div>
+  <div class="ex"><div class="icon">🏫</div><div style="flex:1"><div class="de" style="color:var(--orange)">Er <strong>war</strong> Student.</div><div class="ar">كان طالباً</div></div></div>
+  <div class="ex"><div class="icon">❌</div><div style="flex:1"><div class="de" style="color:var(--sky)">Ich <strong>hatte</strong> <u>keine</u> Zeit.</div><div class="ar">لم يكن عندي وقت</div><div class="nt">hatte + keine = نفي في الماضي</div></div></div>
+</div>
+
+<!-- ═══ 5: EXTRAS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--cyan),#20a0b8)">٥</div>
+    <div><div class="sec-t">ملاحظات ومفردات إضافية</div><div class="sec-td">Zusätzliches</div></div>
+  </div>
+
+  <div class="sub">🔤 تذكير بالنطق</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px">
+    <div class="ex" style="margin:0"><div class="icon">🗣️</div><div style="flex:1"><div class="de" style="color:var(--cyan)">au → أَوْ</div><div class="ar">مثل: Auto</div></div></div>
+    <div class="ex" style="margin:0"><div class="icon">🗣️</div><div style="flex:1"><div class="de" style="color:var(--cyan)">ei → آي</div><div class="ar">مثل: eins, drei</div></div></div>
+    <div class="ex" style="margin:0"><div class="icon">🗣️</div><div style="flex:1"><div class="de" style="color:var(--cyan)">eu → أُوي</div><div class="ar">مثل: Deutsch</div></div></div>
+    <div class="ex" style="margin:0"><div class="icon">🗣️</div><div style="flex:1"><div class="de" style="color:var(--cyan)">-er → a خفيفة</div><div class="ar">Mutter → موتّا</div></div></div>
+  </div>
+
+  <div class="sub">📝 مفردات</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px">
+    <div class="ex" style="margin:0"><div class="icon">🎂</div><div style="flex:1"><div class="de" style="color:var(--pink)">der Geburtstag</div><div class="ar">عيد الميلاد</div></div></div>
+    <div class="ex" style="margin:0"><div class="icon">📅</div><div style="flex:1"><div class="de" style="color:var(--pink)">das Geburtsdatum</div><div class="ar">تاريخ الميلاد</div></div></div>
+    <div class="ex" style="margin:0"><div class="icon">🤷</div><div style="flex:1"><div class="de" style="color:var(--pink)">wissen (weiß)</div><div class="ar">يعرف (أعرف)</div></div></div>
+    <div class="ex" style="margin:0"><div class="icon">❌</div><div style="flex:1"><div class="de" style="color:var(--pink)">Ich weiß nicht.</div><div class="ar">لا أعرف</div></div></div>
+  </div>
+
+  <div class="rule" style="background:var(--amber-d);border:1px solid rgba(232,168,40,.14);margin-top:16px">
+    <h4 style="color:var(--amber)">📝 الامتحان</h4>
+    <p>موعد الامتحان: <strong style="color:var(--amber)">يوم الاثنين القادم</strong>. راجع الأفعال المنفصلة، ضمائر النصب، والماضي البسيط لـ haben و sein.</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Original lecture folders (big media lives in GitHub Releases, not the repo)
+المحاضرة */
+
+# Local-only build artifacts
+upload-map.json
+.upload-stage/
+
+# Auth / task temp files
+auth.out
+auth.err
+auth.log
+*.output
+
+# OS / editor junk
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 14 — المراجعة الشاملة للامتحان</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#060810;--card:#0c1020;--card-h:#121828;
+--bdr:#182038;--bdr-h:#243050;
+--gold:#e8b028;--gold-d:rgba(232,176,40,.07);
+--sky:#3898f0;--sky-d:rgba(56,152,240,.07);
+--teal:#28d0a8;--teal-d:rgba(40,208,168,.07);
+--red:#f04858;--red-d:rgba(240,72,88,.07);
+--violet:#9060e8;--violet-d:rgba(144,96,232,.07);
+--green:#40c868;--green-d:rgba(64,200,104,.07);
+--orange:#f08030;--orange-d:rgba(240,128,48,.07);
+--rose:#e860a0;--rose-d:rgba(232,96,160,.07);
+--cyan:#38c0d8;--cyan-d:rgba(56,192,216,.07);
+--amber:#e8a828;--amber-d:rgba(232,168,40,.07);
+--pink:#e868a8;--pink-d:rgba(232,104,168,.07);
+--txt:#ccc8c0;--txt-d:#586878;--txt-b:#f0ece4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:'Noto Naskh Arabic',serif;line-height:2;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(700px 500px at 10% 20%,rgba(232,176,40,.02) 0%,transparent 70%),radial-gradient(600px 600px at 88% 55%,rgba(40,208,168,.018) 0%,transparent 70%),radial-gradient(600px 500px at 50% 85%,rgba(240,72,88,.015) 0%,transparent 70%);animation:dr 26s ease-in-out infinite}
+@keyframes dr{0%,100%{transform:translate(0,0)}50%{transform:translate(12px,-10px)}}
+.w{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:28px 20px 100px}
+
+.hero{text-align:center;padding:56px 16px 44px}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;background:var(--gold-d);border:1px solid rgba(232,176,40,.16);border-radius:100px;padding:7px 22px;font-size:13px;font-weight:700;color:var(--gold);font-family:'Noto Kufi Arabic',sans-serif;margin-bottom:22px}
+.hero-pill b{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:bk 2.4s ease infinite}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Noto Kufi Arabic',sans-serif;font-size:clamp(26px,5.5vw,48px);font-weight:900;color:var(--txt-b);line-height:1.35;margin-bottom:12px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold),var(--red));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:15px;color:var(--txt-d);max-width:560px;margin:0 auto}
+.hero-sep{width:60px;height:3px;margin:22px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--gold),var(--red))}
+
+.sec{margin-bottom:48px}
+.sec-h{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.sec-n{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:21px;font-weight:700;color:var(--bg);flex-shrink:0}
+.sec-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:20px;font-weight:800;color:var(--txt-b);line-height:1.4}
+.sec-td{font-family:'Instrument Serif',serif;font-size:13px;color:var(--txt-d);font-style:italic;direction:ltr;text-align:right}
+
+.cd{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:22px;margin-bottom:12px;transition:all .3s ease}
+.cd:hover{border-color:var(--bdr-h);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.rule{border-radius:16px;padding:20px;margin-bottom:12px;position:relative;overflow:hidden}
+.rule::before{content:'';position:absolute;top:-40px;left:50%;width:160px;height:160px;border-radius:50%;filter:blur(60px);opacity:.1;pointer-events:none}
+.rule h4{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.rule p{font-size:14px;line-height:2}
+.note{display:flex;gap:12px;border-radius:14px;padding:16px 20px;margin-bottom:10px}
+.note .ni{font-size:18px;flex-shrink:0;margin-top:2px}
+.note p{font-size:14px;line-height:1.9}
+.sub{font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:16px;color:var(--txt-b);margin:20px 0 12px;display:flex;align-items:center;gap:8px}
+
+.ex{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:14px 18px;margin-bottom:8px;display:flex;align-items:flex-start;gap:12px;transition:all .3s ease}
+.ex:hover{border-color:var(--bdr-h);transform:translateX(-3px);background:var(--card-h)}
+.ex .icon{font-size:16px;flex-shrink:0;margin-top:4px}
+.ex .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;direction:ltr;text-align:right;flex:1;line-height:1.7}
+.ex .ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+.ex .nt{font-size:10px;color:var(--txt-d);font-style:italic;margin-top:2px;background:rgba(255,255,255,.03);padding:2px 8px;border-radius:4px;display:inline-block}
+
+/* STRUCT */
+.struct{display:flex;align-items:center;justify-content:center;gap:0;margin:16px 0;flex-wrap:wrap;direction:ltr}
+.struct-block{padding:12px 16px;text-align:center;border:1px solid}
+.struct-block .label{font-size:9px;font-weight:700;letter-spacing:.5px;font-family:'Noto Kufi Arabic',sans-serif}
+.struct-block .value{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;margin-top:2px}
+
+/* TABLE */
+.tb-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--bdr);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;direction:ltr;text-align:center}
+table th{padding:12px 14px;font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:700;border-bottom:2px solid var(--bdr)}
+table td{padding:11px 14px;font-size:14px;border-bottom:1px solid rgba(24,32,58,.4);font-family:'JetBrains Mono',monospace;font-weight:600}
+table tr:last-child td{border-bottom:none}
+table tr:hover td{background:rgba(72,152,240,.02)}
+.changed{color:var(--red) !important;font-weight:700 !important}
+.same{color:var(--green) !important}
+.arrow-cell{color:var(--txt-d);font-size:14px}
+
+/* COMPARE DUO */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.duo{grid-template-columns:1fr}}
+.duo-box{border-radius:16px;padding:22px;text-align:center;transition:all .3s ease}
+.duo-box:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.duo-box h5{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700;margin-bottom:12px}
+.duo-item{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.duo-item:last-child{border-bottom:none}
+.duo-item .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;min-width:110px;text-align:left}
+.duo-item .ar{font-size:13px;color:var(--txt-d)}
+
+/* PAST CARDS */
+.past-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.past-duo{grid-template-columns:1fr}}
+.past-card{border-radius:18px;padding:24px;text-align:center;transition:all .3s ease}
+.past-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.past-card .pair{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:12px;direction:ltr}
+.past-card .old{font-family:'JetBrains Mono',monospace;font-size:22px;opacity:.4;text-decoration:line-through}
+.past-card .arr{font-size:20px;color:var(--txt-d)}
+.past-card .new{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700}
+.past-card .meaning{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:700;margin-top:4px}
+.past-card .conj{margin-top:14px;direction:ltr;text-align:left;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:2.2}
+.past-card .conj .pr{color:rgba(255,255,255,.35);min-width:65px;display:inline-block}
+
+/* FEELING CARDS */
+.feel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.feel-item{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:12px;transition:all .3s ease}
+.feel-item:hover{border-color:var(--bdr-h);transform:translateY(-2px);background:var(--card-h)}
+.feel-item .emoji{font-size:22px;flex-shrink:0}
+.feel-item .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr}
+.feel-item .ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+
+/* RESTAURANT DIALOG */
+.rest-dialog{background:var(--card);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;margin-bottom:14px}
+.rest-head{padding:18px 24px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--bdr)}
+.rest-head .emoji{font-size:28px}
+.rest-head .title{font-family:'Noto Kufi Arabic',sans-serif;font-size:16px;font-weight:800}
+.rest-body{padding:16px 24px}
+.rest-line{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(24,32,58,.3)}
+.rest-line:last-child{border-bottom:none}
+.rest-role{font-size:10px;font-weight:700;padding:3px 10px;border-radius:6px;flex-shrink:0;font-family:'Noto Kufi Arabic',sans-serif;margin-top:4px;min-width:50px;text-align:center}
+.rest-de{font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:right;flex:1;line-height:1.7}
+.rest-ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+
+/* EXAM BOX */
+.exam-box{border-radius:20px;padding:28px;position:relative;overflow:hidden;text-align:center}
+.exam-box::before{content:'';position:absolute;top:-50px;left:50%;width:200px;height:200px;border-radius:50%;filter:blur(80px);opacity:.15;pointer-events:none;background:var(--gold)}
+.exam-box .emoji{font-size:40px;margin-bottom:10px}
+.exam-box h3{font-family:'Noto Kufi Arabic',sans-serif;font-size:20px;font-weight:900;margin-bottom:14px}
+.exam-info{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+@media(max-width:640px){.exam-info{grid-template-columns:1fr}}
+.exam-stat{background:rgba(255,255,255,.03);border-radius:12px;padding:14px}
+.exam-stat .label{font-size:12px;color:var(--txt-d);font-family:'Noto Kufi Arabic',sans-serif;font-weight:600}
+.exam-stat .val{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;margin-top:4px}
+
+@keyframes fadeU{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(26px);transition:all .55s cubic-bezier(.23,1,.32,1)}
+.rv.v{opacity:1;transform:translateY(0)}
+@media(max-width:600px){.w{padding:14px 14px 60px}.hero{padding:40px 10px 32px}.sec-t{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 14 — المحاضرة الرابعة عشرة</div>
+  <h1>المراجعة الشاملة <em>للامتحان النهائي</em></h1>
+  <p class="hero-sub">الأفعال المنفصلة، ضمائر النصب، الماضي البسيط، التعبير عن الأحاسيس، وثقافة المطعم</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: SEPARABLE VERBS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#18a888)">١</div>
+    <div><div class="sec-t">الأفعال الانفصالية</div><div class="sec-td">Trennbare Verben</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--teal-d);border:1px solid rgba(40,208,168,.14)">
+    <h4 style="color:var(--teal)">📖 التعريف</h4>
+    <p>أفعال من جزأين: <strong style="color:var(--teal)">فعل أصلي + سابقة (Prefix)</strong>. عند التصريف: الفعل في الموقع الثاني، والسابقة تُرمى في <strong style="color:var(--teal)">آخر الجملة</strong>.</p>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:13px;color:var(--txt-d);text-align:center;margin:14px 0 6px">الجملة العادية — الفعل ينفصل</div>
+  <div class="struct">
+    <div class="struct-block" style="border-color:var(--txt-d);border-radius:12px 0 0 12px;background:rgba(255,255,255,.02)"><div class="label" style="color:var(--txt-d)">الفاعل</div><div class="value" style="color:var(--txt-b)">Ich</div></div>
+    <div class="struct-block" style="border-color:var(--teal);background:rgba(40,208,168,.08)"><div class="label" style="color:var(--teal)">فعل مصرّف ②</div><div class="value" style="color:var(--teal)">lade</div></div>
+    <div class="struct-block" style="border-color:var(--txt-d);background:rgba(255,255,255,.02)"><div class="label" style="color:var(--txt-d)">مفعول به</div><div class="value" style="color:var(--txt)">dich</div></div>
+    <div class="struct-block" style="border-color:var(--rose);background:rgba(232,96,160,.08);border-radius:0 12px 12px 0"><div class="label" style="color:var(--rose)">السابقة 🔚</div><div class="value" style="color:var(--rose)">ein</div></div>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:13px;color:var(--txt-d);text-align:center;margin:18px 0 6px">مع فعل ناقص — لا ينفصل!</div>
+  <div class="struct">
+    <div class="struct-block" style="border-color:var(--txt-d);border-radius:12px 0 0 12px;background:rgba(255,255,255,.02)"><div class="label" style="color:var(--txt-d)">الفاعل</div><div class="value" style="color:var(--txt-b)">Ich</div></div>
+    <div class="struct-block" style="border-color:var(--red);background:rgba(240,72,88,.08)"><div class="label" style="color:var(--red)">Modal ②</div><div class="value" style="color:var(--red)">will</div></div>
+    <div class="struct-block" style="border-color:var(--txt-d);background:rgba(255,255,255,.02)"><div class="label" style="color:var(--txt-d)">مفعول</div><div class="value" style="color:var(--txt)">dich</div></div>
+    <div class="struct-block" style="border-color:var(--sky);background:rgba(56,152,240,.08);border-radius:0 12px 12px 0"><div class="label" style="color:var(--sky)">مصدر كامل ∞</div><div class="value" style="color:var(--sky)">abholen</div></div>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:13px;color:var(--txt-d);text-align:center;margin:18px 0 6px">السؤال — الفعل أولاً والسابقة آخراً</div>
+  <div class="struct">
+    <div class="struct-block" style="border-color:var(--teal);border-radius:12px 0 0 12px;background:rgba(40,208,168,.08)"><div class="label" style="color:var(--teal)">فعل ①</div><div class="value" style="color:var(--teal)">Macht</div></div>
+    <div class="struct-block" style="border-color:var(--txt-d);background:rgba(255,255,255,.02)"><div class="label" style="color:var(--txt-d)">الفاعل</div><div class="value" style="color:var(--txt-b)">ihr</div></div>
+    <div class="struct-block" style="border-color:var(--rose);background:rgba(232,96,160,.08);border-radius:0 12px 12px 0"><div class="label" style="color:var(--rose)">السابقة 🔚</div><div class="value" style="color:var(--rose)">mit?</div></div>
+  </div>
+
+  <div class="sub">✏️ أمثلة تطبيقية</div>
+  <div class="ex"><div class="icon">🎉</div><div style="flex:1"><div class="de" style="color:var(--teal)">Ich <strong>lade</strong> dich <strong style="color:var(--rose)">ein</strong>.</div><div class="ar">أنا أدعوك</div><div class="nt">einladen ← laden (يحمل) + ein = يدعو</div></div></div>
+  <div class="ex"><div class="icon">🚗</div><div style="flex:1"><div class="de" style="color:var(--teal)">Ich <strong>hole</strong> dich um 8 Uhr <strong style="color:var(--rose)">ab</strong>.</div><div class="ar">أصطحبك الساعة 8</div><div class="nt">abholen: يجلب/يُحضر أشخاصاً</div></div></div>
+  <div class="ex"><div class="icon">✅</div><div style="flex:1"><div class="de" style="color:var(--sky)">Ich <strong style="color:var(--red)">will</strong> dich <u>abholen</u>.</div><div class="ar">أريد أن أصطحبك</div><div class="nt">مع Modal → الفعل كامل بدون انفصال!</div></div></div>
+  <div class="ex"><div class="icon">❓</div><div style="flex:1"><div class="de" style="color:var(--teal)"><strong>Macht</strong> ihr <strong style="color:var(--rose)">mit</strong>?</div><div class="ar">هل تشاركون؟</div><div class="nt">سؤال: الفعل أولاً + السابقة آخراً</div></div></div>
+</div>
+
+<!-- ═══ 2: AKKUSATIV PRONOUNS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#7040c0)">٢</div>
+    <div><div class="sec-t">ضمائر النصب الشخصية</div><div class="sec-td">Personalpronomen im Akkusativ</div></div>
+  </div>
+
+  <div class="tb-wrap">
+    <table>
+      <thead><tr><th style="color:var(--violet)">Nominativ (رفع)</th><th></th><th style="color:var(--red)">Akkusativ (نصب)</th><th style="color:var(--txt-d)">المعنى</th></tr></thead>
+      <tbody>
+        <tr><td style="color:var(--violet)">ich</td><td class="arrow-cell">→</td><td class="changed">mich</td><td style="font-size:12px;color:var(--txt-d)">ـني</td></tr>
+        <tr><td style="color:var(--violet)">du</td><td class="arrow-cell">→</td><td class="changed">dich</td><td style="font-size:12px;color:var(--txt-d)">ـك</td></tr>
+        <tr><td style="color:var(--violet)">er</td><td class="arrow-cell">→</td><td class="changed">ihn</td><td style="font-size:12px;color:var(--txt-d)">ـه</td></tr>
+        <tr><td style="color:var(--violet)">es</td><td class="arrow-cell">→</td><td class="same">es ✓</td><td style="font-size:12px;color:var(--txt-d)">لم يتغير</td></tr>
+        <tr><td style="color:var(--violet)">sie</td><td class="arrow-cell">→</td><td class="same">sie ✓</td><td style="font-size:12px;color:var(--txt-d)">لم يتغير</td></tr>
+        <tr><td style="color:var(--violet)">wir</td><td class="arrow-cell">→</td><td class="changed">uns</td><td style="font-size:12px;color:var(--txt-d)">ـنا</td></tr>
+        <tr><td style="color:var(--violet)">ihr</td><td class="arrow-cell">→</td><td class="changed">euch</td><td style="font-size:12px;color:var(--txt-d)">ـكم</td></tr>
+        <tr><td style="color:var(--violet)">sie/Sie</td><td class="arrow-cell">→</td><td class="same">sie/Sie ✓</td><td style="font-size:12px;color:var(--txt-d)">لم يتغير</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub">✏️ أمثلة</div>
+  <div class="ex"><div class="icon">❤️</div><div style="flex:1"><div class="de" style="color:var(--violet)">Ich liebe <strong style="color:var(--red)">dich</strong>.</div><div class="ar">أحبك — du تحولت إلى dich لأنها مفعول به</div></div></div>
+  <div class="ex"><div class="icon">🎉</div><div style="flex:1"><div class="de" style="color:var(--violet)"><strong style="color:var(--red)">Wen</strong> lädst du ein?</div><div class="ar">من تدعو؟ — wer تحولت إلى wen في حالة النصب</div></div></div>
+  <div class="ex"><div class="icon">🎁</div><div style="flex:1"><div class="de" style="color:var(--violet)">Das ist <strong>für</strong> <strong style="color:var(--red)">mich</strong>.</div><div class="ar">هذا لي — für يفرض دائماً Akkusativ!</div></div></div>
+  <div class="ex"><div class="icon">📞</div><div style="flex:1"><div class="de" style="color:var(--violet)">Ich rufe <strong style="color:var(--red)">ihn</strong> morgen an.</div><div class="ar">أتصل به غداً — er تحولت إلى ihn</div></div></div>
+
+  <div class="note" style="background:var(--red-d);border:1px solid rgba(240,72,88,.12)">
+    <div class="ni">⚠️</div>
+    <div><p><span style="font-family:'JetBrains Mono',monospace;color:var(--red);font-weight:700">für</span> + Akkusativ دائماً:<br><span style="font-family:'JetBrains Mono',monospace;color:var(--red)">für mich, für dich, für ihn, für sie, für uns, für euch</span></p></div>
+  </div>
+</div>
+
+<!-- ═══ 3: PRÄTERITUM ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--orange),#c86818)">٣</div>
+    <div><div class="sec-t">الماضي البسيط</div><div class="sec-td">Präteritum: war & hatte</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--orange-d);border:1px solid rgba(240,128,48,.14)">
+    <h4 style="color:var(--orange)">📖 لماذا هذان الفعلان فقط؟</h4>
+    <p>الماضي البسيط يُستخدم غالباً في الكتابة، لكن <strong style="color:var(--orange)">war</strong> و <strong style="color:var(--orange)">hatte</strong> يُستخدمان حتى في <strong style="color:var(--orange)">المحادثة اليومية</strong>.</p>
+  </div>
+
+  <div class="past-duo">
+    <div class="past-card" style="background:rgba(56,152,240,.06);border:1px solid rgba(56,152,240,.2)">
+      <div class="pair"><span class="old" style="color:var(--sky)">sein</span><span class="arr">→</span><span class="new" style="color:var(--sky)">war</span></div>
+      <div class="meaning" style="color:var(--sky)">يكون → كان</div>
+      <div class="conj">
+        <div><span class="pr">ich</span> <strong style="color:var(--sky)">war</strong></div>
+        <div><span class="pr">du</span> <strong style="color:var(--sky)">warst</strong></div>
+        <div><span class="pr">er/sie/es</span> <strong style="color:var(--sky)">war</strong></div>
+        <div><span class="pr">wir</span> <strong style="color:var(--sky)">waren</strong></div>
+        <div><span class="pr">ihr</span> <strong style="color:var(--sky)">wart</strong></div>
+        <div><span class="pr">sie/Sie</span> <strong style="color:var(--sky)">waren</strong></div>
+      </div>
+    </div>
+    <div class="past-card" style="background:rgba(240,128,48,.06);border:1px solid rgba(240,128,48,.2)">
+      <div class="pair"><span class="old" style="color:var(--orange)">haben</span><span class="arr">→</span><span class="new" style="color:var(--orange)">hatte</span></div>
+      <div class="meaning" style="color:var(--orange)">يملك → كان يملك</div>
+      <div class="conj">
+        <div><span class="pr">ich</span> <strong style="color:var(--orange)">hatte</strong></div>
+        <div><span class="pr">du</span> <strong style="color:var(--orange)">hattest</strong></div>
+        <div><span class="pr">er/sie/es</span> <strong style="color:var(--orange)">hatte</strong></div>
+        <div><span class="pr">wir</span> <strong style="color:var(--orange)">hatten</strong></div>
+        <div><span class="pr">ihr</span> <strong style="color:var(--orange)">hattet</strong></div>
+        <div><span class="pr">sie/Sie</span> <strong style="color:var(--orange)">hatten</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--violet-d);border:1px solid rgba(144,96,232,.12)">
+    <div class="ni">💡</div>
+    <div><p><strong style="color:var(--violet)">ich = er/sie/es</strong> دائماً في الماضي:<br><span style="font-family:'JetBrains Mono',monospace;color:var(--violet)">ich <strong>war</strong> = er <strong>war</strong> | ich <strong>hatte</strong> = er <strong>hatte</strong></span></p></div>
+  </div>
+
+  <div class="sub">✏️ أمثلة</div>
+  <div class="ex"><div class="icon">📍</div><div style="flex:1"><div class="de" style="color:var(--sky)">Ich <strong>war</strong> in Amman.</div><div class="ar">كنت في عمّان</div></div></div>
+  <div class="ex"><div class="icon">🚗</div><div style="flex:1"><div class="de" style="color:var(--orange)">Ich <strong>hatte</strong> ein Auto.</div><div class="ar">كان عندي سيارة</div></div></div>
+  <div class="ex"><div class="icon">🍕</div><div style="flex:1"><div class="de" style="color:var(--sky)">Die Pizza <strong>war</strong> kalt.</div><div class="ar">البيتزا كانت باردة</div></div></div>
+</div>
+
+<!-- ═══ 4: FEELINGS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#c04078)">٤</div>
+    <div><div class="sec-t">التعبير عن الأحاسيس: اسم أم صفة؟</div><div class="sec-td">Haben oder Sein?</div></div>
+  </div>
+
+  <div class="duo">
+    <div class="duo-box" style="background:var(--sky-d);border:1px solid rgba(56,152,240,.2);border-radius:16px">
+      <h5 style="color:var(--sky)">📦 أسماء → haben + kein</h5>
+      <div style="font-size:12px;color:var(--txt-d);margin-bottom:12px">تُعامل كأسماء (تستخدم مع <strong style="color:var(--sky)">haben</strong> وتُنفى بـ <strong style="color:var(--sky)">kein</strong>)</div>
+      <div class="duo-item"><span class="de" style="color:var(--sky)">Hunger</span><span class="ar">جوع</span></div>
+      <div class="duo-item"><span class="de" style="color:var(--sky)">Durst</span><span class="ar">عطش</span></div>
+      <div class="duo-item"><span class="de" style="color:var(--sky)">Spaß</span><span class="ar">متعة</span></div>
+      <div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;text-align:right;background:rgba(56,152,240,.04);padding:10px 14px;border-radius:10px;color:var(--sky)">
+        ✅ Ich <strong>habe</strong> Hunger.<br>
+        ❌ Ich <strong>habe</strong> <strong style="color:var(--red)">keinen</strong> Hunger.
+      </div>
+    </div>
+
+    <div class="duo-box" style="background:var(--green-d);border:1px solid rgba(64,200,104,.2);border-radius:16px">
+      <h5 style="color:var(--green)">🏷️ صفات → sein + nicht</h5>
+      <div style="font-size:12px;color:var(--txt-d);margin-bottom:12px">تُعامل كصفات (تستخدم مع <strong style="color:var(--green)">sein</strong> وتُنفى بـ <strong style="color:var(--green)">nicht</strong>)</div>
+      <div class="duo-item"><span class="de" style="color:var(--green)">kalt</span><span class="ar">بارد</span></div>
+      <div class="duo-item"><span class="de" style="color:var(--green)">warm</span><span class="ar">دافئ</span></div>
+      <div class="duo-item"><span class="de" style="color:var(--green)">nett</span><span class="ar">لطيف</span></div>
+      <div style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;text-align:right;background:rgba(64,200,104,.04);padding:10px 14px;border-radius:10px;color:var(--green)">
+        ✅ Die Pizza <strong>war</strong> kalt.<br>
+        ❌ Das <strong>ist</strong> <strong style="color:var(--red)">nicht</strong> nett.
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--red-d);border:1px solid rgba(240,72,88,.12);margin-top:12px">
+    <div class="ni">⚠️</div>
+    <div><p>لا يصح قول <span style="font-family:'JetBrains Mono',monospace;color:var(--red);text-decoration:line-through">Ich bin Hunger</span> ❌ — الصحيح: <span style="font-family:'JetBrains Mono',monospace;color:var(--green)">Ich <strong>habe</strong> Hunger</span> ✅</p></div>
+  </div>
+</div>
+
+<!-- ═══ 5: RESTAURANT ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--amber),#c88810)">٥</div>
+    <div><div class="sec-t">ثقافة المطعم والتعامل</div><div class="sec-td">Im Restaurant</div></div>
+  </div>
+
+  <div class="rest-dialog">
+    <div class="rest-head" style="background:rgba(232,168,40,.04)">
+      <div class="emoji">🍽️</div>
+      <div class="title" style="color:var(--amber)">محادثة في المطعم</div>
+    </div>
+    <div class="rest-body">
+      <div class="rest-line">
+        <div class="rest-role" style="background:rgba(64,200,104,.1);color:var(--green);border:1px solid rgba(64,200,104,.15)">زبون</div>
+        <div style="flex:1"><div class="rest-de" style="color:var(--green)">Entschuldigung, kann ich bitte zahlen?</div><div class="rest-ar">معذرة، هل يمكنني الدفع؟</div></div>
+      </div>
+      <div class="rest-line">
+        <div class="rest-role" style="background:rgba(232,168,40,.1);color:var(--amber);border:1px solid rgba(232,168,40,.15)">نادل</div>
+        <div style="flex:1"><div class="rest-de" style="color:var(--amber)">Zusammen oder getrennt?</div><div class="rest-ar">معاً أم كل واحد لحاله؟</div></div>
+      </div>
+      <div class="rest-line">
+        <div class="rest-role" style="background:rgba(64,200,104,.1);color:var(--green);border:1px solid rgba(64,200,104,.15)">زبون</div>
+        <div style="flex:1"><div class="rest-de" style="color:var(--green)">Zusammen, bitte. — Stimmt so!</div><div class="rest-ar">معاً، من فضلك. — الباقي لك!</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(232,168,40,.12)">
+    <div class="ni">💰</div>
+    <div>
+      <p><span style="font-family:'JetBrains Mono',monospace;color:var(--amber);font-weight:700">Stimmt so!</span> = «الباقي لك / هكذا تمام» — تُستخدم عند ترك البقشيش (Trinkgeld) للنادل.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 6: DATES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--pink),#c04880)">٦</div>
+    <div><div class="sec-t">التواريخ وأعياد الميلاد</div><div class="sec-td">Geburtstag & Datum</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--pink-d);border:1px solid rgba(232,104,168,.14)">
+    <h4 style="color:var(--pink)">📅 القاعدة</h4>
+    <p>نستخدم <span style="font-family:'JetBrains Mono',monospace;color:var(--pink);font-weight:700">am</span> + الرقم الترتيبي + الشهر.</p>
+    <p style="margin-top:4px">1–19: نهاية <strong style="color:var(--pink)">-ten</strong> | 20+: نهاية <strong style="color:var(--pink)">-sten</strong></p>
+  </div>
+
+  <div class="ex"><div class="icon">🎂</div><div style="flex:1"><div class="de" style="color:var(--pink)">Ich habe <strong>am zweiundzwanzigsten Juni</strong> Geburtstag.</div><div class="ar">عيد ميلادي في 22 يونيو</div><div class="nt">22 → zwanzig + sten</div></div></div>
+  <div class="ex"><div class="icon">🎁</div><div style="flex:1"><div class="de" style="color:var(--pink)">Mein Geburtstag ist <strong>am dritten März</strong>.</div><div class="ar">عيد ميلادي في 3 مارس</div><div class="nt">3 → dritten (استثنائي!)</div></div></div>
+  <div class="ex"><div class="icon">🎉</div><div style="flex:1"><div class="de" style="color:var(--pink)">Er hat <strong>am ersten Januar</strong> Geburtstag.</div><div class="ar">عيد ميلاده في 1 يناير</div><div class="nt">1 → ersten (استثنائي!)</div></div></div>
+</div>
+
+<!-- ═══ EXAM ═══ -->
+<div class="sec rv">
+  <div class="exam-box" style="background:var(--gold-d);border:1px solid rgba(232,176,40,.2);border-radius:20px">
+    <div class="emoji">🏆</div>
+    <h3 style="color:var(--gold)">معلومات الامتحان النهائي</h3>
+    <div class="exam-info">
+      <div class="exam-stat">
+        <div class="label">الموعد</div>
+        <div class="val" style="color:var(--gold)">الأربعاء القادم</div>
+      </div>
+      <div class="exam-stat">
+        <div class="label">الساعة</div>
+        <div class="val" style="color:var(--gold)">2:30 ظهراً</div>
+      </div>
+      <div class="exam-stat">
+        <div class="label">المحتوى</div>
+        <div class="val" style="color:var(--gold)">الوحدات 1 — 6</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;font-size:14px;color:var(--txt-d)">طبيعة الأسئلة: <strong style="color:var(--gold)">اختيار من متعدد + كتابة</strong></div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

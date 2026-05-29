@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأدوات، الاتجاهات، الفصول وبناء الجملة</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#060810;--card:#0c1020;--card-h:#121828;
+--bdr:#182038;--bdr-h:#243050;
+--sky:#3898f0;--sky-d:rgba(56,152,240,.07);
+--ember:#f07838;--ember-d:rgba(240,120,56,.07);
+--green:#38c870;--green-d:rgba(56,200,112,.07);
+--red:#f04858;--red-d:rgba(240,72,88,.07);
+--violet:#9860e8;--violet-d:rgba(152,96,232,.07);
+--gold:#e8b028;--gold-d:rgba(232,176,40,.07);
+--cyan:#30c8d8;--cyan-d:rgba(48,200,216,.07);
+--rose:#e860a0;--rose-d:rgba(232,96,160,.07);
+--txt:#ccc8c0;--txt-d:#586878;--txt-b:#f0ece4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:'Noto Naskh Arabic',serif;line-height:2;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(700px 500px at 12% 25%,rgba(56,152,240,.02) 0%,transparent 70%),radial-gradient(600px 600px at 88% 55%,rgba(240,120,56,.018) 0%,transparent 70%),radial-gradient(600px 500px at 45% 85%,rgba(56,200,112,.015) 0%,transparent 70%);animation:dr 28s ease-in-out infinite}
+@keyframes dr{0%,100%{transform:translate(0,0)}50%{transform:translate(14px,-10px)}}
+.w{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:28px 20px 100px}
+
+.hero{text-align:center;padding:60px 16px 48px}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;background:var(--sky-d);border:1px solid rgba(56,152,240,.16);border-radius:100px;padding:7px 22px;font-size:13px;font-weight:700;color:var(--sky);font-family:'Noto Kufi Arabic',sans-serif;margin-bottom:24px;animation:fadeD .7s ease}
+.hero-pill b{width:7px;height:7px;border-radius:50%;background:var(--sky);animation:bk 2.4s ease infinite}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Noto Kufi Arabic',sans-serif;font-size:clamp(26px,5.5vw,48px);font-weight:900;color:var(--txt-b);line-height:1.35;margin-bottom:14px;animation:fadeU .7s ease .1s both}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--sky),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:15px;color:var(--txt-d);max-width:560px;margin:0 auto;animation:fadeU .7s ease .2s both}
+.hero-sep{width:60px;height:3px;margin:24px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--sky),var(--green));animation:fadeU .7s ease .3s both}
+
+.sec{margin-bottom:50px}
+.sec-h{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.sec-n{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:21px;font-weight:700;color:var(--bg);flex-shrink:0}
+.sec-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:21px;font-weight:800;color:var(--txt-b);line-height:1.4}
+.sec-td{font-family:'Instrument Serif',serif;font-size:13px;color:var(--txt-d);font-style:italic;direction:ltr;text-align:right}
+
+.cd{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:22px;margin-bottom:12px;transition:all .3s ease}
+.cd:hover{border-color:var(--bdr-h);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.25)}
+
+.rule{border-radius:16px;padding:22px;margin-bottom:12px;position:relative;overflow:hidden}
+.rule::before{content:'';position:absolute;top:-40px;left:50%;width:180px;height:180px;border-radius:50%;filter:blur(70px);opacity:.1;pointer-events:none}
+.rule h4{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.rule p{font-size:14px;line-height:2}
+
+.note{display:flex;gap:12px;border-radius:14px;padding:18px 20px;margin-bottom:12px}
+.note .ni{font-size:18px;flex-shrink:0;margin-top:2px}
+.note p{font-size:14px;line-height:1.9}
+
+/* ARTICLE TABLE */
+.at-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--bdr);margin-bottom:14px}
+.at-table{width:100%;border-collapse:collapse;direction:ltr;text-align:center}
+.at-table th{padding:13px 14px;font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:700;border-bottom:2px solid var(--bdr)}
+.at-table td{padding:12px 14px;font-size:15px;border-bottom:1px solid rgba(24,32,58,.4)}
+.at-table tr:last-child td{border-bottom:none}
+.at-table tr:hover td{background:rgba(56,152,240,.03)}
+.at-table .de{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px}
+.at-table .ex{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400;display:block;margin-top:3px}
+.at-table .empty{color:var(--txt-d);font-size:11px;font-style:italic;font-family:'Noto Naskh Arabic',serif}
+
+/* DIRECTION CARDS */
+.dir-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+@media(max-width:640px){.dir-trio{grid-template-columns:1fr}}
+.dir-card{border-radius:16px;padding:24px 16px;text-align:center;transition:all .3s ease}
+.dir-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.dir-card .arrow{font-size:40px;margin-bottom:8px}
+.dir-card .word{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;direction:ltr}
+.dir-card .mean{font-size:14px;margin-top:6px}
+
+/* IMPERATIVE EXAMPLES */
+.imp-grid{display:grid;gap:10px;margin-top:14px}
+.imp-item{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 20px;display:flex;align-items:center;gap:14px;transition:all .25s ease}
+.imp-item:hover{border-color:var(--bdr-h);transform:translateX(-3px);background:var(--card-h)}
+.imp-item .icon{font-size:20px;flex-shrink:0}
+.imp-item .de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;direction:ltr;text-align:right;flex:1}
+.imp-item .ar{font-size:13px;color:var(--txt-d);margin-top:2px}
+
+/* SEASON CARDS */
+.season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+@media(max-width:700px){.season-grid{grid-template-columns:repeat(2,1fr)}}
+.season-card{border-radius:16px;padding:22px 14px;text-align:center;transition:all .3s ease}
+.season-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.season-card .emoji{font-size:36px;margin-bottom:6px}
+.season-card .de{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;direction:ltr}
+.season-card .ar{font-size:14px;margin-top:4px}
+.season-card .art{font-family:'JetBrains Mono',monospace;font-size:11px;margin-top:4px;direction:ltr;opacity:.6}
+
+/* MONTHS GRID */
+.mon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+.mon-item{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 10px;text-align:center;transition:all .25s ease}
+.mon-item:hover{border-color:rgba(232,176,40,.25);transform:scale(1.03)}
+.mon-item .num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d)}
+.mon-item .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;margin-top:2px}
+
+/* PREPOSITION COMPARE */
+.prep-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:640px){.prep-duo{grid-template-columns:1fr}}
+.prep-box{border-radius:16px;padding:22px;text-align:center;transition:all .3s ease}
+.prep-box:hover{transform:translateY(-2px)}
+.prep-box .word{font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:700;direction:ltr}
+.prep-box .usage{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:700;margin-top:6px}
+.prep-box .examples{margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;text-align:center;line-height:2}
+
+/* SENTENCE STRUCTURE */
+.struct-row{display:flex;gap:0;direction:ltr;justify-content:center;flex-wrap:wrap;margin:20px 0}
+.struct-block{padding:14px 18px;text-align:center;border:1px solid}
+.struct-block .label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-family:'Noto Kufi Arabic',sans-serif}
+.struct-block .value{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;margin-top:3px}
+
+/* PRONUNCIATION RULES */
+.pron-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.pron-item{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:18px;transition:all .3s ease}
+.pron-item:hover{border-color:var(--bdr-h);transform:translateY(-2px);background:var(--card-h)}
+.pron-letter{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;direction:ltr;margin-bottom:4px}
+.pron-desc{font-size:14px;line-height:1.8}
+.pron-ex{font-family:'JetBrains Mono',monospace;font-size:12px;direction:ltr;display:inline-block;background:rgba(152,96,232,.06);border:1px solid rgba(152,96,232,.12);border-radius:6px;padding:2px 8px;margin-top:6px}
+
+/* SELF INTRO */
+.intro-list{display:grid;gap:8px}
+.intro-item{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 20px;display:flex;align-items:center;gap:14px;transition:all .25s ease}
+.intro-item:hover{border-color:rgba(232,96,160,.25);transform:translateX(-3px);background:var(--card-h)}
+.intro-item .icon{font-size:20px;flex-shrink:0}
+.intro-item .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;direction:ltr;text-align:right;flex:1;line-height:1.7}
+.intro-item .ar{font-size:13px;color:var(--txt-d);margin-top:2px}
+
+/* GEHEN VS FAHREN */
+.gf-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:640px){.gf-duo{grid-template-columns:1fr}}
+.gf-box{border-radius:16px;padding:22px;text-align:center;transition:all .3s ease}
+.gf-box:hover{transform:translateY(-2px)}
+.gf-box .emoji{font-size:32px;margin-bottom:6px}
+.gf-box .verb{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;direction:ltr}
+.gf-box .desc{font-size:14px;margin-top:8px;line-height:1.7}
+
+@keyframes fadeU{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeD{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(26px);transition:all .55s cubic-bezier(.23,1,.32,1)}
+.rv.v{opacity:1;transform:translateY(0)}
+@media(max-width:600px){.w{padding:14px 14px 60px}.hero{padding:40px 10px 32px}.sec-t{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> المحاضرة 7</div>
+  <h1>الاتجاهات، الفصول <em>وبناء الجملة</em></h1>
+  <p class="hero-sub">أدوات التعريف والنفي، وصف الطريق وصيغة الأمر، فصول السنة والأشهر، هيكل الجملة، وملاحظات النطق</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: ARTICLES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#2070c8)">١</div>
+    <div><div class="sec-t">التعريف والتنكير والنفي</div><div class="sec-td">Artikel & Negation</div></div>
+  </div>
+
+  <div class="at-wrap">
+    <table class="at-table">
+      <thead>
+        <tr>
+          <th style="color:var(--sky)">الحالة</th>
+          <th style="color:var(--sky)">المذكر 🔵</th>
+          <th style="color:var(--green)">المحايد 🟢</th>
+          <th style="color:var(--red)">المؤنث 🔴</th>
+          <th style="color:var(--violet)">الجمع 🟣</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:12px;color:var(--sky)">التعريف</td>
+          <td><span class="de" style="color:var(--sky)">der</span><span class="ex" style="color:var(--txt-d)">der Bahnhof</span></td>
+          <td><span class="de" style="color:var(--green)">das</span><span class="ex" style="color:var(--txt-d)">das Theater</span></td>
+          <td><span class="de" style="color:var(--red)">die</span><span class="ex" style="color:var(--txt-d)">die Brücke</span></td>
+          <td><span class="de" style="color:var(--violet)">die</span><span class="ex" style="color:var(--txt-d)">die Häuser</span></td>
+        </tr>
+        <tr>
+          <td style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:12px;color:var(--ember)">النكرة</td>
+          <td><span class="de" style="color:var(--ember)">ein</span><span class="ex" style="color:var(--txt-d)">ein Café</span></td>
+          <td><span class="de" style="color:var(--ember)">ein</span><span class="ex" style="color:var(--txt-d)">ein Hotel</span></td>
+          <td><span class="de" style="color:var(--ember)">eine</span><span class="ex" style="color:var(--txt-d)">eine Kirche</span></td>
+          <td><span class="empty">—</span></td>
+        </tr>
+        <tr>
+          <td style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:12px;color:var(--red)">النفي</td>
+          <td><span class="de" style="color:var(--red)">kein</span><span class="ex" style="color:var(--txt-d)">kein Glück</span></td>
+          <td><span class="de" style="color:var(--red)">kein</span><span class="ex" style="color:var(--txt-d)">kein Fahrrad</span></td>
+          <td><span class="de" style="color:var(--red)">keine</span><span class="ex" style="color:var(--txt-d)">keine Fahrkarte</span></td>
+          <td><span class="de" style="color:var(--red)">keine</span><span class="ex" style="color:var(--txt-d)">keine Busse</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ 2: DIRECTIONS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--ember),#c85818)">٢</div>
+    <div><div class="sec-t">الاتجاهات وفعل الأمر</div><div class="sec-td">Wegbeschreibung & Imperativ</div></div>
+  </div>
+
+  <div class="dir-trio">
+    <div class="dir-card" style="background:var(--ember-d);border:1px solid rgba(240,120,56,.2)">
+      <div class="arrow">⬅️</div>
+      <div class="word" style="color:var(--ember)">links</div>
+      <div class="mean" style="color:var(--ember)">يسار</div>
+    </div>
+    <div class="dir-card" style="background:var(--green-d);border:1px solid rgba(56,200,112,.2)">
+      <div class="arrow">⬆️</div>
+      <div class="word" style="color:var(--green)">geradeaus</div>
+      <div class="mean" style="color:var(--green)">للأمام مباشرة (دغري)</div>
+    </div>
+    <div class="dir-card" style="background:var(--sky-d);border:1px solid rgba(56,152,240,.2)">
+      <div class="arrow">➡️</div>
+      <div class="word" style="color:var(--sky)">rechts</div>
+      <div class="mean" style="color:var(--sky)">يمين</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--ember-d);border:1px solid rgba(240,120,56,.14)">
+    <h4 style="color:var(--ember)">📢 صيغة الأمر مع Sie</h4>
+    <p>الفعل في <strong style="color:var(--ember)">بداية الجملة</strong> + الضمير <span style="font-family:'JetBrains Mono',monospace;color:var(--ember)">Sie</span> + علامة تعجب <strong style="color:var(--ember)">!</strong></p>
+  </div>
+
+  <div class="imp-grid">
+    <div class="imp-item">
+      <div class="icon">🚶</div>
+      <div style="flex:1"><div class="imp-de" style="font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;direction:ltr;text-align:right;color:var(--ember)">Gehen Sie geradeaus!</div><div style="font-size:13px;color:var(--txt-d);margin-top:2px">اذهب للأمام مباشرة!</div></div>
+    </div>
+    <div class="imp-item">
+      <div class="icon">🚗</div>
+      <div style="flex:1"><div class="imp-de" style="font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;direction:ltr;text-align:right;color:var(--ember)">Fahren Sie rechts!</div><div style="font-size:13px;color:var(--txt-d);margin-top:2px">قد/اذهب بالمركبة يميناً!</div></div>
+    </div>
+  </div>
+
+  <!-- Gehen vs Fahren -->
+  <div class="gf-duo">
+    <div class="gf-box" style="background:var(--green-d);border:1px solid rgba(56,200,112,.2);border-radius:16px">
+      <div class="emoji">🚶</div>
+      <div class="verb" style="color:var(--green)">gehen</div>
+      <div class="desc" style="color:var(--green)">يذهب <strong>مشياً</strong> على الأقدام</div>
+    </div>
+    <div class="gf-box" style="background:var(--sky-d);border:1px solid rgba(56,152,240,.2);border-radius:16px">
+      <div class="emoji">🚗</div>
+      <div class="verb" style="color:var(--sky)">fahren</div>
+      <div class="desc" style="color:var(--sky)">يذهب <strong>بوسيلة مواصلات</strong> أو يقود</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: SEASONS & MONTHS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#c89810)">٣</div>
+    <div><div class="sec-t">فصول السنة والأشهر</div><div class="sec-td">Jahreszeiten & Monate</div></div>
+  </div>
+
+  <div class="note" style="background:var(--gold-d);border:1px solid rgba(232,176,40,.12)">
+    <div class="ni">📌</div>
+    <div><p>جميع الفصول والأشهر تأخذ أداة التعريف المذكر <span style="font-family:'JetBrains Mono',monospace;color:var(--gold);font-weight:700">der</span>.</p></div>
+  </div>
+
+  <div class="season-grid">
+    <div class="season-card" style="background:rgba(100,160,240,.08);border:1px solid rgba(100,160,240,.2)">
+      <div class="emoji">❄️</div>
+      <div class="de" style="color:#78b0f0">Winter</div>
+      <div class="ar" style="color:#78b0f0">الشتاء</div>
+      <div class="art" style="color:#78b0f0">der Winter</div>
+    </div>
+    <div class="season-card" style="background:rgba(120,220,100,.08);border:1px solid rgba(120,220,100,.2)">
+      <div class="emoji">🌸</div>
+      <div class="de" style="color:#78d860">Frühling</div>
+      <div class="ar" style="color:#78d860">الربيع</div>
+      <div class="art" style="color:#78d860">der Frühling</div>
+    </div>
+    <div class="season-card" style="background:rgba(240,200,40,.08);border:1px solid rgba(240,200,40,.2)">
+      <div class="emoji">☀️</div>
+      <div class="de" style="color:var(--gold)">Sommer</div>
+      <div class="ar" style="color:var(--gold)">الصيف</div>
+      <div class="art" style="color:var(--gold)">der Sommer</div>
+    </div>
+    <div class="season-card" style="background:rgba(232,140,48,.08);border:1px solid rgba(232,140,48,.2)">
+      <div class="emoji">🍂</div>
+      <div class="de" style="color:var(--ember)">Herbst</div>
+      <div class="ar" style="color:var(--ember)">الخريف</div>
+      <div class="art" style="color:var(--ember)">der Herbst</div>
+    </div>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:15px;color:var(--txt-b);margin:20px 0 10px">📅 أشهر السنة</div>
+  <div class="mon-grid">
+    <div class="mon-item"><div class="num">1</div><div class="de" style="color:var(--gold)">Januar</div></div>
+    <div class="mon-item"><div class="num">2</div><div class="de" style="color:var(--gold)">Februar</div></div>
+    <div class="mon-item"><div class="num">3</div><div class="de" style="color:var(--gold)">März</div></div>
+    <div class="mon-item"><div class="num">4</div><div class="de" style="color:var(--gold)">April</div></div>
+    <div class="mon-item"><div class="num">5</div><div class="de" style="color:var(--gold)">Mai</div></div>
+    <div class="mon-item"><div class="num">6</div><div class="de" style="color:var(--gold)">Juni</div></div>
+    <div class="mon-item"><div class="num">7</div><div class="de" style="color:var(--gold)">Juli</div></div>
+    <div class="mon-item"><div class="num">8</div><div class="de" style="color:var(--gold)">August</div></div>
+    <div class="mon-item"><div class="num">9</div><div class="de" style="color:var(--gold)">September</div></div>
+    <div class="mon-item"><div class="num">10</div><div class="de" style="color:var(--gold)">Oktober</div></div>
+    <div class="mon-item"><div class="num">11</div><div class="de" style="color:var(--gold)">November</div></div>
+    <div class="mon-item"><div class="num">12</div><div class="de" style="color:var(--gold)">Dezember</div></div>
+  </div>
+
+  <!-- Prepositions -->
+  <div class="prep-duo">
+    <div class="prep-box" style="background:var(--cyan-d);border:1px solid rgba(48,200,216,.2);border-radius:16px">
+      <div class="word" style="color:var(--cyan)">am</div>
+      <div class="usage" style="color:var(--cyan)">مع الأيام وفترات اليوم</div>
+      <div class="examples" style="color:var(--cyan)">am Montag<br>am Morgen</div>
+    </div>
+    <div class="prep-box" style="background:var(--gold-d);border:1px solid rgba(232,176,40,.2);border-radius:16px">
+      <div class="word" style="color:var(--gold)">im</div>
+      <div class="usage" style="color:var(--gold)">مع الأشهر والفصول</div>
+      <div class="examples" style="color:var(--gold)">im Sommer<br>im Januar</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 4: SENTENCE STRUCTURE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--green),#20a850)">٤</div>
+    <div><div class="sec-t">هيكل الجملة الألمانية</div><div class="sec-td">Satzbau</div></div>
+  </div>
+
+  <div class="rule" style="background:var(--green-d);border:1px solid rgba(56,200,112,.14)">
+    <h4 style="color:var(--green)">⚡ القاعدة الذهبية</h4>
+    <p>الفعل <strong style="color:var(--green)">دائماً في الموقع الثاني</strong>. الموقع الأول يمكن أن يكون الفاعل أو ظرف الزمان.</p>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:14px;color:var(--txt-b);margin:16px 0 8px;text-align:center">الفاعل أولاً (الترتيب العادي)</div>
+  <div class="struct-row">
+    <div class="struct-block" style="border-color:var(--green);border-radius:12px 0 0 12px;background:rgba(56,200,112,.06)">
+      <div class="label" style="color:var(--green)">الفاعل ①</div>
+      <div class="value" style="color:var(--green)">Ich</div>
+    </div>
+    <div class="struct-block" style="border-color:var(--ember);background:rgba(240,120,56,.06)">
+      <div class="label" style="color:var(--ember)">الفعل ②</div>
+      <div class="value" style="color:var(--ember)">arbeite</div>
+    </div>
+    <div class="struct-block" style="border-color:var(--txt-d);border-radius:0 12px 12px 0;background:rgba(255,255,255,.02)">
+      <div class="label" style="color:var(--txt-d)">بقية الجملة</div>
+      <div class="value" style="color:var(--txt)">am Montag</div>
+    </div>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:14px;color:var(--txt-b);margin:16px 0 8px;text-align:center">ظرف الزمان أولاً (للتأكيد)</div>
+  <div class="struct-row">
+    <div class="struct-block" style="border-color:var(--gold);border-radius:12px 0 0 12px;background:rgba(232,176,40,.06)">
+      <div class="label" style="color:var(--gold)">الزمان ①</div>
+      <div class="value" style="color:var(--gold)">Am Montag</div>
+    </div>
+    <div class="struct-block" style="border-color:var(--ember);background:rgba(240,120,56,.06)">
+      <div class="label" style="color:var(--ember)">الفعل ②</div>
+      <div class="value" style="color:var(--ember)">arbeite</div>
+    </div>
+    <div class="struct-block" style="border-color:var(--green);border-radius:0 12px 12px 0;background:rgba(56,200,112,.06)">
+      <div class="label" style="color:var(--green)">الفاعل ③</div>
+      <div class="value" style="color:var(--green)">ich</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: PRONUNCIATION ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#7040c0)">٥</div>
+    <div><div class="sec-t">ملاحظات حول النطق</div><div class="sec-td">Aussprache</div></div>
+  </div>
+
+  <div class="pron-grid">
+    <div class="pron-item">
+      <div class="pron-letter" style="color:var(--violet)">äu</div>
+      <div class="pron-desc">يُلفظان مثل «أُوي» (Oye)</div>
+      <div class="pron-ex" style="color:var(--violet)">Häuser</div>
+    </div>
+    <div class="pron-item">
+      <div class="pron-letter" style="color:var(--violet)">st / sp</div>
+      <div class="pron-desc">في وسط الكلمة يُلفظان بوضوح</div>
+    </div>
+    <div class="pron-item">
+      <div class="pron-letter" style="color:var(--violet)">a</div>
+      <div class="pron-desc">يجب مدّه عند اللفظ (إلا إذا سبقه حرف علة)</div>
+      <div class="pron-ex" style="color:var(--violet)">Fahrkarte</div>
+    </div>
+    <div class="pron-item">
+      <div class="pron-letter" style="color:var(--violet)">h</div>
+      <div class="pron-desc">بعد حرف علة: لا يُلفظ — يعمل على مدّ الحرف قبله</div>
+      <div class="pron-ex" style="color:var(--violet)">Fahrrad</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 6: SELF INTRO ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#c04078)">٦</div>
+    <div><div class="sec-t">التعريف بالنفس</div><div class="sec-td">Vorstellen</div></div>
+  </div>
+
+  <div class="intro-list">
+    <div class="intro-item">
+      <div class="icon">👤</div>
+      <div style="flex:1"><div class="intro-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;text-align:right;color:var(--rose)">Ich heiße ... / Ich bin ...</div><div style="font-size:13px;color:var(--txt-d);margin-top:2px">الاسم</div></div>
+    </div>
+    <div class="intro-item">
+      <div class="icon">🎂</div>
+      <div style="flex:1"><div class="intro-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;text-align:right;color:var(--rose)">Ich bin ... Jahre alt.</div><div style="font-size:13px;color:var(--txt-d);margin-top:2px">العمر</div></div>
+    </div>
+    <div class="intro-item">
+      <div class="icon">🏠</div>
+      <div style="flex:1"><div class="intro-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;text-align:right;color:var(--rose)">Ich wohne in ...</div><div style="font-size:13px;color:var(--txt-d);margin-top:2px">مكان السكن</div></div>
+    </div>
+    <div class="intro-item">
+      <div class="icon">🗣️</div>
+      <div style="flex:1"><div class="intro-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;text-align:right;color:var(--rose)">Ich spreche ...</div><div style="font-size:13px;color:var(--txt-d);margin-top:2px">اللغات</div></div>
+    </div>
+    <div class="intro-item">
+      <div class="icon">🎓</div>
+      <div style="flex:1"><div class="intro-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;text-align:right;color:var(--rose)">Ich bin Student an der Universität.</div><div style="font-size:13px;color:var(--txt-d);margin-top:2px">الدراسة / العمل</div></div>
+    </div>
+    <div class="intro-item">
+      <div class="icon">📅</div>
+      <div style="flex:1"><div class="intro-de" style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;text-align:right;color:var(--rose)">Ich habe keinen freien Tag.</div><div style="font-size:13px;color:var(--txt-d);margin-top:2px">أيام العطلة — ليس لديّ يوم عطلة</div></div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

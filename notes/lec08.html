@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة الثامنة — المحادثات، الاتجاهات والفصول</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#060810;--card:#0c1020;--card-h:#121828;
+--bdr:#182038;--bdr-h:#243050;
+--warm:#f08040;--warm-d:rgba(240,128,64,.07);
+--mint:#30d8a0;--mint-d:rgba(48,216,160,.07);
+--blue:#4098f0;--blue-d:rgba(64,152,240,.07);
+--plum:#a860e0;--plum-d:rgba(168,96,224,.07);
+--gold:#e0b030;--gold-d:rgba(224,176,48,.07);
+--rose:#e860a0;--rose-d:rgba(232,96,160,.07);
+--cyan:#38c8d8;--cyan-d:rgba(56,200,216,.07);
+--red:#f04858;--red-d:rgba(240,72,88,.07);
+--txt:#ccc8c0;--txt-d:#586878;--txt-b:#f0ece4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:'Noto Naskh Arabic',serif;line-height:2;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(700px 500px at 10% 20%,rgba(240,128,64,.02) 0%,transparent 70%),radial-gradient(600px 600px at 90% 55%,rgba(48,216,160,.018) 0%,transparent 70%),radial-gradient(600px 500px at 45% 85%,rgba(168,96,224,.015) 0%,transparent 70%);animation:dr 26s ease-in-out infinite}
+@keyframes dr{0%,100%{transform:translate(0,0)}50%{transform:translate(12px,-10px)}}
+.w{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:28px 20px 100px}
+
+.hero{text-align:center;padding:60px 16px 48px}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;background:var(--warm-d);border:1px solid rgba(240,128,64,.16);border-radius:100px;padding:7px 22px;font-size:13px;font-weight:700;color:var(--warm);font-family:'Noto Kufi Arabic',sans-serif;margin-bottom:24px;animation:fadeD .7s ease}
+.hero-pill b{width:7px;height:7px;border-radius:50%;background:var(--warm);animation:bk 2.4s ease infinite}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Noto Kufi Arabic',sans-serif;font-size:clamp(26px,5.5vw,48px);font-weight:900;color:var(--txt-b);line-height:1.35;margin-bottom:14px;animation:fadeU .7s ease .1s both}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--warm),var(--mint));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:15px;color:var(--txt-d);max-width:560px;margin:0 auto;animation:fadeU .7s ease .2s both}
+.hero-sep{width:60px;height:3px;margin:24px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--warm),var(--mint));animation:fadeU .7s ease .3s both}
+
+.sec{margin-bottom:50px}
+.sec-h{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.sec-n{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:21px;font-weight:700;color:var(--bg);flex-shrink:0}
+.sec-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:21px;font-weight:800;color:var(--txt-b);line-height:1.4}
+.sec-td{font-family:'Instrument Serif',serif;font-size:13px;color:var(--txt-d);font-style:italic;direction:ltr;text-align:right}
+
+/* DIALOGUE CARD */
+.dialog{background:var(--card);border:1px solid var(--bdr);border-radius:20px;padding:0;margin-bottom:16px;overflow:hidden;transition:all .3s ease}
+.dialog:hover{border-color:var(--bdr-h);box-shadow:0 8px 32px rgba(0,0,0,.25)}
+.dialog-header{padding:18px 24px;display:flex;align-items:center;gap:14px}
+.dialog-avatar{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.dialog-name{font-family:'Noto Kufi Arabic',sans-serif;font-size:17px;font-weight:800}
+.dialog-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;margin-right:8px;font-family:'Noto Kufi Arabic',sans-serif}
+.dialog-body{padding:0 24px 22px}
+.dialog-de{font-family:'JetBrains Mono',monospace;font-size:13px;line-height:2;direction:ltr;text-align:right;background:rgba(255,255,255,.015);border-radius:12px;padding:16px 18px;border:1px solid rgba(255,255,255,.03)}
+.dialog-ar{font-size:13px;color:var(--txt-d);line-height:2;margin-top:12px;padding:0 4px;border-right:3px solid;padding-right:14px;border-radius:0}
+
+/* DIRECTION EXERCISE */
+.dir-ex{background:var(--card);border:1px solid var(--bdr);border-radius:18px;padding:22px;margin-bottom:12px;transition:all .3s ease}
+.dir-ex:hover{border-color:var(--bdr-h);transform:translateY(-2px)}
+.dir-q{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.dir-q .icon{font-size:22px;flex-shrink:0}
+.dir-q .q{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:600;direction:ltr;text-align:right;flex:1}
+.dir-q .qar{font-size:13px;color:var(--txt-d);margin-top:2px}
+.dir-path{display:flex;align-items:center;gap:6px;flex-wrap:wrap;direction:ltr;justify-content:center;margin:14px 0}
+.dir-step{padding:10px 16px;border-radius:10px;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600}
+.dir-arrow{font-size:18px;color:var(--txt-d)}
+.dir-answer{font-size:13px;color:var(--txt-d);text-align:center;margin-top:6px}
+
+/* SEASON SENTENCES */
+.ss-grid{display:grid;gap:10px}
+.ss-item{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:14px;transition:all .25s ease}
+.ss-item:hover{border-color:var(--bdr-h);transform:translateX(-3px);background:var(--card-h)}
+.ss-icon{font-size:24px;flex-shrink:0}
+.ss-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;direction:ltr;text-align:right;flex:1;line-height:1.7}
+.ss-ar{font-size:13px;color:var(--txt-d);margin-top:2px}
+.ss-season{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;flex-shrink:0}
+
+/* KEY VOCAB */
+.kv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.kv-item{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:12px;transition:all .25s ease}
+.kv-item:hover{border-color:var(--bdr-h);transform:translateY(-2px);background:var(--card-h)}
+.kv-item .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr}
+.kv-item .ar{font-size:13px;color:var(--txt-d)}
+
+/* TIP BOX */
+.tip{border-radius:16px;padding:22px;position:relative;overflow:hidden;display:flex;align-items:flex-start;gap:14px}
+.tip::before{content:'';position:absolute;top:-40px;left:50%;width:180px;height:180px;border-radius:50%;filter:blur(70px);opacity:.1;pointer-events:none}
+.tip .ti{font-size:24px;flex-shrink:0}
+.tip p{font-size:14px;line-height:2}
+
+.note{display:flex;gap:12px;border-radius:14px;padding:16px 20px;margin-bottom:12px}
+.note .ni{font-size:18px;flex-shrink:0;margin-top:2px}
+.note p{font-size:14px;line-height:1.9}
+
+@keyframes fadeU{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeD{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(26px);transition:all .55s cubic-bezier(.23,1,.32,1)}
+.rv.v{opacity:1;transform:translateY(0)}
+@media(max-width:600px){.w{padding:14px 14px 60px}.hero{padding:40px 10px 32px}.sec-t{font-size:18px}.dir-path{gap:4px}.dir-step{padding:8px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 8 — المحاضرة الثامنة</div>
+  <h1>المحادثات، الاتجاهات <em>والفصول</em></h1>
+  <p class="hero-sub">نماذج تعريف بالنفس، تدريبات وصف الطريق، جمل الفصول والأشهر، والكلمات المفتاحية</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: SELF INTRO DIALOGUES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--warm),#d06020)">١</div>
+    <div><div class="sec-t">محادثات التعريف بالنفس</div><div class="sec-td">Sich vorstellen</div></div>
+  </div>
+
+  <!-- Hanin -->
+  <div class="dialog">
+    <div class="dialog-header" style="background:rgba(240,128,64,.06);border-bottom:1px solid rgba(240,128,64,.1)">
+      <div class="dialog-avatar" style="background:rgba(240,128,64,.12)">👩‍⚕️</div>
+      <div>
+        <div class="dialog-name" style="color:var(--warm)">حنين — Hanin</div>
+        <span class="dialog-tag" style="background:rgba(240,128,64,.1);color:var(--warm);border:1px solid rgba(240,128,64,.15)">الأكثر تفصيلاً</span>
+      </div>
+    </div>
+    <div class="dialog-body">
+      <div class="dialog-de" style="color:var(--warm)">Ich bin Hanin, 22 Jahre alt und wohne in Amman, Jordanien. Ich spreche Arabisch und Englisch. Zurzeit lerne ich Deutsch. Vom Beruf bin ich Krankenschwester. Ich arbeite im Al-Bashir Krankenhaus in Amman. Das Krankenhaus hat 1150 Betten. Ich arbeite an allen Tagen die Woche, außer Montag und Mittwoch. In meiner Freizeit koche ich gern.</div>
+      <div class="dialog-ar" style="border-color:rgba(240,128,64,.3)">أنا حنين، عمري 22 سنة وأسكن في عمان، الأردن. أتحدث العربية والإنجليزية. حالياً أتعلم الألمانية. مهنتي ممرضة. أعمل في مستشفى البشير في عمان. المستشفى يضم 1150 سريراً. أعمل طوال أيام الأسبوع، ما عدا الاثنين والأربعاء. في وقت فراغي أحب الطبخ.</div>
+    </div>
+  </div>
+
+  <!-- Mawadda -->
+  <div class="dialog">
+    <div class="dialog-header" style="background:rgba(48,216,160,.06);border-bottom:1px solid rgba(48,216,160,.1)">
+      <div class="dialog-avatar" style="background:rgba(48,216,160,.12)">🛍️</div>
+      <div>
+        <div class="dialog-name" style="color:var(--mint)">مودة — Mawadda</div>
+        <span class="dialog-tag" style="background:rgba(48,216,160,.1);color:var(--mint);border:1px solid rgba(48,216,160,.15)">التركيز على العمل</span>
+      </div>
+    </div>
+    <div class="dialog-body">
+      <div class="dialog-de" style="color:var(--mint)">Ich bin Mawadda... Ich wohne in Augsburg... Ich arbeite als Verkäuferin. Ich habe einen Tag frei am Freitag.</div>
+      <div class="dialog-ar" style="border-color:rgba(48,216,160,.3)">أنا مودة... أسكن في أوغسبورغ... أعمل كبائعة. لدي يوم عطلة واحد وهو يوم الجمعة.</div>
+    </div>
+  </div>
+
+  <!-- Khaldiya -->
+  <div class="dialog">
+    <div class="dialog-header" style="background:rgba(168,96,224,.06);border-bottom:1px solid rgba(168,96,224,.1)">
+      <div class="dialog-avatar" style="background:rgba(168,96,224,.12)">🏃‍♀️</div>
+      <div>
+        <div class="dialog-name" style="color:var(--plum)">خالدية — Khaldiya</div>
+        <span class="dialog-tag" style="background:rgba(168,96,224,.1);color:var(--plum);border:1px solid rgba(168,96,224,.15)">الهوايات</span>
+      </div>
+    </div>
+    <div class="dialog-body">
+      <div class="dialog-de" style="color:var(--plum)">Ich wohne in Bamburg. Meine Muttersprache ist Arabisch und ich lerne Deutsch. Mein Hobby ist Joggen und ich arbeite nicht.</div>
+      <div class="dialog-ar" style="border-color:rgba(168,96,224,.3)">أسكن في بامبورغ. لغتي الأم هي العربية وأتعلم الألمانية. هوايتي هي الجري وأنا لا أعمل.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: DIRECTIONS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--blue),#2078c8)">٢</div>
+    <div><div class="sec-t">تدريبات وصف الطريق</div><div class="sec-td">Wegbeschreibung</div></div>
+  </div>
+
+  <!-- Exercise 1 -->
+  <div class="dir-ex">
+    <div class="dir-q">
+      <div class="icon">🏬</div>
+      <div style="flex:1">
+        <div class="q" style="color:var(--blue)">Wo ist City Mall?</div>
+        <div class="qar">أين يقع سيتي مول؟</div>
+      </div>
+    </div>
+    <div class="dir-path">
+      <div class="dir-step" style="background:rgba(64,152,240,.1);color:var(--blue)">geradeaus ⬆️</div>
+      <div class="dir-arrow">→</div>
+      <div class="dir-step" style="background:rgba(64,152,240,.1);color:var(--blue)">links ⬅️</div>
+      <div class="dir-arrow">→</div>
+      <div class="dir-step" style="background:rgba(64,152,240,.1);color:var(--blue)">rechts ➡️</div>
+      <div class="dir-arrow">→</div>
+      <div class="dir-step" style="background:rgba(64,152,240,.1);color:var(--blue)">geradeaus ⬆️</div>
+    </div>
+    <div class="dir-answer">ببساطة للأمام مباشرة، يساراً، ثم يميناً، ثم للأمام مباشرة</div>
+  </div>
+
+  <!-- Exercise 2 -->
+  <div class="dir-ex">
+    <div class="dir-q">
+      <div class="icon">💊</div>
+      <div style="flex:1">
+        <div class="q" style="color:var(--mint)">Wo ist die Apotheke?</div>
+        <div class="qar">أين تقع الصيدلية؟</div>
+      </div>
+    </div>
+    <div class="dir-path">
+      <div class="dir-step" style="background:rgba(48,216,160,.1);color:var(--mint)">rechts ➡️</div>
+      <div class="dir-arrow">→</div>
+      <div class="dir-step" style="background:rgba(48,216,160,.1);color:var(--mint)">links ⬅️</div>
+      <div class="dir-arrow">→</div>
+      <div class="dir-step" style="background:rgba(48,216,160,.15);color:var(--mint);border:1px solid rgba(48,216,160,.25)">📍 Da!</div>
+    </div>
+    <div class="dir-answer">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--mint);direction:ltr">Gehen Sie rechts, dann links. Da ist die Apotheke.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: SEASON SENTENCES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#c09010)">٣</div>
+    <div><div class="sec-t">جمل الفصول والأشهر</div><div class="sec-td">Jahreszeiten — Übungen</div></div>
+  </div>
+
+  <div class="note" style="background:var(--gold-d);border:1px solid rgba(224,176,48,.12)">
+    <div class="ni">📌</div>
+    <div><p>دمج النشاط مع الوقت المناسب باستخدام حرف الجر <span style="font-family:'JetBrains Mono',monospace;color:var(--gold);font-weight:700">im</span> للفصول والأشهر.</p></div>
+  </div>
+
+  <div class="ss-grid">
+    <div class="ss-item">
+      <div class="ss-icon">🏛️</div>
+      <div style="flex:1">
+        <div class="ss-de" style="color:var(--blue)">Ich gehe ins Museum <u>im Winter</u>.</div>
+        <div class="ss-ar">أذهب إلى المتحف في الشتاء.</div>
+      </div>
+      <div class="ss-season" style="background:rgba(100,160,240,.1);color:#78b0f0;border:1px solid rgba(100,160,240,.15)">❄️ Winter</div>
+    </div>
+    <div class="ss-item">
+      <div class="ss-icon">🏊</div>
+      <div style="flex:1">
+        <div class="ss-de" style="color:var(--gold)">Ich gehe schwimmen <u>im Sommer</u>.</div>
+        <div class="ss-ar">أذهب للسباحة في الصيف.</div>
+      </div>
+      <div class="ss-season" style="background:rgba(224,176,48,.1);color:var(--gold);border:1px solid rgba(224,176,48,.15)">☀️ Sommer</div>
+    </div>
+    <div class="ss-item">
+      <div class="ss-icon">🧺</div>
+      <div style="flex:1">
+        <div class="ss-de" style="color:var(--gold)">Ich mache ein Picknick <u>im Sommer</u>.</div>
+        <div class="ss-ar">أقوم بنزهة في الصيف.</div>
+      </div>
+      <div class="ss-season" style="background:rgba(224,176,48,.1);color:var(--gold);border:1px solid rgba(224,176,48,.15)">☀️ Sommer</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 4: KEY VOCAB ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--cyan),#20a8b8)">٤</div>
+    <div><div class="sec-t">كلمات مفتاحية للتدريب</div><div class="sec-td">Schlüsselwörter</div></div>
+  </div>
+
+  <div class="kv-grid">
+    <div class="kv-item"><span class="de" style="color:var(--cyan)">Vom Beruf bin ich...</span><span class="ar">مهنتي هي...</span></div>
+    <div class="kv-item"><span class="de" style="color:var(--cyan)">Ich arbeite als...</span><span class="ar">أنا أعمل كـ...</span></div>
+    <div class="kv-item"><span class="de" style="color:var(--cyan)">außer</span><span class="ar">ما عدا (استثناء)</span></div>
+    <div class="kv-item"><span class="de" style="color:var(--cyan)">Freizeit</span><span class="ar">وقت الفراغ</span></div>
+    <div class="kv-item"><span class="de" style="color:var(--cyan)">geradeaus</span><span class="ar">للأمام مباشرة</span></div>
+    <div class="kv-item"><span class="de" style="color:var(--cyan)">links / rechts</span><span class="ar">يساراً / يميناً</span></div>
+    <div class="kv-item"><span class="de" style="color:var(--cyan)">Vielen Dank</span><span class="ar">شكراً جزيلاً (فيلن دانك)</span></div>
+    <div class="kv-item"><span class="de" style="color:var(--cyan)">Zurzeit</span><span class="ar">حالياً</span></div>
+    <div class="kv-item"><span class="de" style="color:var(--cyan)">Muttersprache</span><span class="ar">اللغة الأم</span></div>
+    <div class="kv-item"><span class="de" style="color:var(--cyan)">Krankenhaus</span><span class="ar">مستشفى</span></div>
+    <div class="kv-item"><span class="de" style="color:var(--cyan)">Krankenschwester</span><span class="ar">ممرضة</span></div>
+    <div class="kv-item"><span class="de" style="color:var(--cyan)">Verkäuferin</span><span class="ar">بائعة</span></div>
+  </div>
+</div>
+
+<!-- ═══ TIP ═══ -->
+<div class="rv">
+  <div class="tip" style="background:var(--warm-d);border:1px solid rgba(240,128,64,.14);border-radius:16px">
+    <div class="ti">💡</div>
+    <div>
+      <p style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;color:var(--warm);margin-bottom:4px">نصيحة للأداء</p>
+      <p>تذكر دائماً أن الفعل يأتي في <strong style="color:var(--warm)">المركز الثاني</strong> في الجملة الألمانية، حتى لو بدأت بظرف زمان:</p>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:right;margin-top:8px;background:rgba(240,128,64,.06);padding:10px 14px;border-radius:10px;color:var(--warm)">
+        <span style="color:var(--gold)">Am Montag</span> <strong>arbeite</strong> <span style="color:var(--txt-d)">ich.</span>
+        <span style="font-family:'Noto Naskh Arabic',serif;font-size:12px;color:var(--txt-d);margin-right:10px">— يوم الاثنين أعمل</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

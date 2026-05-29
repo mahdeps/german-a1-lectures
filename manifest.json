@@ -1,0 +1,509 @@
+{
+    "site":  {
+                 "title":  "German A1 - المحاضرات",
+                 "subtitle":  "دورة اللغة الألمانية - المستوى A1",
+                 "owner":  "mahdeps",
+                 "repo":  "german-a1-lectures",
+                 "tag":  "v1"
+             },
+    "lectures":  [
+                     {
+                         "number":  1,
+                         "topic":  "",
+                         "downloads":  [
+                                           {
+                                               "label":  "النسخة الصوتية (MP3/M4A)",
+                                               "kind":  "audio",
+                                               "asset":  "L01-audio.m4a",
+                                               "size":  "37 MB"
+                                           }
+                                       ],
+                         "notes":  [
+
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  2,
+                         "topic":  "الدرس الأول - أساسيات اللغة الألمانية",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L02-main.mp4",
+                                               "size":  "776 MB"
+                                           },
+                                           {
+                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
+                                               "kind":  "video-compressed",
+                                               "asset":  "L02-compressed.mp4",
+                                               "size":  "166 MB"
+                                           }
+                                       ],
+                         "notes":  [
+                                       {
+                                           "label":  "الملخص التفاعلي",
+                                           "title":  "الدرس الأول - أساسيات اللغة الألمانية",
+                                           "path":  "notes/lec02.html"
+                                       }
+                                   ],
+                         "pdf":  [
+                                     {
+                                         "label":  "ملف PDF",
+                                         "path":  "pdf/lec02.pdf",
+                                         "size":  "104 KB"
+                                     }
+                                 ]
+                     },
+                     {
+                         "number":  3,
+                         "topic":  "الأبجدية، الأرقام، التحيات والقواعد الأساسية",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L03-main.mp4",
+                                               "size":  "543 MB"
+                                           },
+                                           {
+                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
+                                               "kind":  "video-compressed",
+                                               "asset":  "L03-compressed.mp4",
+                                               "size":  "125 MB"
+                                           }
+                                       ],
+                         "notes":  [
+                                       {
+                                           "label":  "الملخص التفاعلي",
+                                           "title":  "الأبجدية، الأرقام، التحيات والقواعد الأساسية",
+                                           "path":  "notes/lec03.html"
+                                       }
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  4,
+                         "topic":  "أدوات التعريف، النكرة، النفي وبناء السؤال",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L04-main.mp4",
+                                               "size":  "375 MB"
+                                           },
+                                           {
+                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
+                                               "kind":  "video-compressed",
+                                               "asset":  "L04-compressed.mp4",
+                                               "size":  "104 MB"
+                                           }
+                                       ],
+                         "notes":  [
+                                       {
+                                           "label":  "الملخص التفاعلي",
+                                           "title":  "أدوات التعريف، النكرة، النفي وبناء السؤال",
+                                           "path":  "notes/lec04.html"
+                                       }
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  5,
+                         "topic":  "الأفعال، الهوايات وأيام الأسبوع",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L05-main.mp4",
+                                               "size":  "539 MB"
+                                           },
+                                           {
+                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
+                                               "kind":  "video-compressed",
+                                               "asset":  "L05-compressed.mp4",
+                                               "size":  "130 MB"
+                                           }
+                                       ],
+                         "notes":  [
+                                       {
+                                           "label":  "الملخص التفاعلي",
+                                           "title":  "الأفعال، الهوايات وأيام الأسبوع",
+                                           "path":  "notes/lec05.html"
+                                       }
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  6,
+                         "topic":  "المحاضرة السادسة — الأدوات، المهن والجمع",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L06-main.mp4",
+                                               "size":  "105 MB"
+                                           },
+                                           {
+                                               "label":  "النسخة الصوتية (MP3/M4A)",
+                                               "kind":  "audio",
+                                               "asset":  "L06-audio.m4a",
+                                               "size":  "50 MB"
+                                           }
+                                       ],
+                         "notes":  [
+                                       {
+                                           "label":  "الملخص التفاعلي",
+                                           "title":  "المحاضرة السادسة — الأدوات، المهن والجمع",
+                                           "path":  "notes/lec06.html"
+                                       }
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  7,
+                         "topic":  "الأدوات، الاتجاهات، الفصول وبناء الجملة",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L07-main.mp4",
+                                               "size":  "428 MB"
+                                           },
+                                           {
+                                               "label":  "فيديو إضافي 1",
+                                               "kind":  "video-extra",
+                                               "asset":  "L07-extra1.mp4",
+                                               "size":  "75 MB"
+                                           },
+                                           {
+                                               "label":  "النسخة الصوتية (MP3/M4A)",
+                                               "kind":  "audio",
+                                               "asset":  "L07-audio.m4a",
+                                               "size":  "53 MB"
+                                           }
+                                       ],
+                         "notes":  [
+                                       {
+                                           "label":  "الملخص التفاعلي",
+                                           "title":  "الأدوات، الاتجاهات، الفصول وبناء الجملة",
+                                           "path":  "notes/lec07.html"
+                                       }
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  8,
+                         "topic":  "المحاضرة الثامنة — المحادثات، الاتجاهات والفصول",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L08-main.mp4",
+                                               "size":  "222 MB"
+                                           },
+                                           {
+                                               "label":  "فيديو إضافي 1",
+                                               "kind":  "video-extra",
+                                               "asset":  "L08-extra1.mp4",
+                                               "size":  "36 MB"
+                                           },
+                                           {
+                                               "label":  "النسخة الصوتية (MP3/M4A)",
+                                               "kind":  "audio",
+                                               "asset":  "L08-audio.m4a",
+                                               "size":  "25 MB"
+                                           }
+                                       ],
+                         "notes":  [
+                                       {
+                                           "label":  "الملخص التفاعلي",
+                                           "title":  "المحاضرة الثامنة — المحادثات، الاتجاهات والفصول",
+                                           "path":  "notes/lec08.html"
+                                       }
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  9,
+                         "topic":  "الطعام، التسوق وحالة الاكوزاتيف",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L09-main.mp4",
+                                               "size":  "625 MB"
+                                           },
+                                           {
+                                               "label":  "فيديو إضافي 1",
+                                               "kind":  "video-extra",
+                                               "asset":  "L09-extra1.mp4",
+                                               "size":  "116 MB"
+                                           },
+                                           {
+                                               "label":  "النسخة الصوتية (MP3/M4A)",
+                                               "kind":  "audio",
+                                               "asset":  "L09-audio.m4a",
+                                               "size":  "77 MB"
+                                           }
+                                       ],
+                         "notes":  [
+                                       {
+                                           "label":  "الملخص التفاعلي",
+                                           "title":  "الطعام، التسوق وحالة الاكوزاتيف",
+                                           "path":  "notes/lec09.html"
+                                       }
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  10,
+                         "topic":  "möchten و mögen، تركيب الجملة، والتعبير عن الوقت",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L10-main.mp4",
+                                               "size":  "712 MB"
+                                           },
+                                           {
+                                               "label":  "فيديو إضافي 1",
+                                               "kind":  "video-extra",
+                                               "asset":  "L10-extra1.mp4",
+                                               "size":  "139 MB"
+                                           },
+                                           {
+                                               "label":  "النسخة الصوتية (MP3/M4A)",
+                                               "kind":  "audio",
+                                               "asset":  "L10-audio.m4a",
+                                               "size":  "84 MB"
+                                           }
+                                       ],
+                         "notes":  [
+                                       {
+                                           "label":  "الملخص التفاعلي",
+                                           "title":  "möchten و mögen، تركيب الجملة، والتعبير عن الوقت",
+                                           "path":  "notes/lec10.html"
+                                       }
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  11,
+                         "topic":  "المحاضرة 11 — الروتين، الساعة وضمائر الملكية",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L11-main.mp4",
+                                               "size":  "610 MB"
+                                           },
+                                           {
+                                               "label":  "فيديو إضافي 1",
+                                               "kind":  "video-extra",
+                                               "asset":  "L11-extra1.mp4",
+                                               "size":  "111 MB"
+                                           },
+                                           {
+                                               "label":  "فيديو إضافي 2",
+                                               "kind":  "video-extra",
+                                               "asset":  "L11-extra2.mp4",
+                                               "size":  "29 MB"
+                                           },
+                                           {
+                                               "label":  "ملف صوتي 1",
+                                               "kind":  "audio",
+                                               "asset":  "L11-audio1.m4a",
+                                               "size":  "72 MB"
+                                           },
+                                           {
+                                               "label":  "ملف صوتي 2",
+                                               "kind":  "audio",
+                                               "asset":  "L11-audio2.m4a",
+                                               "size":  "22 MB"
+                                           }
+                                       ],
+                         "notes":  [
+                                       {
+                                           "label":  "الملخص التفاعلي",
+                                           "title":  "الساعة، العائلة والمواعيد — Kapitel 5",
+                                           "path":  "notes/lec11.html"
+                                       },
+                                       {
+                                           "label":  "ملخص إضافي",
+                                           "title":  "الساعة، العائلة والمواعيد — Kapitel 5",
+                                           "path":  "notes/lec11-2.html"
+                                       },
+                                       {
+                                           "label":  "ملخص إضافي",
+                                           "title":  "المحاضرة 11 — الروتين، الساعة وضمائر الملكية",
+                                           "path":  "notes/lec11-3.html"
+                                       }
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  12,
+                         "topic":  "المحاضرة 12 — الأفعال الناقصة، المواعيد واللباقة",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L12-main.mp4",
+                                               "size":  "742 MB"
+                                           },
+                                           {
+                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
+                                               "kind":  "video-compressed",
+                                               "asset":  "L12-compressed.mp4",
+                                               "size":  "195 MB"
+                                           }
+                                       ],
+                         "notes":  [
+                                       {
+                                           "label":  "الملخص التفاعلي",
+                                           "title":  "المحاضرة 12 — الأفعال الناقصة، المواعيد واللباقة",
+                                           "path":  "notes/lec12.html"
+                                       }
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  13,
+                         "topic":  "المحاضرة 13 — أعياد الميلاد، الأفعال المنفصلة والماضي",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L13-main.mp4",
+                                               "size":  "1.21 GB"
+                                           },
+                                           {
+                                               "label":  "فيديو إضافي 1",
+                                               "kind":  "video-extra",
+                                               "asset":  "L13-extra1.mp4",
+                                               "size":  "271 MB"
+                                           },
+                                           {
+                                               "label":  "النسخة الصوتية (MP3/M4A)",
+                                               "kind":  "audio",
+                                               "asset":  "L13-audio.m4a",
+                                               "size":  "84 MB"
+                                           }
+                                       ],
+                         "notes":  [
+                                       {
+                                           "label":  "الملخص التفاعلي",
+                                           "title":  "المحاضرة 13 — أعياد الميلاد، الأفعال المنفصلة والماضي",
+                                           "path":  "notes/lec13.html"
+                                       }
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  14,
+                         "topic":  "المحاضرة 14 — المراجعة الشاملة للامتحان",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L14-main.mp4",
+                                               "size":  "366 MB"
+                                           },
+                                           {
+                                               "label":  "فيديو إضافي 1",
+                                               "kind":  "video-extra",
+                                               "asset":  "L14-extra1.mp4",
+                                               "size":  "56 MB"
+                                           },
+                                           {
+                                               "label":  "النسخة الصوتية (MP3/M4A)",
+                                               "kind":  "audio",
+                                               "asset":  "L14-audio.m4a",
+                                               "size":  "54 MB"
+                                           }
+                                       ],
+                         "notes":  [
+                                       {
+                                           "label":  "الملخص التفاعلي",
+                                           "title":  "المحاضرة 14 — المراجعة الشاملة للامتحان",
+                                           "path":  "notes/lec14.html"
+                                       }
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  15,
+                         "topic":  "",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L15-main.mp4",
+                                               "size":  "550 MB"
+                                           },
+                                           {
+                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
+                                               "kind":  "video-compressed",
+                                               "asset":  "L15-compressed.mp4",
+                                               "size":  "145 MB"
+                                           }
+                                       ],
+                         "notes":  [
+
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     },
+                     {
+                         "number":  16,
+                         "topic":  "",
+                         "downloads":  [
+                                           {
+                                               "label":  "الفيديو الكامل (جودة عالية)",
+                                               "kind":  "video-main",
+                                               "asset":  "L16-main.mp4",
+                                               "size":  "798 MB"
+                                           },
+                                           {
+                                               "label":  "الفيديو (نسخة مضغوطة - أخف)",
+                                               "kind":  "video-compressed",
+                                               "asset":  "L16-compressed.mp4",
+                                               "size":  "187 MB"
+                                           }
+                                       ],
+                         "notes":  [
+
+                                   ],
+                         "pdf":  [
+
+                                 ]
+                     }
+                 ]
+}

@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الدرس الأول - أساسيات اللغة الألمانية</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0c0f14;
+  --bg-card: #141820;
+  --bg-card-hover: #1a2030;
+  --accent: #f0c040;
+  --accent2: #e8783a;
+  --accent3: #44c8b0;
+  --accent4: #6890f0;
+  --text: #e8e4dc;
+  --text-dim: #8890a0;
+  --text-bright: #ffffff;
+  --border: #2a3040;
+  --glow: rgba(240, 192, 64, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Naskh Arabic', serif;
+  line-height: 2;
+  overflow-x: hidden;
+}
+
+/* Animated background */
+.bg-pattern {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.bg-pattern::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: 
+    radial-gradient(ellipse 600px 400px at 20% 30%, rgba(240,192,64,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 80% 70%, rgba(68,200,176,0.03) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 600px at 60% 20%, rgba(104,144,240,0.03) 0%, transparent 70%);
+  animation: bgFloat 20s ease-in-out infinite;
+}
+@keyframes bgFloat {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(30px, -20px) rotate(1deg); }
+  66% { transform: translate(-20px, 30px) rotate(-1deg); }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 20px 60px;
+  position: relative;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(240,192,64,0.1);
+  border: 1px solid rgba(240,192,64,0.2);
+  border-radius: 100px;
+  padding: 8px 24px;
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 32px;
+  animation: fadeInDown 0.8s ease;
+}
+.hero-badge .dot {
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.hero h1 {
+  font-family: 'Noto Kufi Arabic', sans-serif;
+  font-size: clamp(36px, 7vw, 64px);
+  font-weight: 900;
+  color: var(--text-bright);
+  line-height: 1.3;
+  margin-bottom: 16px;
+  animation: fadeInUp 0.8s ease 0.1s both;
+}
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: 18px;
+  color: var(--text-dim);
+  max-width: 500px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+.hero-line {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  margin: 32px auto 0;
+  border-radius: 3px;
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+/* Section */
+.section {
+  margin-bottom: 56px;
+  animation: fadeInUp 0.6s ease both;
+}
+.section:nth-child(2) { animation-delay: 0.1s; }
+.section:nth-child(3) { animation-delay: 0.15s; }
+.section:nth-child(4) { animation-delay: 0.2s; }
+.section:nth-child(5) { animation-delay: 0.25s; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  position: relative;
+}
+.section-number {
+  width: 52px; height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  flex-shrink: 0;
+  position: relative;
+  color: var(--bg);
+}
+.section-number::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  z-index: -1;
+}
+.s1 .section-number { background: linear-gradient(135deg, var(--accent), #e8a020); }
+.s2 .section-number { background: linear-gradient(135deg, var(--accent2), #d05030); }
+.s3 .section-number { background: linear-gradient(135deg, var(--accent3), #28a090); }
+.s4 .section-number { background: linear-gradient(135deg, var(--accent4), #4870d0); }
+.s5 .section-number { background: linear-gradient(135deg, #c878e0, #9050c0); }
+
+.section-title-group {
+  flex: 1;
+}
+.section-title {
+  font-family: 'Noto Kufi Arabic', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-bright);
+  line-height: 1.4;
+}
+.section-title-de {
+  font-family: 'DM Serif Display', serif;
+  font-size: 15px;
+  color: var(--text-dim);
+  font-style: italic;
+  direction: ltr;
+  text-align: right;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 100px; height: 100px;
+  border-radius: 0 20px 0 100px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.card:hover {
+  border-color: rgba(240,192,64,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.card:hover::before { opacity: 1; }
+
+/* Pronoun Grid */
+.pronoun-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+.pronoun-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+.pronoun-item:hover {
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+  transform: translateX(-4px);
+  box-shadow: 4px 0 0 var(--accent);
+}
+.pronoun-de {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 40px;
+  text-align: center;
+  direction: ltr;
+}
+.pronoun-ar {
+  font-size: 17px;
+  color: var(--text);
+  flex: 1;
+}
+
+/* Phonetics */
+.phon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+.phon-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+.phon-item:hover {
+  border-color: var(--accent2);
+  background: var(--bg-card-hover);
+}
+.phon-letter {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--accent2);
+  margin-bottom: 6px;
+  direction: ltr;
+  display: inline-block;
+}
+.phon-desc {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.8;
+}
+.phon-example {
+  display: inline-block;
+  background: rgba(232,120,58,0.1);
+  border: 1px solid rgba(232,120,58,0.15);
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--accent2);
+  margin-top: 6px;
+  direction: ltr;
+}
+
+/* Verb Table */
+.verb-table-wrap {
+  overflow-x: auto;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+.verb-table {
+  width: 100%;
+  border-collapse: collapse;
+  direction: ltr;
+  text-align: center;
+}
+.verb-table th {
+  background: rgba(68,200,176,0.1);
+  padding: 14px 16px;
+  font-family: 'Noto Kufi Arabic', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent3);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.verb-table td {
+  padding: 12px 16px;
+  font-size: 15px;
+  color: var(--text);
+  border-bottom: 1px solid rgba(42,48,64,0.5);
+}
+.verb-table tr:last-child td { border-bottom: none; }
+.verb-table tr:hover td {
+  background: rgba(68,200,176,0.04);
+}
+.verb-table .pronoun-col {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--accent3);
+}
+.verb-table .ending {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Verb chips */
+.verb-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+.verb-chip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 18px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+.verb-chip:hover {
+  border-color: var(--accent3);
+  background: var(--bg-card-hover);
+  transform: scale(1.03);
+}
+.verb-chip .de {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent3);
+  direction: ltr;
+  display: block;
+}
+.verb-chip .ar {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+.verb-chip .ex {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-family: 'JetBrains Mono', monospace;
+  direction: ltr;
+  display: block;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+/* Golden Rule */
+.golden-rule {
+  background: linear-gradient(135deg, rgba(240,192,64,0.08), rgba(240,192,64,0.02));
+  border: 1px solid rgba(240,192,64,0.2);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.golden-rule::before {
+  content: '⚡';
+  position: absolute;
+  top: -10px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 60px;
+  opacity: 0.08;
+}
+.golden-rule h3 {
+  font-family: 'Noto Kufi Arabic', sans-serif;
+  font-size: 20px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.golden-rule p {
+  font-size: 17px;
+  color: var(--text);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Intro Sentences */
+.intro-sentences {
+  display: grid;
+  gap: 14px;
+}
+.intro-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+  counter-increment: intro;
+}
+.intro-item:hover {
+  border-color: rgba(200,120,224,0.4);
+  background: var(--bg-card-hover);
+  transform: translateX(-4px);
+}
+.intro-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  background: rgba(200,120,224,0.1);
+}
+.intro-content {
+  flex: 1;
+}
+.intro-label {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.intro-de {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  color: #c878e0;
+  direction: ltr;
+  text-align: right;
+  line-height: 1.6;
+}
+.intro-ar {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* Notes */
+.note-box {
+  background: rgba(104,144,240,0.06);
+  border: 1px solid rgba(104,144,240,0.15);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+.note-box .note-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.note-box p {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.9;
+}
+
+/* Vocab footer */
+.vocab-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.vocab-tag {
+  background: rgba(240,192,64,0.08);
+  border: 1px solid rgba(240,192,64,0.12);
+  border-radius: 10px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+.vocab-tag:hover {
+  background: rgba(240,192,64,0.14);
+  transform: translateY(-2px);
+}
+.vocab-tag .vde {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  direction: ltr;
+}
+.vocab-tag .var {
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+/* Compound sounds section */
+.compound-title {
+  font-family: 'Noto Kufi Arabic', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--text-bright);
+  margin: 24px 0 12px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll animations */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container { padding: 20px 16px 60px; }
+  .hero { padding: 50px 12px 40px; }
+  .pronoun-grid, .phon-grid { grid-template-columns: 1fr; }
+  .section-title { font-size: 20px; }
+  .card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Lektion Eins — الدرس الأول
+    </div>
+    <h1>أساسيات اللغة <span class="highlight">الألمانية</span></h1>
+    <p class="hero-sub">الضمائر، النطق، تصريف الأفعال، وبناء الجملة — كل ما تحتاجه للبداية</p>
+    <div class="hero-line"></div>
+  </div>
+
+  <!-- Section 1: Pronouns -->
+  <div class="section s1 reveal">
+    <div class="section-header">
+      <div class="section-number">١</div>
+      <div class="section-title-group">
+        <div class="section-title">الضمائر الشخصية</div>
+        <div class="section-title-de">Personalpronomen</div>
+      </div>
+    </div>
+
+    <div class="pronoun-grid">
+      <div class="pronoun-item">
+        <div class="pronoun-de">ich</div>
+        <div class="pronoun-ar">أنا</div>
+      </div>
+      <div class="pronoun-item">
+        <div class="pronoun-de">du</div>
+        <div class="pronoun-ar">أنتَ / أنتِ <span style="color:var(--text-dim);font-size:13px">(غير رسمي)</span></div>
+      </div>
+      <div class="pronoun-item">
+        <div class="pronoun-de">er</div>
+        <div class="pronoun-ar">هو</div>
+      </div>
+      <div class="pronoun-item">
+        <div class="pronoun-de">es</div>
+        <div class="pronoun-ar">ضمير محايد</div>
+      </div>
+      <div class="pronoun-item">
+        <div class="pronoun-de">sie</div>
+        <div class="pronoun-ar">هي</div>
+      </div>
+      <div class="pronoun-item">
+        <div class="pronoun-de">wir</div>
+        <div class="pronoun-ar">نحن</div>
+      </div>
+      <div class="pronoun-item">
+        <div class="pronoun-de">ihr</div>
+        <div class="pronoun-ar">أنتم / أنتن</div>
+      </div>
+      <div class="pronoun-item">
+        <div class="pronoun-de">sie</div>
+        <div class="pronoun-ar">هم / هن</div>
+      </div>
+      <div class="pronoun-item" style="grid-column: 1 / -1; max-width: 400px; margin: 0 auto; border-color: rgba(240,192,64,0.2); background: rgba(240,192,64,0.04);">
+        <div class="pronoun-de" style="font-size:24px;">Sie</div>
+        <div class="pronoun-ar">حضرتك / حضرتكم <span style="color:var(--accent);font-size:13px">(رسمي — حرف S كبير دائماً)</span></div>
+      </div>
+    </div>
+
+    <div class="note-box" style="margin-top:20px;">
+      <div class="note-icon">💡</div>
+      <div>
+        <p><strong>du</strong> للأصدقاء والمعارف، أما <strong>Sie</strong> فللمواقف الرسمية والأشخاص الذين لا نعرفهم.</p>
+        <p style="margin-top:6px">التمييز بين <strong>sie</strong> المختلفة يكون من خلال تصريف الفعل وسياق الجملة.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Pronunciation -->
+  <div class="section s2 reveal">
+    <div class="section-header">
+      <div class="section-number">٢</div>
+      <div class="section-title-group">
+        <div class="section-title">قواعد النطق</div>
+        <div class="section-title-de">Aussprache</div>
+      </div>
+    </div>
+
+    <div class="phon-grid">
+      <div class="phon-item">
+        <div class="phon-letter">i</div>
+        <div class="phon-desc">يُلفظ ياء ممدودة (إي)</div>
+      </div>
+      <div class="phon-item">
+        <div class="phon-letter">u</div>
+        <div class="phon-desc">يُلفظ (أو)</div>
+        <span class="phon-example">du → دو</span>
+      </div>
+      <div class="phon-item">
+        <div class="phon-letter">e</div>
+        <div class="phon-desc">يُلفظ (إيه) قريبة من الفتحة الممدودة</div>
+      </div>
+      <div class="phon-item">
+        <div class="phon-letter">ch</div>
+        <div class="phon-desc">شين مخففة بعد حرف i</div>
+        <span class="phon-example">ich → إيشْ</span>
+      </div>
+      <div class="phon-item">
+        <div class="phon-letter">s</div>
+        <div class="phon-desc">بداية الكلمة → (ز) &nbsp;|&nbsp; نهاية الكلمة → (س)</div>
+      </div>
+      <div class="phon-item">
+        <div class="phon-letter">w</div>
+        <div class="phon-desc">يُلفظ مثل V بالإنجليزية</div>
+        <span class="phon-example">wir → فير</span>
+      </div>
+      <div class="phon-item">
+        <div class="phon-letter">h</div>
+        <div class="phon-desc">لا يُلفظ بعد حرف علة — وظيفته المدّ فقط</div>
+      </div>
+      <div class="phon-item">
+        <div class="phon-letter">ß</div>
+        <div class="phon-desc">يُسمى Es-zett — يساوي دبل سين (ss)</div>
+        <span class="phon-example">heißen</span>
+      </div>
+    </div>
+
+    <div class="compound-title">🔗 المقاطع الصوتية المركبة</div>
+    <div class="phon-grid">
+      <div class="phon-item" style="border-color: rgba(232,120,58,0.2);">
+        <div class="phon-letter">ei</div>
+        <div class="phon-desc">يُلفظ «آي»</div>
+        <span class="phon-example">heißen → هآيسن</span>
+      </div>
+      <div class="phon-item" style="border-color: rgba(232,120,58,0.2);">
+        <div class="phon-letter">au</div>
+        <div class="phon-desc">يُلفظ «أَوْ» (مد)</div>
+        <span class="phon-example">Auto → أَوْتو</span>
+      </div>
+      <div class="phon-item" style="border-color: rgba(232,120,58,0.2);">
+        <div class="phon-letter">eu</div>
+        <div class="phon-desc">يُلفظ «أُويْ»</div>
+        <span class="phon-example">Deutsch → دُويْتش</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Verb Conjugation -->
+  <div class="section s3 reveal">
+    <div class="section-header">
+      <div class="section-number">٣</div>
+      <div class="section-title-group">
+        <div class="section-title">تصريف الأفعال</div>
+        <div class="section-title-de">Verbkonjugation</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p style="margin-bottom:16px;color:var(--text);">معظم الأفعال تنتهي بـ <strong style="color:var(--accent3)">-en</strong> أو <strong style="color:var(--accent3)">-n</strong> في المصدر. نحذف النهاية ونضيف:</p>
+      
+      <div class="verb-table-wrap">
+        <table class="verb-table">
+          <thead>
+            <tr>
+              <th>الضمير</th>
+              <th>النهاية</th>
+              <th>مثال: lernen</th>
+              <th>مثال: wohnen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="pronoun-col">ich</td><td><span class="ending">-e</span></td><td>lern<span class="ending">e</span></td><td>wohn<span class="ending">e</span></td></tr>
+            <tr><td class="pronoun-col">du</td><td><span class="ending">-st</span></td><td>lern<span class="ending">st</span></td><td>wohn<span class="ending">st</span></td></tr>
+            <tr><td class="pronoun-col">er/es/sie</td><td><span class="ending">-t</span></td><td>lern<span class="ending">t</span></td><td>wohn<span class="ending">t</span></td></tr>
+            <tr><td class="pronoun-col">wir</td><td><span class="ending">-en</span></td><td>lern<span class="ending">en</span></td><td>wohn<span class="ending">en</span></td></tr>
+            <tr><td class="pronoun-col">ihr</td><td><span class="ending">-t</span></td><td>lern<span class="ending">t</span></td><td>wohn<span class="ending">t</span></td></tr>
+            <tr><td class="pronoun-col">sie/Sie</td><td><span class="ending">-en</span></td><td>lern<span class="ending">en</span></td><td>wohn<span class="ending">en</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Sein special -->
+    <div class="card" style="border-color: rgba(68,200,176,0.2); background: rgba(68,200,176,0.03);">
+      <p style="margin-bottom:12px;font-weight:700;color:var(--accent3);font-family:'Noto Kufi Arabic',sans-serif;">⚠️ الفعل الشاذ: sein (يكون)</p>
+      <div class="verb-table-wrap" style="border-color:rgba(68,200,176,0.2)">
+        <table class="verb-table">
+          <thead>
+            <tr>
+              <th>ich</th><th>du</th><th>er/es/sie</th><th>wir</th><th>ihr</th><th>sie/Sie</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="color:var(--accent3);font-weight:600">bin</td>
+              <td style="color:var(--accent3);font-weight:600">bist</td>
+              <td style="color:var(--accent3);font-weight:600">ist</td>
+              <td style="color:var(--accent3);font-weight:600">sind</td>
+              <td style="color:var(--accent3);font-weight:600">seid</td>
+              <td style="color:var(--accent3);font-weight:600">sind</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:17px;color:var(--text-bright);margin:24px 0 12px;">أهم الأفعال</p>
+    <div class="verb-list">
+      <div class="verb-chip">
+        <span class="de">haben</span>
+        <span class="ar">يملك</span>
+        <span class="ex">ich habe, du hast</span>
+      </div>
+      <div class="verb-chip">
+        <span class="de">heißen</span>
+        <span class="ar">يُدعى / يُسمّى</span>
+        <span class="ex">ich heiße</span>
+      </div>
+      <div class="verb-chip">
+        <span class="de">wohnen</span>
+        <span class="ar">يسكن (+ in)</span>
+        <span class="ex">ich wohne in…</span>
+      </div>
+      <div class="verb-chip">
+        <span class="de">kommen</span>
+        <span class="ar">يأتي (+ aus)</span>
+        <span class="ex">ich komme aus…</span>
+      </div>
+      <div class="verb-chip">
+        <span class="de">sprechen</span>
+        <span class="ar">يتحدث</span>
+        <span class="ex">ich spreche</span>
+      </div>
+      <div class="verb-chip">
+        <span class="de">lernen</span>
+        <span class="ar">يتعلّم</span>
+        <span class="ex">ich lerne</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: Sentence Structure -->
+  <div class="section s4 reveal">
+    <div class="section-header">
+      <div class="section-number">٤</div>
+      <div class="section-title-group">
+        <div class="section-title">تكوين الجملة</div>
+        <div class="section-title-de">Satzbau</div>
+      </div>
+    </div>
+
+    <div class="golden-rule">
+      <h3>🏆 القاعدة الذهبية</h3>
+      <p>الفعل يأتي دائماً في <strong style="color:var(--accent);text-decoration:underline;">الموقع الثاني</strong> في الجملة الخبرية الألمانية، ويُصرَّف بناءً على الفاعل.</p>
+    </div>
+  </div>
+
+  <!-- Section 5: Self Introduction -->
+  <div class="section s5 reveal">
+    <div class="section-header">
+      <div class="section-number">٥</div>
+      <div class="section-title-group">
+        <div class="section-title">الجمل التعريفية الأساسية</div>
+        <div class="section-title-de">Sich vorstellen</div>
+      </div>
+    </div>
+
+    <div class="intro-sentences">
+      <div class="intro-item">
+        <div class="intro-icon">👤</div>
+        <div class="intro-content">
+          <div class="intro-label">الاسم</div>
+          <div class="intro-de">Ich bin [Name] / Ich heiße [Name]</div>
+          <div class="intro-ar">أنا أُدعى...</div>
+        </div>
+      </div>
+      <div class="intro-item">
+        <div class="intro-icon">🏠</div>
+        <div class="intro-content">
+          <div class="intro-label">السكن</div>
+          <div class="intro-de">Ich wohne in Amman</div>
+          <div class="intro-ar">أنا أسكن في عمّان</div>
+        </div>
+      </div>
+      <div class="intro-item">
+        <div class="intro-icon">🌍</div>
+        <div class="intro-content">
+          <div class="intro-label">الأصل</div>
+          <div class="intro-de">Ich komme aus Jordanien</div>
+          <div class="intro-ar">أنا من الأردن</div>
+        </div>
+      </div>
+      <div class="intro-item">
+        <div class="intro-icon">🗣️</div>
+        <div class="intro-content">
+          <div class="intro-label">اللغات</div>
+          <div class="intro-de">Ich spreche Arabisch und Englisch</div>
+          <div class="intro-ar">أنا أتحدث العربية والإنجليزية</div>
+        </div>
+      </div>
+      <div class="intro-item">
+        <div class="intro-icon">📚</div>
+        <div class="intro-content">
+          <div class="intro-label">التعلّم</div>
+          <div class="intro-de">Ich lerne Deutsch</div>
+          <div class="intro-ar">أنا أتعلّم الألمانية</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vocab Footer -->
+  <div class="reveal">
+    <p style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:17px;color:var(--text-bright);margin-bottom:14px;">📝 مفردات إضافية</p>
+    <div class="vocab-footer" style="border-top:none;padding-top:0;">
+      <div class="vocab-tag">
+        <span class="vde">Jordanien</span>
+        <span class="var">الأردن</span>
+      </div>
+      <div class="vocab-tag">
+        <span class="vde">Auto</span>
+        <span class="var">سيارة</span>
+      </div>
+      <div class="vocab-tag">
+        <span class="vde">Deutsch</span>
+        <span class="var">اللغة الألمانية</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Scroll reveal animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
