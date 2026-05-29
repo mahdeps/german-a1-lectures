@@ -9,6 +9,7 @@ upload-map.json
 auth.out
 auth.err
 auth.log
+upload.log
 *.output
 
 # OS / editor junk
